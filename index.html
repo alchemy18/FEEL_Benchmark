@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEEL Benchmark</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container { 
+            max-width: 960px;
+            margin: auto;
+            padding: 2rem; 
+        }
+        header { 
+            background: #fff; 
+            padding: 2rem; 
+            text-align: center; 
+            border-bottom: 1px solid #dee2e6;
+        }
+        header h1 {
+            color: #007bff;
+            font-size: 2.5em;
+        }
+        nav { 
+            background: #343a40; 
+            color: #fff; 
+            padding: 1rem; 
+            text-align: center;
+        }
+        nav a { 
+            color: #fff; 
+            text-decoration: none; 
+            margin: 0 1.5rem; 
+            font-weight: 500;
+        }
+        .section { 
+            background: #fff;
+            padding: 2rem;
+            margin-bottom: 2rem; 
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 { 
+            color: #343a40; 
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        code {
+            background-color: #e9ecef;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 1.5rem;
+        }
+        th, td { 
+            border: 1px solid #dee2e6; 
+            padding: 12px; 
+            text-align: left; 
+        }
+        th { 
+            background-color: #f2f2f2; 
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>FEEL Benchmark</h1>
+        <p>A Unified Cross-Dataset Evaluation Framework for Emotion Recognition from Physiological Signals</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#contributions">Contributions</a>
+        <a href="#datasets">Datasets</a>
+        <a href="#models">Models</a>
+        <a href="#analysis">Analysis</a>
+    </nav>
+
+    <div class="container">
+
+        <div id="about" class="section">
+            <h2>About FEEL</h2>
+            <p>To address the lack of standardized evaluation for heterogeneity and its impact on model performance, we present <strong>FEEL</strong>, the first unified cross-dataset evaluation framework for emotion recognition from physiological signals. FEEL enables a systematic analysis of model generalizability and transferability across diverse data collection scenarios.</p>
+            <p>By moving beyond isolated dataset evaluations, FEEL facilitates a holistic assessment of model performance under varying experimental conditions, laying the groundwork for developing scalable, robust emotion recognition models for real-world affective computing applications.</p>
+        </div>
+
+        <div id="contributions" class="section">
+            <h2>Our Contributions</h2>
+            <p>Our key contributions include:</p>
+            <ol>
+                <li>A comprehensive benchmark of <strong>19 publicly available emotion recognition datasets</strong> based on physiological signals.</li>
+                <li>A <strong>unified binning strategy</strong> for data harmonization across diverse sources.</li>
+                <li>A novel <strong>fine-tuning strategy for contrastive language-signal pretraining (CLSP)</strong> applied to datasets lacking textual modalities.</li>
+                <li><strong>Extensive cross-dataset analyses</strong> to evaluate model transferability across variations in labeling strategies, devices, and settings, as well as transferability across demographic groups.</li>
+            </ol>
+        </div>
+
+        <div id="datasets" class="section">
+            <h2>Datasets</h2>
+            <p>We curated a diverse collection of 19 publicly available datasets covering a wide range of experimental conditions and labeling strategies. A full list and details are available in Appendix A.1 of our paper.</p>
+            <!-- A table of datasets could be inserted here -->
+        </div>
+
+        <div id="models" class="section">
+            <h2>Benchmarked Models</h2>
+            <p>We benchmarked this dataset suite using four representative modeling approaches commonly employed in prior studies:</p>
+            <ul>
+                <li><strong>Traditional Machine Learning:</strong> Using handcrafted features.</li>
+                <li><strong>Deep Learning on Features:</strong> Applying deep learning to handcrafted features.</li>
+                <li><strong>End-to-End Deep Learning:</strong> Applying deep learning directly on segments of raw physiological signals.</li>
+                <li><strong>Pre-trained Representation Learning:</strong> Leveraging signal embeddings learned from external tasks or domains (e.g., CLSP).</li>
+            </ul>
+        </div>
+        
+        <div id="analysis" class="section">
+            <h2>Cross-Dataset Analysis</h2>
+            <p>We present a comprehensive cross-dataset analysis to examine key dimensions of dataset heterogeneity that impact model generalization. By systematically analyzing these dimensions, we uncovered how design choices across datasets contribute to performance variability.</p>
+            <h3>Harmonization Dimensions</h3>
+            <ul>
+                <li>Experimental Setting</li>
+                <li>Device Type</li>
+                <li>Labeling Method</li>
+            </ul>
+            <h3>Transferability Experiments</h3>
+            <ul>
+                <li>Focus on participants’ demographic characteristics.</li>
+            </ul>
+            
+            <h3>Performance Overview (Example)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model Type</th>
+                        <th>Avg. Performance</th>
+                        <th>Transferability (Setting)</th>
+                        <th>Transferability (Device)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Traditional ML</td>
+                        <td>0.75</td>
+                        <td>0.68</td>
+                        <td>0.71</td>
+                    </tr>
+                    <tr>
+                        <td>End-to-End DL</td>
+                        <td>0.82</td>
+                        <td>0.75</td>
+                        <td>0.78</td>
+                    </tr>
+                     <tr>
+                        <td>Pre-trained (CLSP)</td>
+                        <td>0.88</td>
+                        <td>0.85</td>
+                        <td>0.86</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 FEEL Benchmark Project</p>
+    </footer>
+
+</body>
+</html>
