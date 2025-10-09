@@ -24,9 +24,16 @@
             text-align: center; 
             border-bottom: 1px solid #dee2e6;
         }
+        /* Style for the new logo */
+        .logo {
+            max-width: 450px; /* Adjust this value to make the logo bigger or smaller */
+            height: auto;
+            margin-bottom: 1rem;
+        }
         header h1 {
             color: #007bff;
             font-size: 2.5em;
+            margin-top: 0; /* Remove extra space above the H1 */
         }
         nav { 
             background: #343a40; 
@@ -106,6 +113,9 @@
 <body>
 
     <header>
+        <!-- LOGO ADDED HERE -->
+        <img src="FEEL.png" alt="FEEL Benchmark Logo" class="logo">
+        
         <h1>FEEL Benchmark</h1>
         <p>A Unified Cross-Dataset Evaluation Framework for Emotion Recognition from Physiological Signals</p>
     </header>
@@ -116,7 +126,7 @@
         <a href="#datasets">Datasets</a>
         <a href="#models">Models</a>
         <a href="#analysis">Analysis</a>
-        <a href="#submit">Submit</a> <!-- Added Navigation Link -->
+        <a href="#submit">Submit</a>
     </nav>
 
     <div class="container">
@@ -201,7 +211,6 @@
             </table>
         </div>
 
-        <!-- NEW SUBMISSION SECTION -->
         <div id="submit" class="section">
             <h2>Submit Your Work</h2>
             <p>Help us grow the FEEL benchmark! We invite you to submit your own datasets or the results of your models. By contributing, you help the community better understand the challenges of generalization in physiological emotion recognition.</p>
@@ -210,7 +219,6 @@
                 Open Submission Form
             </a>
         </div>
-        <!-- END OF NEW SECTION -->
 
     </div>
 
