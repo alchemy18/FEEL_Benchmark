@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEEL: Framework for Emotion Evaluation</title>
+    <link rel="icon" href="chcc.png" type="image/jpeg">
+    <link rel="shortcut icon" href="chcc.png" type="image/jpeg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6; 
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px 30px 20px;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            max-width: 400px;
+            width: 80%;
+            height: auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .authors {
+            margin: 15px 0 5px 0;
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
+
+        .authors a {
+            color: white;
+            text-decoration: none;
+            margin: 0 5px;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .authors a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .authors sup {
+            font-size: 0.7em;
+            margin-left: 2px;
+        }
+
+        .affiliations {
+            font-size: 0.85em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .nav-buttons, .primary-btns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+
+        .nav-btn, .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+
+        .nav-btn:hover, .btn:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .container { 
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        .section {
+            margin: 30px 0;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            scroll-margin-top: 60px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.4em;
+            margin: 20px 0 15px 0;
+        }
+
+        h4 {
+            color: #555;
+            font-size: 1.1em;
+            margin: 15px 0 8px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.8em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        thead tr {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        th, td {
+            padding: 6px 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tbody tr:hover {
+            background-color: #e9ecef;
+        }
+
+        .rank-badge {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+            text-align: center;
+            border-radius: 50%;
+            font-weight: bold;
+            color: white;
+            font-size: 0.85em;
+        }
+
+        .rank-1 { background: #FFD700; color: #333; }
+        .rank-2 { background: #C0C0C0; color: #333; }
+        .rank-3 { background: #CD7F32; color: white; }
+        .rank-other { background: #667eea; font-size: 0.75em; }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-card h4 {
+            color: white;
+            font-size: 1em;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .paradigm-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .paradigm-card {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .paradigm-card h4 {
+            color: #667eea;
+            font-size: 0.9em;
+            margin-bottom: 6px;
+        }
+
+        .paradigm-card p, .paradigm-card ul {
+            font-size: 0.75em;
+            line-height: 1.3;
+        }
+
+        .paradigm-card ul {
+            margin: 4px 0 4px 12px;
+            padding: 0;
+        }
+
+        .paradigm-card li {
+            margin: 2px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 0.7em;
+            font-weight: 600;
+            margin: 1px;
+        }
+
+        .badge-lab { background-color: #d1ecf1; color: #0c5460; }
+        .badge-real { background-color: #f8d7da; color: #721c24; }
+        .badge-constraint { background-color: #fff3cd; color: #856404; }
+
+        .key-findings {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #007bff;
+        }
+
+        .key-findings ul {
+            margin: 10px 0 0 20px;
+        }
+
+        .key-findings li {
+            margin: 6px 0;
+            line-height: 1.5;
+            font-size: 0.9em;
+        }
+
+        .architecture-image {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .architecture-image img {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .architecture-image p {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+            font-size: 0.85em;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            font-size: 1.3em;
+            z-index: 1000;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+        }
+
+        .leaderboard-tabs {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 8px 15px;
+            background: #f8f9fa;
+            border: 2px solid #667eea;
+            color: #667eea;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .license-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+            margin: 20px 0;
+        }
+
+        .license-box pre {
+            font-family: 'Courier New', monospace;
+            font-size: 0.75em;
+            line-height: 1.5;
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        @media (max-width: 1200px) {
+            .paradigm-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .paradigm-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            table {
+                font-size: 0.7em;
+            }
+
+            th, td {
+                padding: 5px 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="logo-container">
+            <img src="FEEL.png" alt="FEEL Framework Logo">
+        </div>
+        <h1>Framework for Emotion Evaluation</h1>
+        <p class="subtitle">Quantifying Heterogeneity in Physiological Signals for Generalizable Emotion Recognition</p>
+
+        <div class="authors">
+            <a href="https://alchemy18.github.io/pragyasingh/" target="_blank">Pragya Singh<sup>1</sup></a>,
+            <a href="https://sites.google.com/view/ankush-gupta" target="_blank">Ankush Gupta<sup>1</sup></a>,
+            <a href="https://www.linkedin.com/in/somayj/" target="_blank">Somay Jalan<sup>1</sup></a>,
+            <a href="https://www.linkedin.com/in/mohan-kumar-0b05242/" target="_blank">Mohan Kumar<sup>2</sup></a>,
+            <a href="https://www.iiitd.ac.in/pushpendra" target="_blank">Pushpendra Singh<sup>1</sup></a>
+        </div>
+        <div class="affiliations">
+            <sup>1</sup>IIIT-D, New Delhi, India &nbsp;&nbsp;&nbsp; <sup>2</sup>RIT, Rochester, New York, USA
+        </div>
+
+        <div class="primary-btns">
+            <a href="#paper-link" class="btn btn-primary">📄 Paper</a>
+            <a href="https://github.com/alchemy18/FFEL" class="btn btn-primary">💻 Code</a>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="#about" class="nav-btn">About</a>
+            <a href="#contributions" class="nav-btn">Contributions</a>
+            <a href="#datasets" class="nav-btn">Datasets</a>
+            <a href="#leaderboards" class="nav-btn">Leaderboards</a>
+            <a href="#models" class="nav-btn">Models</a>
+            <a href="#submit" class="nav-btn">Submit</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- About Section -->
+        <div id="about" class="section">
+            <h2>📋 About FEEL</h2>
+            <p style="font-size: 1.1em; line-height: 1.7; margin-bottom: 15px;">
+                <strong>FEEL (Framework for Emotion Evaluation)</strong> is the first large-scale benchmarking study for emotion recognition 
+                using EDA and PPG signals across 19 publicly available datasets, enabling systematic analysis of model generalizability.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>Datasets</h4>
+                    <div class="stat-value">19</div>
+                    <p>Publicly Available</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Architectures</h4>
+                    <div class="stat-value">16</div>
+                    <p>Models Benchmarked</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Paradigms</h4>
+                    <div class="stat-value">4</div>
+                    <p>Modeling Approaches</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Signals</h4>
+                    <div class="stat-value">2</div>
+                    <p>EDA & PPG</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contributions Section -->
+        <div id="contributions" class="section">
+            <h2>🎯 Key Contributions</h2>
+            <div class="key-findings">
+                <ul>
+                    <li><strong>19 Datasets:</strong> Diverse experimental conditions (lab, real-world, constraint), devices, and labeling strategies</li>
+                    <li><strong>Unified Pipeline:</strong> Standardized preprocessing, harmonization, and evaluation protocols</li>
+                    <li><strong>16 Architectures:</strong> Evaluated across 4 paradigms - traditional ML, deep learning, and pretrained models</li>
+                    <li><strong>Cross-Dataset Analysis:</strong> Systematic transferability evaluation across settings, devices, and labeling methods</li>
+                    <li><strong>CLSP Fine-Tuning:</strong> Novel conditional context optimization for dataset adaptation</li>
+                    <li><strong>Four-Class Extension:</strong> Circumplex model (HAPV, HANV, LAPV, LANV) for nuanced emotion recognition</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Datasets Section -->
+        <!-- Datasets Section -->
+<div id="datasets" class="section">
+    <h2>📚 Dataset Collection</h2>
+    
+    <h3>Overview of 19 Emotion Datasets</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Dataset</th>
+                <th>N</th>
+                <th>Device</th>
+                <th>Setting</th>
+                <th>Labeling</th>
+                <th>Task</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="https://archive.ics.uci.edu/dataset/465/wesad+wearable+stress+and+affect+detection" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">WESAD</a></td>
+                <td>15</td>
+                <td>E4</td>
+                <td><span class="badge badge-lab">Lab</span></td>
+                <td>Stimulus</td>
+                <td>Reading, videos, TSST, meditation</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.nature.com/articles/s41597-022-01361-y" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">NURSE</a></td>
+                <td>15</td>
+                <td>E4</td>
+                <td><span class="badge badge-real">Real</span></td>
+                <td>Self-report</td>
+                <td>Hospital work stress</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.nature.com/articles/s41597-022-01262-0" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">EMOGNITION</a></td>
+                <td>43</td>
+                <td>E4</td>
+                <td><span class="badge badge-lab">Lab</span></td>
+                <td>Stimulus</td>
+                <td>Film clips (9 emotions)</td>
+            </tr>
+            <tr>
+                <td><a href="https://sites.google.com/view/ybenezeth/ubfc-phys" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">UBFCPHYS</a></td>
+                <td>56</td>
+                <td>E4</td>
+                <td><span class="badge badge-lab">Lab</span></td>
+                <td>Stimulus</td>
+                <td>Speech, arithmetic</td>
+            </tr>
+            <tr>
+                <td><a href="https://hubbs.engr.tamu.edu/resources/verbio-dataset/" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">VERBIO</a></td>
+                <td>49</td>
+                <td>E4</td>
+                <td><span class="badge badge-lab">Lab</span></td>
+                <td>Self-report</td>
+                <td>Public speaking</td>
+            </tr>
+            <tr>
+                <td><a href="https://ieeexplore.ieee.org/document/10265252" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">PhyMER</a></td>
+                <td>30</td>
+                <td>E4</td>
+                <td><span class="badge badge-lab">Lab</span></td>
+                <td>Self-report</td>
+                <td>Video stimuli</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.nature.com/articles/s41597-024-03429-3" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">EmoWear</a></td>
+                <td>48</td>
+                <td>E4</td>
+                <td><span class="badge badge-lab">Lab</span></td>
+                <td>Self-report</td>
+                <td>Video stimuli</td>
+            </tr>
+            <tr>
+                <td><a href="https://ieee-dataport.org/open-access/maus-dataset-mental-workload-assessment-n-back-task-using-wearable-sensor" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">MAUS</a></td>
+                <td>22</td>
+                <td>Procomp</td>
+                <td><span class="badge badge-lab">Lab</span></td>
+                <td>Stimulus</td>
+                <td>N-Back task</td>
+            </tr>
+            <tr>
+                <td><a href="https://ieee-dataport.org/open-access/database-cognitive-load-affect-and-stress-recognition" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">CLAS</a></td>
+                <td>62</td>
+                <td>Shimmer3</td>
+                <td><span class="badge badge-lab">Lab</span></td>
+                <td>Stimulus</td>
+                <td>Videos, math, Stroop</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.nature.com/articles/s41597-019-0209-0" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">CASE</a></td>
+                <td>30</td>
+                <td>ThoughtTech</td>
+                <td><span class="badge badge-lab">Lab</span></td>
+                <td>Self-report</td>
+                <td>Video clips</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.nature.com/articles/s41597-024-03738-7" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">Unobtrusive</a></td>
+                <td>24</td>
+                <td>E4</td>
+                <td><span class="badge badge-lab">Lab</span><span class="badge badge-real">Real</span></td>
+                <td>Stimulus</td>
+                <td>Cognitive tasks, WFH</td>
+            </tr>
+            <tr>
+                <td><a href="https://ieeexplore.ieee.org/document/9599346" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">CEAP-360VR</a></td>
+                <td>32</td>
+                <td>E4</td>
+                <td><span class="badge badge-lab">Lab</span></td>
+                <td>Self-report</td>
+                <td>VR 360° videos</td>
+            </tr>
+            <tr>
+                <td><a href="https://physionet.org/content/scientisst-move-biosignals/1.0.1/" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">ScientISST MOVE</a></td>
+                <td>15</td>
+                <td>E4</td>
+                <td><span class="badge badge-constraint">Constraint</span></td>
+                <td>Stimulus</td>
+                <td>Physical activities</td>
+            </tr>
+            <tr>
+                <td><a href="https://dl.acm.org/doi/10.1145/3610892" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">LAUREATE</a></td>
+                <td>44</td>
+                <td>E4</td>
+                <td><span class="badge badge-real">Real</span></td>
+                <td>Self-report</td>
+                <td>13-week university</td>
+            </tr>
+            <tr>
+                <td><a href="https://ieeexplore.ieee.org/document/10756706" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">ForDigitStress</a></td>
+                <td>38</td>
+                <td>IOMbio</td>
+                <td><span class="badge badge-constraint">Constraint</span></td>
+                <td>Expert</td>
+                <td>Job interview</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.nature.com/articles/s41597-021-00945-4" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">Dapper</a></td>
+                <td>88</td>
+                <td>Custom</td>
+                <td><span class="badge badge-real">Real</span></td>
+                <td>Self-report</td>
+                <td>Daily life (5 days)</td>
+            </tr>
+            <tr>
+                <td><a href="https://arxiv.org/abs/2206.14568" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">ADARP</a></td>
+                <td>11</td>
+                <td>E4</td>
+                <td><span class="badge badge-real">Real</span></td>
+                <td>Self-report</td>
+                <td>Alcohol disorder</td>
+            </tr>
+            <tr>
+                <td><a href="https://polytechnic.purdue.edu/ahmrs/mocas-dataset" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">MOCAS</a></td>
+                <td>21</td>
+                <td>E4</td>
+                <td><span class="badge badge-lab">Lab</span></td>
+                <td>Self-report</td>
+                <td>CCTV monitoring</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.nature.com/articles/s41597-025-04845-9" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">Exercise</a></td>
+                <td>97</td>
+                <td>E4</td>
+                <td><span class="badge badge-constraint">Constraint</span></td>
+                <td>Stimulus</td>
+                <td>Stroop, debate, exercise</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+        <!-- Leaderboards Section -->
+        <div id="leaderboards" class="section">
+            <h2>🏆 Leaderboards</h2>
+
+            <div class="leaderboard-tabs">
+                <button class="tab-btn active" onclick="showTab(event, 'arousal')">Arousal</button>
+                <button class="tab-btn" onclick="showTab(event, 'valence')">Valence</button>
+                <button class="tab-btn" onclick="showTab(event, 'fourclass')">Four-Class</button>
+            </div>
+
+            <!-- Arousal Leaderboard -->
+            <div id="arousal" class="tab-content active">
+                <h3>Arousal Classification - All 19 Datasets</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Dataset</th>
+                            <th>EDA F1</th>
+                            <th>PPG F1</th>
+                            <th>Combined F1</th>
+                            <th>Best Model</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="rank-badge rank-1">1</span></td><td>ForDigitStress</td><td>0.94</td><td><strong>0.99</strong></td><td><strong>0.99</strong></td><td>RF (PPG/Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-2">2</span></td><td>WESAD</td><td>0.83</td><td>0.80</td><td>0.91</td><td>HC-MLP (Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-3">3</span></td><td>Unobtrusive</td><td>0.88</td><td>0.87</td><td>0.86</td><td>RF (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">4</span></td><td>ScientISST MOVE</td><td>0.77</td><td>0.81</td><td>0.88</td><td>HC-MLP (Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">5</span></td><td>ADARP</td><td>0.83</td><td>0.80</td><td>0.62</td><td>CLSP MLP 25% (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">6</span></td><td>MAUS</td><td>0.83</td><td>0.82</td><td>0.82</td><td>Signal ResNet (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">7</span></td><td>VERBIO</td><td>0.83</td><td>0.77</td><td>0.72</td><td>CLSP CNN 50% (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">8</span></td><td>LAUREATE</td><td>0.69</td><td>0.77</td><td>0.82</td><td>CLSP Zero-Shot (Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">9</span></td><td>Dapper</td><td>0.77</td><td>0.70</td><td>0.81</td><td>CLSP MLP 5% (Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">10</span></td><td>CLAS</td><td>0.69</td><td>0.66</td><td>0.70</td><td>RF (All)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">11</span></td><td>EMOGNITION</td><td>0.68</td><td>0.62</td><td>0.57</td><td>CLSP MLP 5% (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">12</span></td><td>MOCAS</td><td>0.65</td><td>0.62</td><td>0.63</td><td>CLSP CNN 5% (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">13</span></td><td>EmoWear</td><td>0.64</td><td>0.64</td><td>0.67</td><td>CLSP MLP 50% (Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">14</span></td><td>Exercise</td><td>0.63</td><td>0.57</td><td>0.54</td><td>CLSP Zero-Shot (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">15</span></td><td>NURSE</td><td>0.62</td><td>0.52</td><td>0.62</td><td>CLSP CNN 5% (EDA/Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">16</span></td><td>CEAP-360VR</td><td>0.56</td><td>0.43</td><td>0.45</td><td>CLSP CNN 5% (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">17</span></td><td>PhyMER</td><td>0.51</td><td>0.42</td><td>0.42</td><td>CLSP Zero-Shot (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">18</span></td><td>CASE</td><td>0.47</td><td>0.30</td><td>0.40</td><td>Signal CNN+Transformer (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">19</span></td><td>UBFCPHYS</td><td>0.45</td><td>0.34</td><td>0.41</td><td>CLSP MLP 5% (EDA)</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Top Models by Modality</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 15px 0;">
+                    <div style="background: #e8f5e9; padding: 15px; border-radius: 8px;">
+                        <h4 style="color: #2e7d32;">EDA Best</h4>
+                        <p><strong>ForDigitStress: 0.94</strong><br><small>CLSP MLP 25%</small></p>
+                    </div>
+                    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px;">
+                        <h4 style="color: #1565c0;">PPG Best</h4>
+                        <p><strong>ForDigitStress: 0.99</strong><br><small>Random Forest</small></p>
+                    </div>
+                    <div style="background: #f3e5f5; padding: 15px; border-radius: 8px;">
+                        <h4 style="color: #6a1b9a;">Combined Best</h4>
+                        <p><strong>ForDigitStress: 0.99</strong><br><small>Random Forest</small></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Valence Leaderboard -->
+            <div id="valence" class="tab-content">
+                <h3>Valence Classification - All 19 Datasets</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Dataset</th>
+                            <th>EDA F1</th>
+                            <th>PPG F1</th>
+                            <th>Combined F1</th>
+                            <th>Best Model</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="rank-badge rank-1">1</span></td><td>WESAD</td><td>0.83</td><td>0.83</td><td><strong>0.98</strong></td><td>HC-MLP (Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-2">2</span></td><td>Dapper</td><td>0.87</td><td>0.85</td><td>0.94</td><td>CLSP CNN 50% (Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-3">3</span></td><td>ForDigitStress</td><td>0.87</td><td>0.92</td><td>0.92</td><td>RF (PPG/Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">4</span></td><td>MOCAS</td><td>0.89</td><td>0.87</td><td>0.82</td><td>CLSP Zero-Shot (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">5</span></td><td>ScientISST MOVE</td><td>0.82</td><td>0.80</td><td>0.82</td><td>CLSP MLP 50% (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">6</span></td><td>EmoWear</td><td>0.78</td><td>0.77</td><td>0.77</td><td>CLSP CNN 50% (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">7</span></td><td>UBFCPHYS</td><td>0.76</td><td>0.68</td><td>0.72</td><td>RF (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">8</span></td><td>Exercise</td><td>0.75</td><td>0.72</td><td>0.71</td><td>CLSP Zero-Shot (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">9</span></td><td>PhyMER</td><td>0.72</td><td>0.69</td><td>0.70</td><td>CLSP Zero-Shot (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">10</span></td><td>Unobtrusive</td><td>0.71</td><td>0.71</td><td>0.70</td><td>CLSP Zero-Shot/RF (EDA/PPG)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">11</span></td><td>CLAS</td><td>0.64</td><td>0.61</td><td>0.63</td><td>CLSP Zero-Shot (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">12</span></td><td>NURSE</td><td>0.62</td><td>0.39</td><td>0.38</td><td>CLSP Zero-Shot (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">13</span></td><td>CEAP-360VR</td><td>0.62</td><td>0.61</td><td>0.50</td><td>CLSP CNN 5% (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">14</span></td><td>MAUS</td><td>0.58</td><td>0.56</td><td>0.59</td><td>LDA (Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">15</span></td><td>CASE</td><td>0.54</td><td>0.48</td><td>0.49</td><td>CLSP MLP 5% (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">16</span></td><td>EMOGNITION</td><td>0.53</td><td>0.50</td><td>0.39</td><td>CLSP Zero-Shot (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">17</span></td><td>LAUREATE</td><td>0.36</td><td>0.41</td><td>0.40</td><td>CLSP MLP 50% (PPG)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">18</span></td><td>VERBIO</td><td>0.40</td><td>0.38</td><td>0.34</td><td>HC-MLP (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">19</span></td><td>ADARP</td><td>0.30</td><td>0.40</td><td>0.47</td><td>HC-MLP (Combined)</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Top Models by Modality</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 15px 0;">
+                    <div style="background: #e8f5e9; padding: 15px; border-radius: 8px;">
+                        <h4 style="color: #2e7d32;">EDA Best</h4>
+                        <p><strong>MOCAS: 0.89</strong><br><small>CLSP Zero-Shot</small></p>
+                    </div>
+                    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px;">
+                        <h4 style="color: #1565c0;">PPG Best</h4>
+                        <p><strong>ForDigitStress: 0.92</strong><br><small>Random Forest</small></p>
+                    </div>
+                    <div style="background: #f3e5f5; padding: 15px; border-radius: 8px;">
+                        <h4 style="color: #6a1b9a;">Combined Best</h4>
+                        <p><strong>WESAD: 0.98</strong><br><small>HC-MLP</small></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Four-Class Leaderboard -->
+            <div id="fourclass" class="tab-content">
+                <h3>Four-Class Classification - All 19 Datasets</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Dataset</th>
+                            <th>EDA F1</th>
+                            <th>PPG F1</th>
+                            <th>Combined F1</th>
+                            <th>Best Model</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="rank-badge rank-1">1</span></td><td>WESAD</td><td><strong>0.987</strong></td><td>0.794</td><td><strong>0.987</strong></td><td>RF/LDA (EDA/Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-2">2</span></td><td>ForDigitStress</td><td>0.682</td><td>0.821</td><td>0.826</td><td>RF (Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-3">3</span></td><td>ScientISST MOVE</td><td>0.701</td><td>0.740</td><td>0.800</td><td>CLSP CNN 50% (Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">4</span></td><td>MAUS</td><td>0.700</td><td>0.705</td><td>0.728</td><td>RF (Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">5</span></td><td>PhyMER</td><td>0.723</td><td>0.300</td><td>0.342</td><td>CLSP CNN 50% (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">6</span></td><td>UBFCPHYS</td><td>0.705</td><td>0.551</td><td>0.622</td><td>CLSP Zero-Shot (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">7</span></td><td>MOCAS</td><td>0.701</td><td>0.357</td><td>0.366</td><td>CLSP MLP 25% (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">8</span></td><td>EMOGNITION</td><td>0.572</td><td>0.601</td><td>0.513</td><td>CLSP CNN 50% (PPG)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">9</span></td><td>Dapper</td><td>0.434</td><td>0.426</td><td>0.555</td><td>RF (Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">10</span></td><td>Exercise</td><td>0.552</td><td>0.438</td><td>0.480</td><td>CLSP CNN 25% (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">11</span></td><td>LAUREATE</td><td>0.527</td><td>0.460</td><td>0.461</td><td>CLSP MLP 5% (EDA)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">12</span></td><td>CASE</td><td>0.476</td><td>0.397</td><td>0.498</td><td>RF (Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">13</span></td><td>VERBIO</td><td>0.480</td><td>0.582</td><td>0.436</td><td>CLSP Zero-Shot (PPG)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">14</span></td><td>NURSE</td><td>0.433</td><td>0.667</td><td>0.520</td><td>CLSP Zero-Shot (PPG)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">15</span></td><td>CLAS</td><td>0.430</td><td>0.408</td><td>0.459</td><td>RF (Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">16</span></td><td>Unobtrusive</td><td>0.402</td><td>0.409</td><td>0.393</td><td>CLSP Zero-Shot (PPG)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">17</span></td><td>ADARP</td><td>0.269</td><td>0.433</td><td>0.354</td><td>CLSP Zero-Shot (PPG)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">18</span></td><td>CEAP-360VR</td><td>0.285</td><td>0.307</td><td>0.314</td><td>RF (Combined)</td></tr>
+                        <tr><td><span class="rank-badge rank-other">19</span></td><td>EmoWear</td><td>0.293</td><td>0.270</td><td>0.282</td><td>CLSP CNN 50% (EDA)</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>Top Models by Modality</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 15px 0;">
+                    <div style="background: #e8f5e9; padding: 15px; border-radius: 8px;">
+                        <h4 style="color: #2e7d32;">EDA Best</h4>
+                        <p><strong>WESAD: 0.987</strong><br><small>Random Forest</small></p>
+                    </div>
+                    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px;">
+                        <h4 style="color: #1565c0;">PPG Best</h4>
+                        <p><strong>ForDigitStress: 0.821</strong><br><small>Random Forest</small></p>
+                    </div>
+                    <div style="background: #f3e5f5; padding: 15px; border-radius: 8px;">
+                        <h4 style="color: #6a1b9a;">Combined Best</h4>
+                        <p><strong>WESAD: 0.987</strong><br><small>LDA</small></p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Models Section -->
+        <div id="models" class="section">
+            <h2>🏗️ Model Architectures</h2>
+
+            <div class="architecture-image">
+                <img src="clsp_finetune.png" alt="CLSP Fine-Tuning Architecture">
+                <p>CLSP fine-tuning with conditional context optimization (CoCoOp)</p>
+            </div>
+
+            <h3>Four Modeling Paradigms (16 Architectures)</h3>
+
+            <div class="paradigm-grid">
+                <div class="paradigm-card">
+                    <h4>1. Traditional ML</h4>
+                    <p><strong>Models:</strong> RF, LDA</p>
+                    <p><strong>Input:</strong> Handcrafted features</p>
+                    <ul>
+                        <li>Random Forest</li>
+                        <li>LDA</li>
+                    </ul>
+                    <p style="margin-top: 6px;"><strong>Top:</strong> 25/114</p>
+                </div>
+
+                <div class="paradigm-card">
+                    <h4>2. DL + Handcrafted</h4>
+                    <p><strong>Models:</strong> 4 variants</p>
+                    <p><strong>Input:</strong> Handcrafted features</p>
+                    <ul>
+                        <li>MLP</li>
+                        <li>ResNet</li>
+                        <li>LSTM+MLP</li>
+                        <li>Attention+MLP</li>
+                    </ul>
+                    <p style="margin-top: 6px;"><strong>Top:</strong> 13/114</p>
+                </div>
+
+                <div class="paradigm-card">
+                    <h4>3. DL on Raw Signals</h4>
+                    <p><strong>Models:</strong> 3 variants</p>
+                    <p><strong>Input:</strong> Raw time-series</p>
+                    <ul>
+                        <li>Signal ResNet</li>
+                        <li>Signal LSTM+MLP</li>
+                        <li>CNN+Transformer</li>
+                    </ul>
+                    <p style="margin-top: 6px;"><strong>Top:</strong> 3/114</p>
+                </div>
+
+                <div class="paradigm-card">
+                    <h4>4. Pretrained CLSP</h4>
+                    <p><strong>Models:</strong> 7 variants</p>
+                    <p><strong>Input:</strong> Pretrained embeddings</p>
+                    <ul>
+                        <li>Zero-Shot</li>
+                        <li>MLP (5/25/50%)</li>
+                        <li>CNN (5/25/50%)</li>
+                    </ul>
+                    <p style="margin-top: 6px;"><strong>Top:</strong> 73/114 (64%)</p>
+                </div>
+            </div>
+
+            <div class="key-findings">
+                <h4>Key Model Insights</h4>
+                <ul>
+                    <li><strong>CLSP Dominance:</strong> 73/114 (64%) top instances, especially CLSP-CNN (37) and CLSP-MLP (22)</li>
+                    <li><strong>Few-Shot Power:</strong> 21 top instances with only 5% training data</li>
+                    <li><strong>Classical ML Competitive:</strong> RF and LDA remain strong for small datasets</li>
+                    <li><strong>Handcrafted Features Win:</strong> 109/114 (96%) top models use domain knowledge</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Submit Section -->
+        <div id="submit" class="section">
+            <h2>🎯 Contribute to FEEL</h2>
+
+            <p style="font-size: 1.05em; line-height: 1.7; margin-bottom: 20px;">
+                Help expand the FEEL benchmark by submitting your model results or proposing new datasets. We welcome contributions that evaluate novel architectures, introduce new preprocessing techniques, or extend analysis to additional heterogeneity dimensions.
+            </p>
+
+            <div style="text-align: center; margin: 25px 0;">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSchhaTlXFliCb1fS2zCK7-66zWAExXn6RavqeLaH2nE8vKs8A/viewform" class="btn" style="display: inline-block;">📤 Submit Results</a>
+            </div>
+
+            <h3>Citation</h3>
+            <div style="background: #f4f4f4; padding: 15px; border-radius: 5px; font-family: monospace; margin: 15px 0; font-size: 0.8em;">
+                <pre>@inproceedings{singh2025feel,
+  title={FEEL: Quantifying Heterogeneity in Physiological 
+         Signals for Generalizable Emotion Recognition},
+  author={Singh, Pragya and Gupta, Ankush and 
+          Jalan, Somay and Kumar, Mohan and 
+          Singh, Pushpendra},
+  booktitle={NeurIPS},
+  year={2025}
+}</pre>
+            </div>
+            <h3>License</h3>
+<div class="license-box">
+    <p style="font-size: 0.9em; line-height: 1.7; margin-bottom: 15px;">
+        <strong>FEEL: Framework for Emotion Evaluation</strong> © 2025 by 
+        <a href="https://alchemy18.github.io/pragyasingh/" target="_blank" style="color: #667eea; text-decoration: none;">Pragya Singh</a>, 
+        <a href="https://sites.google.com/view/ankush-gupta" target="_blank" style="color: #667eea; text-decoration: none;">Ankush Gupta</a>, 
+        <a href="https://www.linkedin.com/in/somayj/" target="_blank" style="color: #667eea; text-decoration: none;">Somay Jalan</a>, 
+        <a href="https://www.linkedin.com/in/mohan-kumar-0b05242/" target="_blank" style="color: #667eea; text-decoration: none;">Mohan Kumar</a>, 
+        <a href="https://www.iiitd.ac.in/pushpendra" target="_blank" style="color: #667eea; text-decoration: none;">Pushpendra Singh</a> 
+        is licensed under 
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.
+    </p>
+    <p style="font-size: 0.85em; line-height: 1.6; color: #666;">
+        To view a copy of this license, visit 
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color: #667eea; text-decoration: none;">https://creativecommons.org/licenses/by-nc-sa/4.0/</a>
+    </p>
+</div>
+
+            
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; margin-top: 40px; color: white;">
+            <h3 style="color: white; margin-bottom: 15px;">📬 Stay Connected</h3>
+            <p style="margin-top: 20px; opacity: 0.9; font-size: 0.9em;">
+                © 2025 FEEL Benchmark | NeurIPS 2025 | IIIT-Delhi & RIT
+            </p>
+        </div>
+    </div>
+
+    <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+        ↑
+    </div>
+
+    <script>
+        // Tab switching
+        function showTab(event, tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Scroll to top button
+        window.onscroll = function() {
+            const scrollTop = document.querySelector('.scroll-top');
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollTop.style.display = 'flex';
+            } else {
+                scrollTop.style.display = 'none';
+            }
+        };
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
