@@ -385,13 +385,43 @@
             word-wrap: break-word;
         }
 
+        /* Timeline specific styles */
+.timeline-dot {
+    position: absolute;
+    left: -37px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #667eea;
+    border: 4px solid white;
+}
+
+.timeline-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+/* In your <style> section */
+#timeline > div > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+
         @media (max-width: 1200px) {
             .paradigm-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .paradigm-grid {
                 grid-template-columns: 1fr;
             }
@@ -445,6 +475,7 @@
             <a href="#leaderboards" class="nav-btn">Leaderboards</a>
             <a href="#models" class="nav-btn">Models</a>
             <a href="#submit" class="nav-btn">Submit</a>
+            <a href="#timeline" class="nav-btn">Timeline</a>
         </div>
     </div>
 
@@ -496,8 +527,7 @@
             </div>
         </div>
 
-        <!-- Datasets Section -->
-        <!-- Datasets Section -->
+<!-- Datasets Section -->
 <div id="datasets" class="section">
     <h2>📚 Dataset Collection</h2>
     
@@ -506,7 +536,7 @@
         <thead>
             <tr>
                 <th>Dataset</th>
-                <th>N</th>
+                <th>No of the Participants</th>
                 <th>Device</th>
                 <th>Setting</th>
                 <th>Labeling</th>
@@ -515,7 +545,7 @@
         </thead>
         <tbody>
             <tr>
-                <td><a href="https://archive.ics.uci.edu/dataset/465/wesad+wearable+stress+and+affect+detection" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">WESAD</a></td>
+                <td><a href="https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">WESAD</a></td>
                 <td>15</td>
                 <td>E4</td>
                 <td><span class="badge badge-lab">Lab</span></td>
@@ -523,7 +553,7 @@
                 <td>Reading, videos, TSST, meditation</td>
             </tr>
             <tr>
-                <td><a href="https://www.nature.com/articles/s41597-022-01361-y" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">NURSE</a></td>
+                <td><a href="https://datadryad.org/dataset/doi:10.5061/dryad.5hqbzkh6f#citations" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">NURSE</a></td>
                 <td>15</td>
                 <td>E4</td>
                 <td><span class="badge badge-real">Real</span></td>
@@ -531,7 +561,7 @@
                 <td>Hospital work stress</td>
             </tr>
             <tr>
-                <td><a href="https://www.nature.com/articles/s41597-022-01262-0" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">EMOGNITION</a></td>
+                <td><a href="https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/R9WAF4" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">EMOGNITION</a></td>
                 <td>43</td>
                 <td>E4</td>
                 <td><span class="badge badge-lab">Lab</span></td>
@@ -539,7 +569,7 @@
                 <td>Film clips (9 emotions)</td>
             </tr>
             <tr>
-                <td><a href="https://sites.google.com/view/ybenezeth/ubfc-phys" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">UBFCPHYS</a></td>
+                <td><a href="https://sites.google.com/view/ybenezeth/ubfc-phys" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">UBFCPHYS</a></td>
                 <td>56</td>
                 <td>E4</td>
                 <td><span class="badge badge-lab">Lab</span></td>
@@ -547,7 +577,7 @@
                 <td>Speech, arithmetic</td>
             </tr>
             <tr>
-                <td><a href="https://hubbs.engr.tamu.edu/resources/verbio-dataset/" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">VERBIO</a></td>
+                <td><a href="https://hubbs.engr.tamu.edu/resources/verbio-dataset/" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">VERBIO</a></td>
                 <td>49</td>
                 <td>E4</td>
                 <td><span class="badge badge-lab">Lab</span></td>
@@ -555,7 +585,7 @@
                 <td>Public speaking</td>
             </tr>
             <tr>
-                <td><a href="https://ieeexplore.ieee.org/document/10265252" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">PhyMER</a></td>
+                <td><a href="https://sites.google.com/view/phymer-dataset" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">PhyMER</a></td>
                 <td>30</td>
                 <td>E4</td>
                 <td><span class="badge badge-lab">Lab</span></td>
@@ -563,7 +593,7 @@
                 <td>Video stimuli</td>
             </tr>
             <tr>
-                <td><a href="https://www.nature.com/articles/s41597-024-03429-3" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">EmoWear</a></td>
+                <td><a href="https://zenodo.org/records/10407279" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">EmoWear</a></td>
                 <td>48</td>
                 <td>E4</td>
                 <td><span class="badge badge-lab">Lab</span></td>
@@ -571,7 +601,7 @@
                 <td>Video stimuli</td>
             </tr>
             <tr>
-                <td><a href="https://ieee-dataport.org/open-access/maus-dataset-mental-workload-assessment-n-back-task-using-wearable-sensor" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">MAUS</a></td>
+                <td><a href="https://ieee-dataport.org/open-access/maus-dataset-mental-workload-assessment-n-back-task-using-wearable-sensor" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">MAUS</a></td>
                 <td>22</td>
                 <td>Procomp</td>
                 <td><span class="badge badge-lab">Lab</span></td>
@@ -579,7 +609,7 @@
                 <td>N-Back task</td>
             </tr>
             <tr>
-                <td><a href="https://ieee-dataport.org/open-access/database-cognitive-load-affect-and-stress-recognition" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">CLAS</a></td>
+                <td><a href="https://ieee-dataport.org/open-access/database-cognitive-load-affect-and-stress-recognition" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">CLAS</a></td>
                 <td>62</td>
                 <td>Shimmer3</td>
                 <td><span class="badge badge-lab">Lab</span></td>
@@ -587,7 +617,7 @@
                 <td>Videos, math, Stroop</td>
             </tr>
             <tr>
-                <td><a href="https://www.nature.com/articles/s41597-019-0209-0" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">CASE</a></td>
+                <td><a href="https://gitlab.com/karan-shr/case_dataset" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">CASE</a></td>
                 <td>30</td>
                 <td>ThoughtTech</td>
                 <td><span class="badge badge-lab">Lab</span></td>
@@ -595,7 +625,7 @@
                 <td>Video clips</td>
             </tr>
             <tr>
-                <td><a href="https://www.nature.com/articles/s41597-024-03738-7" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">Unobtrusive</a></td>
+                <td><a href="https://zenodo.org/records/10371068" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">Unobtrusive</a></td>
                 <td>24</td>
                 <td>E4</td>
                 <td><span class="badge badge-lab">Lab</span><span class="badge badge-real">Real</span></td>
@@ -603,7 +633,7 @@
                 <td>Cognitive tasks, WFH</td>
             </tr>
             <tr>
-                <td><a href="https://ieeexplore.ieee.org/document/9599346" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">CEAP-360VR</a></td>
+                <td><a href="https://github.com/cwi-dis/CEAP-360VR-Dataset" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">CEAP-360VR</a></td>
                 <td>32</td>
                 <td>E4</td>
                 <td><span class="badge badge-lab">Lab</span></td>
@@ -611,7 +641,7 @@
                 <td>VR 360° videos</td>
             </tr>
             <tr>
-                <td><a href="https://physionet.org/content/scientisst-move-biosignals/1.0.1/" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">ScientISST MOVE</a></td>
+                <td><a href="https://www.scientisst.com/projects/run-like-a-scientisst" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">ScientISST MOVE</a></td>
                 <td>15</td>
                 <td>E4</td>
                 <td><span class="badge badge-constraint">Constraint</span></td>
@@ -619,7 +649,7 @@
                 <td>Physical activities</td>
             </tr>
             <tr>
-                <td><a href="https://dl.acm.org/doi/10.1145/3610892" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">LAUREATE</a></td>
+                <td><a href="https://pc.inf.usi.ch/studentproject/affect-and-learning-in-the-laureate-dataset/" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">LAUREATE</a></td>
                 <td>44</td>
                 <td>E4</td>
                 <td><span class="badge badge-real">Real</span></td>
@@ -627,7 +657,7 @@
                 <td>13-week university</td>
             </tr>
             <tr>
-                <td><a href="https://ieeexplore.ieee.org/document/10756706" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">ForDigitStress</a></td>
+                <td><a href="https://hcai.eu/fordigitstress/" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">ForDigitStress</a></td>
                 <td>38</td>
                 <td>IOMbio</td>
                 <td><span class="badge badge-constraint">Constraint</span></td>
@@ -635,7 +665,7 @@
                 <td>Job interview</td>
             </tr>
             <tr>
-                <td><a href="https://www.nature.com/articles/s41597-021-00945-4" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">Dapper</a></td>
+                <td><a href="https://www.synapse.org/Synapse:syn22418021" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">Dapper</a></td>
                 <td>88</td>
                 <td>Custom</td>
                 <td><span class="badge badge-real">Real</span></td>
@@ -643,7 +673,7 @@
                 <td>Daily life (5 days)</td>
             </tr>
             <tr>
-                <td><a href="https://arxiv.org/abs/2206.14568" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">ADARP</a></td>
+                <td><a href="https://zenodo.org/records/6640290" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">ADARP</a></td>
                 <td>11</td>
                 <td>E4</td>
                 <td><span class="badge badge-real">Real</span></td>
@@ -651,7 +681,7 @@
                 <td>Alcohol disorder</td>
             </tr>
             <tr>
-                <td><a href="https://polytechnic.purdue.edu/ahmrs/mocas-dataset" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">MOCAS</a></td>
+                <td><a href="https://zenodo.org/records/7023242" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">MOCAS</a></td>
                 <td>21</td>
                 <td>E4</td>
                 <td><span class="badge badge-lab">Lab</span></td>
@@ -659,7 +689,7 @@
                 <td>CCTV monitoring</td>
             </tr>
             <tr>
-                <td><a href="https://www.nature.com/articles/s41597-025-04845-9" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">Exercise</a></td>
+                <td><a href="https://physionet.org/content/wearable-device-dataset/1.0.0/" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">Exercise</a></td>
                 <td>97</td>
                 <td>E4</td>
                 <td><span class="badge badge-constraint">Constraint</span></td>
@@ -669,6 +699,7 @@
         </tbody>
     </table>
 </div>
+
 
 
         <!-- Leaderboards Section -->
@@ -682,175 +713,649 @@
             </div>
 
             <!-- Arousal Leaderboard -->
-            <div id="arousal" class="tab-content active">
-                <h3>Arousal Classification - All 19 Datasets</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Rank</th>
-                            <th>Dataset</th>
-                            <th>EDA F1</th>
-                            <th>PPG F1</th>
-                            <th>Combined F1</th>
-                            <th>Best Model</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><span class="rank-badge rank-1">1</span></td><td>ForDigitStress</td><td>0.94</td><td><strong>0.99</strong></td><td><strong>0.99</strong></td><td>RF (PPG/Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-2">2</span></td><td>WESAD</td><td>0.83</td><td>0.80</td><td>0.91</td><td>HC-MLP (Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-3">3</span></td><td>Unobtrusive</td><td>0.88</td><td>0.87</td><td>0.86</td><td>RF (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">4</span></td><td>ScientISST MOVE</td><td>0.77</td><td>0.81</td><td>0.88</td><td>HC-MLP (Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">5</span></td><td>ADARP</td><td>0.83</td><td>0.80</td><td>0.62</td><td>CLSP MLP 25% (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">6</span></td><td>MAUS</td><td>0.83</td><td>0.82</td><td>0.82</td><td>Signal ResNet (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">7</span></td><td>VERBIO</td><td>0.83</td><td>0.77</td><td>0.72</td><td>CLSP CNN 50% (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">8</span></td><td>LAUREATE</td><td>0.69</td><td>0.77</td><td>0.82</td><td>CLSP Zero-Shot (Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">9</span></td><td>Dapper</td><td>0.77</td><td>0.70</td><td>0.81</td><td>CLSP MLP 5% (Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">10</span></td><td>CLAS</td><td>0.69</td><td>0.66</td><td>0.70</td><td>RF (All)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">11</span></td><td>EMOGNITION</td><td>0.68</td><td>0.62</td><td>0.57</td><td>CLSP MLP 5% (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">12</span></td><td>MOCAS</td><td>0.65</td><td>0.62</td><td>0.63</td><td>CLSP CNN 5% (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">13</span></td><td>EmoWear</td><td>0.64</td><td>0.64</td><td>0.67</td><td>CLSP MLP 50% (Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">14</span></td><td>Exercise</td><td>0.63</td><td>0.57</td><td>0.54</td><td>CLSP Zero-Shot (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">15</span></td><td>NURSE</td><td>0.62</td><td>0.52</td><td>0.62</td><td>CLSP CNN 5% (EDA/Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">16</span></td><td>CEAP-360VR</td><td>0.56</td><td>0.43</td><td>0.45</td><td>CLSP CNN 5% (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">17</span></td><td>PhyMER</td><td>0.51</td><td>0.42</td><td>0.42</td><td>CLSP Zero-Shot (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">18</span></td><td>CASE</td><td>0.47</td><td>0.30</td><td>0.40</td><td>Signal CNN+Transformer (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">19</span></td><td>UBFCPHYS</td><td>0.45</td><td>0.34</td><td>0.41</td><td>CLSP MLP 5% (EDA)</td></tr>
-                    </tbody>
-                </table>
+           <!-- Arousal Leaderboard -->
+<div id="arousal" class="tab-content active">
+    <h3>Arousal Classification - All 19 Datasets</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Dataset</th>
+                <th>EDA F1</th>
+                <th>EDA Model</th>
+                <th>PPG F1</th>
+                <th>PPG Model</th>
+                <th>Combined F1</th>
+                <th>Combined Model</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="rank-badge rank-1">1</span></td>
+                <td>ForDigitStress</td>
+                <td>0.94</td>
+                <td><small>CLSP MLP 25%</small></td>
+                <td><strong>0.99</strong></td>
+                <td><small>RF</small></td>
+                <td><strong>0.99</strong></td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-2">2</span></td>
+                <td>WESAD</td>
+                <td>0.83</td>
+                <td><small>Signal ResNet</small></td>
+                <td>0.80</td>
+                <td><small>HC-MLP</small></td>
+                <td>0.91</td>
+                <td><small>HC-MLP</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-3">3</span></td>
+                <td>Unobtrusive</td>
+                <td>0.88</td>
+                <td><small>RF</small></td>
+                <td>0.87</td>
+                <td><small>RF</small></td>
+                <td>0.86</td>
+                <td><small>CLSP MLP 50%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">4</span></td>
+                <td>ScientISST MOVE</td>
+                <td>0.77</td>
+                <td><small>HC Attention MLP</small></td>
+                <td>0.81</td>
+                <td><small>RF</small></td>
+                <td>0.88</td>
+                <td><small>HC-MLP</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">5</span></td>
+                <td>ADARP</td>
+                <td>0.83</td>
+                <td><small>CLSP MLP 25%</small></td>
+                <td>0.80</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.62</td>
+                <td><small>CLSP MLP 25%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">6</span></td>
+                <td>MAUS</td>
+                <td>0.83</td>
+                <td><small>Signal ResNet</small></td>
+                <td>0.82</td>
+                <td><small>RF</small></td>
+                <td>0.82</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">7</span></td>
+                <td>VERBIO</td>
+                <td>0.83</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.77</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.72</td>
+                <td><small>CLSP CNN 50%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">8</span></td>
+                <td>LAUREATE</td>
+                <td>0.69</td>
+                <td><small>RF</small></td>
+                <td>0.77</td>
+                <td><small>CLSP MLP 50%</small></td>
+                <td>0.82</td>
+                <td><small>CLSP Zero-Shot</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">9</span></td>
+                <td>Dapper</td>
+                <td>0.77</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.70</td>
+                <td><small>CLSP CNN 5%</small></td>
+                <td>0.81</td>
+                <td><small>CLSP MLP 5%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">10</span></td>
+                <td>CLAS</td>
+                <td>0.69</td>
+                <td><small>RF</small></td>
+                <td>0.66</td>
+                <td><small>RF</small></td>
+                <td>0.70</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">11</span></td>
+                <td>EMOGNITION</td>
+                <td>0.68</td>
+                <td><small>CLSP MLP 5%</small></td>
+                <td>0.62</td>
+                <td><small>CLSP MLP 50%</small></td>
+                <td>0.57</td>
+                <td><small>CLSP CNN 5%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">12</span></td>
+                <td>MOCAS</td>
+                <td>0.65</td>
+                <td><small>CLSP CNN 5%</small></td>
+                <td>0.62</td>
+                <td><small>CLSP MLP 5%</small></td>
+                <td>0.63</td>
+                <td><small>CLSP MLP 25%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">13</span></td>
+                <td>EmoWear</td>
+                <td>0.64</td>
+                <td><small>RF</small></td>
+                <td>0.64</td>
+                <td><small>RF</small></td>
+                <td>0.67</td>
+                <td><small>CLSP MLP 50%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">14</span></td>
+                <td>Exercise</td>
+                <td>0.63</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.57</td>
+                <td><small>CLSP CNN 25%</small></td>
+                <td>0.54</td>
+                <td><small>CLSP MLP 5%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">15</span></td>
+                <td>NURSE</td>
+                <td>0.62</td>
+                <td><small>CLSP CNN 5%</small></td>
+                <td>0.52</td>
+                <td><small>CLSP MLP 50%</small></td>
+                <td>0.62</td>
+                <td><small>CLSP CNN 5%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">16</span></td>
+                <td>CEAP-360VR</td>
+                <td>0.56</td>
+                <td><small>CLSP CNN 5%</small></td>
+                <td>0.43</td>
+                <td><small>CLSP CNN 5%</small></td>
+                <td>0.45</td>
+                <td><small>CLSP MLP 5%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">17</span></td>
+                <td>PhyMER</td>
+                <td>0.51</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.42</td>
+                <td><small>LDA</small></td>
+                <td>0.42</td>
+                <td><small>LDA</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">18</span></td>
+                <td>CASE</td>
+                <td>0.47</td>
+                <td><small>Signal CNN+Transformer</small></td>
+                <td>0.30</td>
+                <td><small>HC-MLP</small></td>
+                <td>0.40</td>
+                <td><small>CLSP MLP 5%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">19</span></td>
+                <td>UBFCPHYS</td>
+                <td>0.45</td>
+                <td><small>CLSP MLP 5%</small></td>
+                <td>0.34</td>
+                <td><small>CLSP CNN 25%</small></td>
+                <td>0.41</td>
+                <td><small>CLSP MLP 5%</small></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-                <h3>Top Models by Modality</h3>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 15px 0;">
-                    <div style="background: #e8f5e9; padding: 15px; border-radius: 8px;">
-                        <h4 style="color: #2e7d32;">EDA Best</h4>
-                        <p><strong>ForDigitStress: 0.94</strong><br><small>CLSP MLP 25%</small></p>
-                    </div>
-                    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px;">
-                        <h4 style="color: #1565c0;">PPG Best</h4>
-                        <p><strong>ForDigitStress: 0.99</strong><br><small>Random Forest</small></p>
-                    </div>
-                    <div style="background: #f3e5f5; padding: 15px; border-radius: 8px;">
-                        <h4 style="color: #6a1b9a;">Combined Best</h4>
-                        <p><strong>ForDigitStress: 0.99</strong><br><small>Random Forest</small></p>
-                    </div>
-                </div>
-
-            </div>
 
             <!-- Valence Leaderboard -->
-            <div id="valence" class="tab-content">
-                <h3>Valence Classification - All 19 Datasets</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Rank</th>
-                            <th>Dataset</th>
-                            <th>EDA F1</th>
-                            <th>PPG F1</th>
-                            <th>Combined F1</th>
-                            <th>Best Model</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><span class="rank-badge rank-1">1</span></td><td>WESAD</td><td>0.83</td><td>0.83</td><td><strong>0.98</strong></td><td>HC-MLP (Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-2">2</span></td><td>Dapper</td><td>0.87</td><td>0.85</td><td>0.94</td><td>CLSP CNN 50% (Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-3">3</span></td><td>ForDigitStress</td><td>0.87</td><td>0.92</td><td>0.92</td><td>RF (PPG/Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">4</span></td><td>MOCAS</td><td>0.89</td><td>0.87</td><td>0.82</td><td>CLSP Zero-Shot (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">5</span></td><td>ScientISST MOVE</td><td>0.82</td><td>0.80</td><td>0.82</td><td>CLSP MLP 50% (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">6</span></td><td>EmoWear</td><td>0.78</td><td>0.77</td><td>0.77</td><td>CLSP CNN 50% (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">7</span></td><td>UBFCPHYS</td><td>0.76</td><td>0.68</td><td>0.72</td><td>RF (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">8</span></td><td>Exercise</td><td>0.75</td><td>0.72</td><td>0.71</td><td>CLSP Zero-Shot (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">9</span></td><td>PhyMER</td><td>0.72</td><td>0.69</td><td>0.70</td><td>CLSP Zero-Shot (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">10</span></td><td>Unobtrusive</td><td>0.71</td><td>0.71</td><td>0.70</td><td>CLSP Zero-Shot/RF (EDA/PPG)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">11</span></td><td>CLAS</td><td>0.64</td><td>0.61</td><td>0.63</td><td>CLSP Zero-Shot (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">12</span></td><td>NURSE</td><td>0.62</td><td>0.39</td><td>0.38</td><td>CLSP Zero-Shot (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">13</span></td><td>CEAP-360VR</td><td>0.62</td><td>0.61</td><td>0.50</td><td>CLSP CNN 5% (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">14</span></td><td>MAUS</td><td>0.58</td><td>0.56</td><td>0.59</td><td>LDA (Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">15</span></td><td>CASE</td><td>0.54</td><td>0.48</td><td>0.49</td><td>CLSP MLP 5% (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">16</span></td><td>EMOGNITION</td><td>0.53</td><td>0.50</td><td>0.39</td><td>CLSP Zero-Shot (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">17</span></td><td>LAUREATE</td><td>0.36</td><td>0.41</td><td>0.40</td><td>CLSP MLP 50% (PPG)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">18</span></td><td>VERBIO</td><td>0.40</td><td>0.38</td><td>0.34</td><td>HC-MLP (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">19</span></td><td>ADARP</td><td>0.30</td><td>0.40</td><td>0.47</td><td>HC-MLP (Combined)</td></tr>
-                    </tbody>
-                </table>
+            <!-- Valence Leaderboard -->
+<div id="valence" class="tab-content">
+    <h3>Valence Classification - All 19 Datasets</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Dataset</th>
+                <th>EDA F1</th>
+                <th>EDA Model</th>
+                <th>PPG F1</th>
+                <th>PPG Model</th>
+                <th>Combined F1</th>
+                <th>Combined Model</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="rank-badge rank-1">1</span></td>
+                <td>WESAD</td>
+                <td>0.83</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.83</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td><strong>0.98</strong></td>
+                <td><small>HC-MLP</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-2">2</span></td>
+                <td>Dapper</td>
+                <td>0.87</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.85</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.94</td>
+                <td><small>CLSP CNN 50%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-3">3</span></td>
+                <td>ForDigitStress</td>
+                <td>0.87</td>
+                <td><small>CLSP CNN 5%</small></td>
+                <td>0.92</td>
+                <td><small>RF</small></td>
+                <td>0.92</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">4</span></td>
+                <td>MOCAS</td>
+                <td>0.89</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.87</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.82</td>
+                <td><small>CLSP CNN 25%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">5</span></td>
+                <td>ScientISST MOVE</td>
+                <td>0.82</td>
+                <td><small>CLSP MLP 50%</small></td>
+                <td>0.80</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.82</td>
+                <td><small>CLSP CNN 50%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">6</span></td>
+                <td>EmoWear</td>
+                <td>0.78</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.77</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.77</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">7</span></td>
+                <td>UBFCPHYS</td>
+                <td>0.76</td>
+                <td><small>RF</small></td>
+                <td>0.68</td>
+                <td><small>LDA</small></td>
+                <td>0.72</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">8</span></td>
+                <td>Exercise</td>
+                <td>0.75</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.72</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.71</td>
+                <td><small>CLSP MLP 50%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">9</span></td>
+                <td>PhyMER</td>
+                <td>0.72</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.69</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.70</td>
+                <td><small>CLSP MLP 50%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">10</span></td>
+                <td>Unobtrusive</td>
+                <td>0.71</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.71</td>
+                <td><small>RF</small></td>
+                <td>0.70</td>
+                <td><small>CLSP CNN 25%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">11</span></td>
+                <td>CLAS</td>
+                <td>0.64</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.61</td>
+                <td><small>CLSP CNN 25%</small></td>
+                <td>0.63</td>
+                <td><small>HC Attention MLP</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">12</span></td>
+                <td>NURSE</td>
+                <td>0.62</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.39</td>
+                <td><small>CLSP CNN 5%</small></td>
+                <td>0.38</td>
+                <td><small>CLSP Zero-Shot</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">13</span></td>
+                <td>CEAP-360VR</td>
+                <td>0.62</td>
+                <td><small>CLSP CNN 5%</small></td>
+                <td>0.61</td>
+                <td><small>CLSP CNN 5%</small></td>
+                <td>0.50</td>
+                <td><small>LDA</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">14</span></td>
+                <td>MAUS</td>
+                <td>0.58</td>
+                <td><small>HC-MLP</small></td>
+                <td>0.56</td>
+                <td><small>LDA</small></td>
+                <td>0.59</td>
+                <td><small>LDA</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">15</span></td>
+                <td>CASE</td>
+                <td>0.54</td>
+                <td><small>CLSP MLP 5%</small></td>
+                <td>0.48</td>
+                <td><small>LDA</small></td>
+                <td>0.49</td>
+                <td><small>LDA</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">16</span></td>
+                <td>EMOGNITION</td>
+                <td>0.53</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.50</td>
+                <td><small>CLSP MLP 5%</small></td>
+                <td>0.39</td>
+                <td><small>CLSP CNN 5%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">17</span></td>
+                <td>LAUREATE</td>
+                <td>0.36</td>
+                <td><small>HC-MLP</small></td>
+                <td>0.41</td>
+                <td><small>HC-MLP</small></td>
+                <td>0.40</td>
+                <td><small>CLSP MLP 50%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">18</span></td>
+                <td>VERBIO</td>
+                <td>0.40</td>
+                <td><small>HC-MLP</small></td>
+                <td>0.38</td>
+                <td><small>HC-MLP</small></td>
+                <td>0.34</td>
+                <td><small>CLSP MLP 5%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">19</span></td>
+                <td>ADARP</td>
+                <td>0.30</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.40</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.47</td>
+                <td><small>HC-MLP</small></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-                <h3>Top Models by Modality</h3>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 15px 0;">
-                    <div style="background: #e8f5e9; padding: 15px; border-radius: 8px;">
-                        <h4 style="color: #2e7d32;">EDA Best</h4>
-                        <p><strong>MOCAS: 0.89</strong><br><small>CLSP Zero-Shot</small></p>
-                    </div>
-                    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px;">
-                        <h4 style="color: #1565c0;">PPG Best</h4>
-                        <p><strong>ForDigitStress: 0.92</strong><br><small>Random Forest</small></p>
-                    </div>
-                    <div style="background: #f3e5f5; padding: 15px; border-radius: 8px;">
-                        <h4 style="color: #6a1b9a;">Combined Best</h4>
-                        <p><strong>WESAD: 0.98</strong><br><small>HC-MLP</small></p>
-                    </div>
-                </div>
-
-            </div>
 
             <!-- Four-Class Leaderboard -->
-            <div id="fourclass" class="tab-content">
-                <h3>Four-Class Classification - All 19 Datasets</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Rank</th>
-                            <th>Dataset</th>
-                            <th>EDA F1</th>
-                            <th>PPG F1</th>
-                            <th>Combined F1</th>
-                            <th>Best Model</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><span class="rank-badge rank-1">1</span></td><td>WESAD</td><td><strong>0.987</strong></td><td>0.794</td><td><strong>0.987</strong></td><td>RF/LDA (EDA/Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-2">2</span></td><td>ForDigitStress</td><td>0.682</td><td>0.821</td><td>0.826</td><td>RF (Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-3">3</span></td><td>ScientISST MOVE</td><td>0.701</td><td>0.740</td><td>0.800</td><td>CLSP CNN 50% (Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">4</span></td><td>MAUS</td><td>0.700</td><td>0.705</td><td>0.728</td><td>RF (Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">5</span></td><td>PhyMER</td><td>0.723</td><td>0.300</td><td>0.342</td><td>CLSP CNN 50% (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">6</span></td><td>UBFCPHYS</td><td>0.705</td><td>0.551</td><td>0.622</td><td>CLSP Zero-Shot (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">7</span></td><td>MOCAS</td><td>0.701</td><td>0.357</td><td>0.366</td><td>CLSP MLP 25% (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">8</span></td><td>EMOGNITION</td><td>0.572</td><td>0.601</td><td>0.513</td><td>CLSP CNN 50% (PPG)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">9</span></td><td>Dapper</td><td>0.434</td><td>0.426</td><td>0.555</td><td>RF (Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">10</span></td><td>Exercise</td><td>0.552</td><td>0.438</td><td>0.480</td><td>CLSP CNN 25% (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">11</span></td><td>LAUREATE</td><td>0.527</td><td>0.460</td><td>0.461</td><td>CLSP MLP 5% (EDA)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">12</span></td><td>CASE</td><td>0.476</td><td>0.397</td><td>0.498</td><td>RF (Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">13</span></td><td>VERBIO</td><td>0.480</td><td>0.582</td><td>0.436</td><td>CLSP Zero-Shot (PPG)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">14</span></td><td>NURSE</td><td>0.433</td><td>0.667</td><td>0.520</td><td>CLSP Zero-Shot (PPG)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">15</span></td><td>CLAS</td><td>0.430</td><td>0.408</td><td>0.459</td><td>RF (Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">16</span></td><td>Unobtrusive</td><td>0.402</td><td>0.409</td><td>0.393</td><td>CLSP Zero-Shot (PPG)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">17</span></td><td>ADARP</td><td>0.269</td><td>0.433</td><td>0.354</td><td>CLSP Zero-Shot (PPG)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">18</span></td><td>CEAP-360VR</td><td>0.285</td><td>0.307</td><td>0.314</td><td>RF (Combined)</td></tr>
-                        <tr><td><span class="rank-badge rank-other">19</span></td><td>EmoWear</td><td>0.293</td><td>0.270</td><td>0.282</td><td>CLSP CNN 50% (EDA)</td></tr>
-                    </tbody>
-                </table>
+            <!-- Four-Class Leaderboard -->
+<div id="fourclass" class="tab-content">
+    <h3>Four-Class Classification - All 19 Datasets</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Dataset</th>
+                <th>EDA F1</th>
+                <th>EDA Model</th>
+                <th>PPG F1</th>
+                <th>PPG Model</th>
+                <th>Combined F1</th>
+                <th>Combined Model</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="rank-badge rank-1">1</span></td>
+                <td>WESAD</td>
+                <td><strong>0.987</strong></td>
+                <td><small>RF</small></td>
+                <td>0.794</td>
+                <td><small>RF</small></td>
+                <td><strong>0.987</strong></td>
+                <td><small>LDA</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-2">2</span></td>
+                <td>ForDigitStress</td>
+                <td>0.682</td>
+                <td><small>LDA</small></td>
+                <td>0.821</td>
+                <td><small>RF</small></td>
+                <td>0.826</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-3">3</span></td>
+                <td>ScientISST MOVE</td>
+                <td>0.701</td>
+                <td><small>CLSP MLP 25%</small></td>
+                <td>0.740</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.800</td>
+                <td><small>CLSP CNN 50%</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">4</span></td>
+                <td>MAUS</td>
+                <td>0.700</td>
+                <td><small>HC-MLP</small></td>
+                <td>0.705</td>
+                <td><small>RF</small></td>
+                <td>0.728</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">5</span></td>
+                <td>PhyMER</td>
+                <td>0.723</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.300</td>
+                <td><small>RF</small></td>
+                <td>0.342</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">6</span></td>
+                <td>UBFCPHYS</td>
+                <td>0.705</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.551</td>
+                <td><small>LDA</small></td>
+                <td>0.622</td>
+                <td><small>LDA</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">7</span></td>
+                <td>MOCAS</td>
+                <td>0.701</td>
+                <td><small>CLSP MLP 25%</small></td>
+                <td>0.357</td>
+                <td><small>RF</small></td>
+                <td>0.366</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">8</span></td>
+                <td>EMOGNITION</td>
+                <td>0.572</td>
+                <td><small>RF</small></td>
+                <td>0.601</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.513</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">9</span></td>
+                <td>Dapper</td>
+                <td>0.434</td>
+                <td><small>RF</small></td>
+                <td>0.426</td>
+                <td><small>RF</small></td>
+                <td>0.555</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">10</span></td>
+                <td>Exercise</td>
+                <td>0.552</td>
+                <td><small>CLSP CNN 25%</small></td>
+                <td>0.438</td>
+                <td><small>HC-MLP</small></td>
+                <td>0.480</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">11</span></td>
+                <td>LAUREATE</td>
+                <td>0.527</td>
+                <td><small>CLSP MLP 5%</small></td>
+                <td>0.460</td>
+                <td><small>RF</small></td>
+                <td>0.461</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">12</span></td>
+                <td>CASE</td>
+                <td>0.476</td>
+                <td><small>RF</small></td>
+                <td>0.397</td>
+                <td><small>RF</small></td>
+                <td>0.498</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">13</span></td>
+                <td>VERBIO</td>
+                <td>0.480</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.582</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.436</td>
+                <td><small>CLSP Zero-Shot</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">14</span></td>
+                <td>NURSE</td>
+                <td>0.433</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.667</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.520</td>
+                <td><small>CLSP Zero-Shot</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">15</span></td>
+                <td>CLAS</td>
+                <td>0.430</td>
+                <td><small>RF</small></td>
+                <td>0.408</td>
+                <td><small>HC-MLP</small></td>
+                <td>0.459</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">16</span></td>
+                <td>Unobtrusive</td>
+                <td>0.402</td>
+                <td><small>RF</small></td>
+                <td>0.409</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.393</td>
+                <td><small>HC-MLP</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">17</span></td>
+                <td>ADARP</td>
+                <td>0.269</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.433</td>
+                <td><small>CLSP Zero-Shot</small></td>
+                <td>0.354</td>
+                <td><small>CLSP Zero-Shot</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">18</span></td>
+                <td>CEAP-360VR</td>
+                <td>0.285</td>
+                <td><small>CLSP MLP 25%</small></td>
+                <td>0.307</td>
+                <td><small>RF</small></td>
+                <td>0.314</td>
+                <td><small>RF</small></td>
+            </tr>
+            <tr>
+                <td><span class="rank-badge rank-other">19</span></td>
+                <td>EmoWear</td>
+                <td>0.293</td>
+                <td><small>CLSP CNN 50%</small></td>
+                <td>0.270</td>
+                <td><small>HC-MLP</small></td>
+                <td>0.282</td>
+                <td><small>HC-MLP</small></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-                <h3>Top Models by Modality</h3>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin: 15px 0;">
-                    <div style="background: #e8f5e9; padding: 15px; border-radius: 8px;">
-                        <h4 style="color: #2e7d32;">EDA Best</h4>
-                        <p><strong>WESAD: 0.987</strong><br><small>Random Forest</small></p>
-                    </div>
-                    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px;">
-                        <h4 style="color: #1565c0;">PPG Best</h4>
-                        <p><strong>ForDigitStress: 0.821</strong><br><small>Random Forest</small></p>
-                    </div>
-                    <div style="background: #f3e5f5; padding: 15px; border-radius: 8px;">
-                        <h4 style="color: #6a1b9a;">Combined Best</h4>
-                        <p><strong>WESAD: 0.987</strong><br><small>LDA</small></p>
-                    </div>
-                </div>
-
-            </div>
 
         </div>
 
         <!-- Models Section -->
         <div id="models" class="section">
-            <h2>🏗️ Model Architectures</h2>
+            <h2>🏛️ Model Architectures</h2>
 
             <div class="architecture-image">
                 <img src="clsp_finetune.png" alt="CLSP Fine-Tuning Architecture">
@@ -868,7 +1373,7 @@
                         <li>Random Forest</li>
                         <li>LDA</li>
                     </ul>
-                    <p style="margin-top: 6px;"><strong>Top:</strong> 25/114</p>
+                    <p style="margin-top: 6px;"><strong>Top:</strong> 59/171</p>
                 </div>
 
                 <div class="paradigm-card">
@@ -881,7 +1386,7 @@
                         <li>LSTM+MLP</li>
                         <li>Attention+MLP</li>
                     </ul>
-                    <p style="margin-top: 6px;"><strong>Top:</strong> 13/114</p>
+                    <p style="margin-top: 6px;"><strong>Top:</strong> 21/171 </p>
                 </div>
 
                 <div class="paradigm-card">
@@ -893,7 +1398,7 @@
                         <li>Signal LSTM+MLP</li>
                         <li>CNN+Transformer</li>
                     </ul>
-                    <p style="margin-top: 6px;"><strong>Top:</strong> 3/114</p>
+                    <p style="margin-top: 6px;"><strong>Top:</strong> 3/171</p>
                 </div>
 
                 <div class="paradigm-card">
@@ -905,66 +1410,113 @@
                         <li>MLP (5/25/50%)</li>
                         <li>CNN (5/25/50%)</li>
                     </ul>
-                    <p style="margin-top: 6px;"><strong>Top:</strong> 73/114 (64%)</p>
+                    <p style="margin-top: 6px;"><strong>Top:</strong> 88/171</p>
                 </div>
             </div>
 
             <div class="key-findings">
                 <h4>Key Model Insights</h4>
                 <ul>
-                    <li><strong>CLSP Dominance:</strong> 73/114 (64%) top instances, especially CLSP-CNN (37) and CLSP-MLP (22)</li>
-                    <li><strong>Few-Shot Power:</strong> 21 top instances with only 5% training data</li>
+                    <li><strong>CLSP is the overall winner with 88/171 (51.5%) - dominates binary tasks but less so in four-class</strong></li>
+                    <li><strong>Few-Shot Power:</strong> 23 top instances with only 5% training data</li>
                     <li><strong>Classical ML Competitive:</strong> RF and LDA remain strong for small datasets</li>
-                    <li><strong>Handcrafted Features Win:</strong> 109/114 (96%) top models use domain knowledge</li>
+                    <li><strong>Handcrafted Features Win:</strong> 166/171 (97%) top models use domain knowledge</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Submit Section -->
-        <div id="submit" class="section">
-            <h2>🎯 Contribute to FEEL</h2>
-
-            <p style="font-size: 1.05em; line-height: 1.7; margin-bottom: 20px;">
-                Help expand the FEEL benchmark by submitting your model results or proposing new datasets. We welcome contributions that evaluate novel architectures, introduce new preprocessing techniques, or extend analysis to additional heterogeneity dimensions.
-            </p>
-
-            <div style="text-align: center; margin: 25px 0;">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSchhaTlXFliCb1fS2zCK7-66zWAExXn6RavqeLaH2nE8vKs8A/viewform" class="btn" style="display: inline-block;">📤 Submit Results</a>
-            </div>
-
-            <h3>Citation</h3>
-            <div style="background: #f4f4f4; padding: 15px; border-radius: 5px; font-family: monospace; margin: 15px 0; font-size: 0.8em;">
-                <pre>@inproceedings{singh2025feel,
-  title={FEEL: Quantifying Heterogeneity in Physiological 
-         Signals for Generalizable Emotion Recognition},
-  author={Singh, Pragya and Gupta, Ankush and 
-          Jalan, Somay and Kumar, Mohan and 
-          Singh, Pushpendra},
-  booktitle={NeurIPS},
-  year={2025}
-}</pre>
-            </div>
-            <h3>License</h3>
-<div class="license-box">
-    <p style="font-size: 0.9em; line-height: 1.7; margin-bottom: 15px;">
-        <strong>FEEL: Framework for Emotion Evaluation</strong> © 2025 by 
-        <a href="https://alchemy18.github.io/pragyasingh/" target="_blank" style="color: #667eea; text-decoration: none;">Pragya Singh</a>, 
-        <a href="https://sites.google.com/view/ankush-gupta" target="_blank" style="color: #667eea; text-decoration: none;">Ankush Gupta</a>, 
-        <a href="https://www.linkedin.com/in/somayj/" target="_blank" style="color: #667eea; text-decoration: none;">Somay Jalan</a>, 
-        <a href="https://www.linkedin.com/in/mohan-kumar-0b05242/" target="_blank" style="color: #667eea; text-decoration: none;">Mohan Kumar</a>, 
-        <a href="https://www.iiitd.ac.in/pushpendra" target="_blank" style="color: #667eea; text-decoration: none;">Pushpendra Singh</a> 
-        is licensed under 
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.
+<!-- Submit Section -->
+<div id="submit" class="section">
+    <h2>🤝 Contribute to FEEL</h2>
+    
+    <p style="font-size: 1.05em; line-height: 1.7; margin-bottom: 20px;">
+        Help expand the FEEL benchmark by submitting your model results or proposing new datasets.
     </p>
-    <p style="font-size: 0.85em; line-height: 1.6; color: #666;">
-        To view a copy of this license, visit 
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color: #667eea; text-decoration: none;">https://creativecommons.org/licenses/by-nc-sa/4.0/</a>
-    </p>
+    
+    <div style="text-align: center; margin: 25px 0;">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSchhaTlXFliCb1fS2zCK7-66zWAExXn6RavqeLaH2nE8vKs8A/viewform" target="_blank" class="btn" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border: none;">📤 Submit Results</a>
+    </div>
+
+    <h3>Citation</h3>
+    <div style="background: #f4f4f4; padding: 15px; border-radius: 5px; font-family: monospace; margin: 15px 0; font-size: 0.8em;">
+        <pre>Accepted at NeurIPS 2025. 
+Citation link comning soon</pre>
+    </div>
+    
+    <h3>License</h3>
+    <div class="license-box">
+        <p style="font-size: 0.9em; line-height: 1.7; margin-bottom: 15px;">
+            <strong>FEEL: Framework for Emotion Evaluation</strong> © 2025 by 
+            <a href="https://www.pragyasingh.com" target="_blank" style="color: #667eea; text-decoration: none;">Pragya Singh</a>, 
+            <a href="#" target="_blank" style="color: #667eea; text-decoration: none;">Ankush Gupta</a>, 
+            <a href="#" target="_blank" style="color: #667eea; text-decoration: none;">Somay Jalan</a>, 
+            <a href="#" target="_blank" style="color: #667eea; text-decoration: none;">Mohan Kumar</a>, 
+            <a href="https://www.iiitd.ac.in/pushpendra" target="_blank" style="color: #667eea; text-decoration: none;">Pushpendra Singh</a> 
+            is licensed under 
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 600;">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.
+        </p>
+        <p style="font-size: 0.85em; line-height: 1.6; color: #666;">
+            To view a copy of this license, visit 
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" style="color: #667eea; text-decoration: none;">https://creativecommons.org/licenses/by-nc-sa/4.0/</a>
+        </p>
+    </div>
 </div>
 
-            
-            </div>
         </div>
+
+<!-- Timeline Section -->
+<div id="timeline" class="section">
+    <h2>📝 Research Timeline</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 20px 0;">
+        
+        <!-- CSCSW 2024 -->
+        <div class="paradigm-card">
+            <h4 style="color: #667eea; font-size: 0.9em; margin-bottom: 6px;">CSCSW 2024</h4>
+            <p style="font-size: 0.75em; line-height: 1.3; margin-bottom: 8px;">
+                Translating Emotions to Annotations: A Participant's Perspective of Physiological Emotion Data Collection
+            </p>
+            <a href="https://dl.acm.org/doi/abs/10.1145/3711093" target="_blank" style="color: #667eea; text-decoration: none; font-size: 0.75em; font-weight: 600;">
+                🧠 Paper →
+            </a>
+        </div>
+        
+        <!-- NeurIPS 2024 -->
+        <div class="paradigm-card">
+            <h4 style="color: #667eea; font-size: 0.9em; margin-bottom: 6px;">NeurIPS 2024</h4>
+            <p style="font-size: 0.75em; line-height: 1.3; margin-bottom: 8px;">
+                EEVR: A Dataset of Paired Physiological Signals and Textual Descriptions for Joint Emotion Representation Learning
+            </p>
+            <a href="https://nips.cc/virtual/2024/poster/97493" target="_blank" style="color: #667eea; text-decoration: none; font-size: 0.75em; font-weight: 600;">
+                ⌚ Project →
+            </a>
+        </div>
+        
+        <!-- IMWUT 2025 -->
+        <div class="paradigm-card">
+            <h4 style="color: #667eea; font-size: 0.9em; margin-bottom: 6px;">IMWUT 2025</h4>
+            <p style="font-size: 0.75em; line-height: 1.3; margin-bottom: 8px;">
+                AnnoSense: A Framework for Physiological Emotion Data Collection in Everyday Settings for AI
+            </p>
+            <a href="https://dl.acm.org/doi/abs/10.1145/3749519" target="_blank" style="color: #667eea; text-decoration: none; font-size: 0.75em; font-weight: 600;">
+                📶 Paper →
+            </a>
+        </div>
+        
+        <!-- NeurIPS 2025 - Current -->
+        <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); padding: 12px; border-radius: 8px; border-left: 4px solid #764ba2; border: 2px solid #667eea;">
+            <h4 style="color: #667eea; font-size: 0.9em; margin-bottom: 6px;">NeurIPS 2025 🎯</h4>
+            <p style="font-size: 0.75em; line-height: 1.3; margin-bottom: 8px;">
+                <strong>FEEL: Quantifying Heterogeneity in Physiological
+Signals for Generalizable Emotion Recognition</strong>
+            </p>
+            <a href="#about" style="color: #667eea; text-decoration: none; font-size: 0.75em; font-weight: 600;">
+               📐  Explore →
+            </a>
+        </div>
+        
+    </div>
+</div>
 
         <!-- Footer -->
         <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; margin-top: 40px; color: white;">
