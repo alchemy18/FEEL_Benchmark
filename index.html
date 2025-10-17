@@ -385,6 +385,73 @@
             word-wrap: break-word;
         }
 
+        .stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Four Modeling Paradigms - Hover Effect */
+.paradigm-card {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.paradigm-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* Timeline Cards - Keep existing hover */
+.timeline-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.timeline-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* Remove hover effect from dataset table links */
+#datasets table tbody tr td a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    transition: none;
+}
+
+#datasets table tbody tr td a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+/* Remove table row hover that might interfere */
+#datasets table tbody tr {
+    transition: background-color 0.2s;
+}
+
+#datasets table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+
         /* Timeline specific styles */
 .timeline-dot {
     position: absolute;
@@ -408,6 +475,262 @@
     transform: translateX(5px);
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
+/* Enhanced Author Name Styling */
+.authors {
+    margin: 15px 0 5px 0;
+    font-size: 0.95em;
+    line-height: 2.2;
+    letter-spacing: 0.3px;
+}
+
+.authors a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Hover Effects */
+.authors a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: #fff;
+}
+
+/* External Link Icon */
+.authors a::after {
+    content: "↗";
+    font-size: 0.7em;
+    margin-left: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.authors a:hover::after {
+    opacity: 0.8;
+}
+
+/* Superscript Styling */
+.authors sup {
+    font-size: 0.7em;
+    margin-left: 3px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Tooltip Styling */
+.authors a[data-tooltip] {
+    cursor: pointer;
+}
+
+.authors a[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    background: rgba(30, 30, 30, 0.95);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    line-height: 1.4;
+}
+
+/* Tooltip Arrow */
+.authors a[data-tooltip]::after {
+    content: "";
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    border: 6px solid transparent;
+    border-top-color: rgba(30, 30, 30, 0.95);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.authors a:hover::before,
+.authors a:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+/* Emphasis on First and Last Author */
+.authors a:first-child,
+.authors a:last-child {
+    font-weight: 700;
+}
+
+/* Remove hover effect from submit/contribute link */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: none; /* Remove transition */
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Keep same background */
+    transform: none; /* Remove transform */
+    box-shadow: none; /* Remove shadow change */
+    color: white; /* Keep same color */
+    text-decoration: none; /* Keep no underline */
+}
+
+/* Alternative: If you want a subtle color change only */
+.cta-button:hover {
+    opacity: 0.9; /* Slight opacity change only */
+}
+
+#support {
+    background: #f8f9fa;
+    padding: 50px 20px;
+    margin-top: 60px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.support-logos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo-box {
+    width: 180px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.logo-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.logo-box img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .support-logos-container {
+        gap: 25px;
+    }
+    
+    .logo-box {
+        width: 160px;
+        height: 70px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .support-logos-container {
+        gap: 20px;
+    }
+    
+    .logo-box {
+        width: 140px;
+        height: 65px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #support {
+        padding: 40px 15px;
+    }
+    
+    .support-logos-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .logo-box {
+        width: 200px;
+        height: 70px;
+    }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .authors {
+        line-height: 2.5;
+        font-size: 0.9em;
+    }
+    
+    .authors a {
+        margin: 4px 6px;
+        padding: 3px 8px;
+    }
+    
+    .authors a[data-tooltip]::before {
+        font-size: 0.75em;
+        padding: 6px 10px;
+        white-space: normal;
+        max-width: 200px;
+        text-align: center;
+    }
+}
+
+/* Animation for Page Load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.authors a {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.authors a:nth-child(1) { animation-delay: 0.1s; }
+.authors a:nth-child(2) { animation-delay: 0.2s; }
+.authors a:nth-child(3) { animation-delay: 0.3s; }
+.authors a:nth-child(4) { animation-delay: 0.4s; }
+.authors a:nth-child(5) { animation-delay: 0.5s; }
+
 /* In your <style> section */
 #timeline > div > div:hover {
     transform: translateY(-5px);
@@ -452,13 +775,25 @@
         <h1>Framework for Emotion Evaluation</h1>
         <p class="subtitle">Quantifying Heterogeneity in Physiological Signals for Generalizable Emotion Recognition</p>
 
-        <div class="authors">
-            <a href="https://alchemy18.github.io/pragyasingh/" target="_blank">Pragya Singh<sup>1</sup></a>,
-            <a href="https://sites.google.com/view/ankush-gupta" target="_blank">Ankush Gupta<sup>1</sup></a>,
-            <a href="https://www.linkedin.com/in/somayj/" target="_blank">Somay Jalan<sup>1</sup></a>,
-            <a href="https://www.linkedin.com/in/mohan-kumar-0b05242/" target="_blank">Mohan Kumar<sup>2</sup></a>,
-            <a href="https://www.iiitd.ac.in/pushpendra" target="_blank">Pushpendra Singh<sup>1</sup></a>
-        </div>
+        <!-- Enhanced Authors Section with Highlighting -->
+<div class="authors">
+    <a href="https://alchemy18.github.io/pragyasingh/" target="_blank" data-tooltip="HCAI Researcher | AI for Mental Health">
+        Pragya Singh<sup>1</sup>
+    </a>,
+    <a href="https://sites.google.com/view/ankush-gupta" target="_blank" data-tooltip="AI/ML Engineer | AI for Equitable Understanding">
+        Ankush Gupta<sup>1</sup>
+    </a>,
+    <a href="https://www.linkedin.com/in/somayj/" target="_blank" data-tooltip="AI/ML Engineer | IIIT-Delhi">
+        Somay Jalan<sup>1</sup>
+    </a>,
+    <a href="https://www.linkedin.com/in/mohan-kumar-0b05242/" target="_blank" data-tooltip="Professor, RIT USA">
+        Mohan Kumar<sup>2</sup>
+    </a>,
+    <a href="https://www.iiitd.ac.in/pushpendra" target="_blank" data-tooltip="Professor, IIIT-Delhi">
+        Pushpendra Singh<sup>1</sup>
+    </a>
+</div>
+
         <div class="affiliations">
             <sup>1</sup>IIIT-D, New Delhi, India &nbsp;&nbsp;&nbsp; <sup>2</sup>RIT, Rochester, New York, USA
         </div>
@@ -470,235 +805,290 @@
 
         <div class="nav-buttons">
             <a href="#about" class="nav-btn">About</a>
+            <a href="#timeline" class="nav-btn">Research Timeline</a>
             <a href="#contributions" class="nav-btn">Contributions</a>
             <a href="#datasets" class="nav-btn">Datasets</a>
             <a href="#leaderboards" class="nav-btn">Leaderboards</a>
             <a href="#models" class="nav-btn">Models</a>
             <a href="#submit" class="nav-btn">Submit</a>
-            <a href="#timeline" class="nav-btn">Timeline</a>
         </div>
     </div>
 
     <div class="container">
         <!-- About Section -->
         <div id="about" class="section">
-            <h2>📋 About FEEL</h2>
-            <p style="font-size: 1.1em; line-height: 1.7; margin-bottom: 15px;">
-                <strong>FEEL (Framework for Emotion Evaluation)</strong> is the first large-scale benchmarking study for emotion recognition 
-                using EDA and PPG signals across 19 publicly available datasets, enabling systematic analysis of model generalizability.
-            </p>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h4>Datasets</h4>
-                    <div class="stat-value">19</div>
-                    <p>Publicly Available</p>
-                </div>
-                <div class="stat-card">
-                    <h4>Architectures</h4>
-                    <div class="stat-value">16</div>
-                    <p>Models Benchmarked</p>
-                </div>
-                <div class="stat-card">
-                    <h4>Paradigms</h4>
-                    <div class="stat-value">4</div>
-                    <p>Modeling Approaches</p>
-                </div>
-                <div class="stat-card">
-                    <h4>Signals</h4>
-                    <div class="stat-value">2</div>
-                    <p>EDA & PPG</p>
-                </div>
-            </div>
+    <h2>About FEEL</h2>
+    <p style="font-size: 1.1em; line-height: 1.7; margin-bottom: 15px;">
+        <strong>FEEL (Framework for Emotion Evaluation)</strong> is the first large-scale benchmarking study for emotion recognition using EDA and PPG signals across 19 publicly available datasets, enabling systematic analysis of model generalizability.
+    </p>
+    
+    <div class="stats-grid">
+        <div class="stat-card">
+            <h4>Datasets</h4>
+            <div class="stat-value">19</div>
+            <p>Publicly Available</p>
         </div>
+        <div class="stat-card">
+            <h4>Architectures</h4>
+            <div class="stat-value">16</div>
+            <p>Models Benchmarked</p>
+        </div>
+        <div class="stat-card">
+            <h4>Paradigms</h4>
+            <div class="stat-value">4</div>
+            <p>Modeling Approaches</p>
+        </div>
+        <div class="stat-card">
+            <h4>Signals</h4>
+            <div class="stat-value">2</div>
+            <p>EDA & PPG</p>
+        </div>
+    </div>
+</div>
+
+        <!-- Timeline Section -->
+<div id="timeline" class="section">
+    <h2>📝 Research Timeline</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 20px 0;">
+        
+        <!-- CSCSW 2024 -->
+        <div class="paradigm-card">
+            <h4 style="color: #667eea; font-size: 0.9em; margin-bottom: 6px;">CSCSW 2024</h4>
+            <p style="font-size: 0.75em; line-height: 1.3; margin-bottom: 8px;">
+                Translating Emotions to Annotations: A Participant's Perspective of Physiological Emotion Data Collection
+            </p>
+            <a href="https://dl.acm.org/doi/abs/10.1145/3711093" target="_blank" style="color: #667eea; text-decoration: none; font-size: 0.75em; font-weight: 600;">
+                🧠 Paper →
+            </a>
+        </div>
+        
+        <!-- NeurIPS 2024 -->
+        <div class="paradigm-card">
+            <h4 style="color: #667eea; font-size: 0.9em; margin-bottom: 6px;">NeurIPS 2024</h4>
+            <p style="font-size: 0.75em; line-height: 1.3; margin-bottom: 8px;">
+                EEVR: A Dataset of Paired Physiological Signals and Textual Descriptions for Joint Emotion Representation Learning
+            </p>
+            <a href="https://nips.cc/virtual/2024/poster/97493" target="_blank" style="color: #667eea; text-decoration: none; font-size: 0.75em; font-weight: 600;">
+                ⌚ Paper →
+            </a>
+        </div>
+        
+        <!-- IMWUT 2025 -->
+        <div class="paradigm-card">
+            <h4 style="color: #667eea; font-size: 0.9em; margin-bottom: 6px;">IMWUT 2025</h4>
+            <p style="font-size: 0.75em; line-height: 1.3; margin-bottom: 8px;">
+                AnnoSense: A Framework for Physiological Emotion Data Collection in Everyday Settings for AI
+            </p>
+            <a href="https://dl.acm.org/doi/abs/10.1145/3749519" target="_blank" style="color: #667eea; text-decoration: none; font-size: 0.75em; font-weight: 600;">
+                📶 Paper →
+            </a>
+        </div>
+        
+        <!-- NeurIPS 2025 - Current -->
+        <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); padding: 12px; border-radius: 8px; border-left: 4px solid #764ba2; border: 2px solid #667eea;">
+            <h4 style="color: #667eea; font-size: 0.9em; margin-bottom: 6px;">NeurIPS 2025 🎯</h4>
+            <p style="font-size: 0.75em; line-height: 1.3; margin-bottom: 8px;">
+                <strong>FEEL: Quantifying Heterogeneity in Physiological
+Signals for Generalizable Emotion Recognition</strong>
+            </p>
+            <a href="#" style="color: #667eea; text-decoration: none; font-size: 0.75em; font-weight: 600;">
+               📐  Paper →
+            </a>
+        </div>
+        
+    </div>
+</div>
 
         <!-- Contributions Section -->
-        <div id="contributions" class="section">
-            <h2>🎯 Key Contributions</h2>
-            <div class="key-findings">
-                <ul>
-                    <li><strong>19 Datasets:</strong> Diverse experimental conditions (lab, real-world, constraint), devices, and labeling strategies</li>
-                    <li><strong>Unified Pipeline:</strong> Standardized preprocessing, harmonization, and evaluation protocols</li>
-                    <li><strong>16 Architectures:</strong> Evaluated across 4 paradigms - traditional ML, deep learning, and pretrained models</li>
-                    <li><strong>Cross-Dataset Analysis:</strong> Systematic transferability evaluation across settings, devices, and labeling methods</li>
-                    <li><strong>CLSP Fine-Tuning:</strong> Novel conditional context optimization for dataset adaptation</li>
-                    <li><strong>Four-Class Extension:</strong> Circumplex model (HAPV, HANV, LAPV, LANV) for nuanced emotion recognition</li>
-                </ul>
-            </div>
-        </div>
+<div id="contributions" class="section">
+    <h2>🎯 Key Contributions</h2>
+    <div class="key-findings">
+        <ul>
+            <li><strong>19 Datasets:</strong> Diverse experimental conditions (lab, real-world, constraint), devices, and labeling strategies</li>
+            <li><strong>Unified Pipeline:</strong> Standardized preprocessing, harmonization, and evaluation protocols</li>
+            <li><strong>16 Architectures:</strong> Evaluated across 4 paradigms - traditional ML, deep learning, and pretrained models</li>
+            <li><strong>Cross-Dataset Analysis:</strong> Systematic transferability evaluation across settings, devices, and labeling methods</li>
+            <li><strong>CLSP Fine-Tuning:</strong> Novel conditional context optimization for dataset adaptation</li>
+            <li><strong>Benchmarked on 3 Classification Tasks:</strong> Arousal, Valence, and Four-Class (HAPV, HANV, LAPV, LANV) emotion recognition</li>
+        </ul>
+    </div>
+</div>
+
 
 <!-- Datasets Section -->
+<!-- Datasets Section with Improved Table Formatting -->
 <div id="datasets" class="section">
-    <h2>📚 Dataset Collection</h2>
-    
+    <h2>Dataset Collection</h2>
     <h3>Overview of 19 Emotion Datasets</h3>
     <table>
         <thead>
             <tr>
-                <th>Dataset</th>
-                <th>No of the Participants</th>
-                <th>Device</th>
-                <th>Setting</th>
-                <th>Labeling</th>
-                <th>Task</th>
+                <th style="text-align: center;">Dataset</th>
+                <th style="text-align: center;">N</th>
+                <th style="text-align: center;">Device</th>
+                <th style="text-align: center;">Setting</th>
+                <th style="text-align: center;">Labeling</th>
+                <th style="text-align: center;">Task</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><a href="https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">WESAD</a></td>
-                <td>15</td>
-                <td>E4</td>
-                <td><span class="badge badge-lab">Lab</span></td>
-                <td>Stimulus</td>
-                <td>Reading, videos, TSST, meditation</td>
+                <td><a href="https://ubicomp.eti.uni-siegen.de/home/datasets/icmi18/" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">WESAD</a></td>
+                <td style="text-align: center;">15</td>
+                <td style="text-align: center;">E4</td>
+                <td style="text-align: center;"><span class="badge badge-lab">Lab</span></td>
+                <td style="text-align: center;">Stimulus</td>
+                <td style="text-align: center;">Reading, videos, TSST, meditation</td>
             </tr>
             <tr>
-                <td><a href="https://datadryad.org/dataset/doi:10.5061/dryad.5hqbzkh6f#citations" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">NURSE</a></td>
-                <td>15</td>
-                <td>E4</td>
-                <td><span class="badge badge-real">Real</span></td>
-                <td>Self-report</td>
-                <td>Hospital work stress</td>
+                <td><a href="https://datadryad.org/stash/dataset/doi:10.5061/dryad.5hqbzkh6f?citations" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">NURSE</a></td>
+                <td style="text-align: center;">15</td>
+                <td style="text-align: center;">E4</td>
+                <td style="text-align: center;"><span class="badge badge-real">Real</span></td>
+                <td style="text-align: center;">Self-report</td>
+                <td style="text-align: center;">Hospital work stress</td>
             </tr>
             <tr>
                 <td><a href="https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/R9WAF4" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">EMOGNITION</a></td>
-                <td>43</td>
-                <td>E4</td>
-                <td><span class="badge badge-lab">Lab</span></td>
-                <td>Stimulus</td>
-                <td>Film clips (9 emotions)</td>
+                <td style="text-align: center;">43</td>
+                <td style="text-align: center;">E4</td>
+                <td style="text-align: center;"><span class="badge badge-lab">Lab</span></td>
+                <td style="text-align: center;">Stimulus</td>
+                <td style="text-align: center;">Film clips (9 emotions)</td>
             </tr>
             <tr>
                 <td><a href="https://sites.google.com/view/ybenezeth/ubfc-phys" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">UBFCPHYS</a></td>
-                <td>56</td>
-                <td>E4</td>
-                <td><span class="badge badge-lab">Lab</span></td>
-                <td>Stimulus</td>
-                <td>Speech, arithmetic</td>
+                <td style="text-align: center;">56</td>
+                <td style="text-align: center;">E4</td>
+                <td style="text-align: center;"><span class="badge badge-lab">Lab</span></td>
+                <td style="text-align: center;">Stimulus</td>
+                <td style="text-align: center;">Speech, arithmetic</td>
             </tr>
             <tr>
                 <td><a href="https://hubbs.engr.tamu.edu/resources/verbio-dataset/" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">VERBIO</a></td>
-                <td>49</td>
-                <td>E4</td>
-                <td><span class="badge badge-lab">Lab</span></td>
-                <td>Self-report</td>
-                <td>Public speaking</td>
+                <td style="text-align: center;">49</td>
+                <td style="text-align: center;">E4</td>
+                <td style="text-align: center;"><span class="badge badge-lab">Lab</span></td>
+                <td style="text-align: center;">Self-report</td>
+                <td style="text-align: center;">Public speaking</td>
             </tr>
             <tr>
                 <td><a href="https://sites.google.com/view/phymer-dataset" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">PhyMER</a></td>
-                <td>30</td>
-                <td>E4</td>
-                <td><span class="badge badge-lab">Lab</span></td>
-                <td>Self-report</td>
-                <td>Video stimuli</td>
+                <td style="text-align: center;">30</td>
+                <td style="text-align: center;">E4</td>
+                <td style="text-align: center;"><span class="badge badge-lab">Lab</span></td>
+                <td style="text-align: center;">Self-report</td>
+                <td style="text-align: center;">Video stimuli</td>
             </tr>
             <tr>
                 <td><a href="https://zenodo.org/records/10407279" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">EmoWear</a></td>
-                <td>48</td>
-                <td>E4</td>
-                <td><span class="badge badge-lab">Lab</span></td>
-                <td>Self-report</td>
-                <td>Video stimuli</td>
+                <td style="text-align: center;">48</td>
+                <td style="text-align: center;">E4</td>
+                <td style="text-align: center;"><span class="badge badge-lab">Lab</span></td>
+                <td style="text-align: center;">Self-report</td>
+                <td style="text-align: center;">Video stimuli</td>
             </tr>
             <tr>
                 <td><a href="https://ieee-dataport.org/open-access/maus-dataset-mental-workload-assessment-n-back-task-using-wearable-sensor" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">MAUS</a></td>
-                <td>22</td>
-                <td>Procomp</td>
-                <td><span class="badge badge-lab">Lab</span></td>
-                <td>Stimulus</td>
-                <td>N-Back task</td>
+                <td style="text-align: center;">22</td>
+                <td style="text-align: center;">Procomp</td>
+                <td style="text-align: center;"><span class="badge badge-lab">Lab</span></td>
+                <td style="text-align: center;">Stimulus</td>
+                <td style="text-align: center;">N-Back task</td>
             </tr>
             <tr>
                 <td><a href="https://ieee-dataport.org/open-access/database-cognitive-load-affect-and-stress-recognition" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">CLAS</a></td>
-                <td>62</td>
-                <td>Shimmer3</td>
-                <td><span class="badge badge-lab">Lab</span></td>
-                <td>Stimulus</td>
-                <td>Videos, math, Stroop</td>
+                <td style="text-align: center;">62</td>
+                <td style="text-align: center;">Shimmer3</td>
+                <td style="text-align: center;"><span class="badge badge-lab">Lab</span></td>
+                <td style="text-align: center;">Stimulus</td>
+                <td style="text-align: center;">Videos, math, Stroop</td>
             </tr>
             <tr>
                 <td><a href="https://gitlab.com/karan-shr/case_dataset" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">CASE</a></td>
-                <td>30</td>
-                <td>ThoughtTech</td>
-                <td><span class="badge badge-lab">Lab</span></td>
-                <td>Self-report</td>
-                <td>Video clips</td>
+                <td style="text-align: center;">30</td>
+                <td style="text-align: center;">ThoughtTech</td>
+                <td style="text-align: center;"><span class="badge badge-lab">Lab</span></td>
+                <td style="text-align: center;">Self-report</td>
+                <td style="text-align: center;">Video clips</td>
             </tr>
             <tr>
                 <td><a href="https://zenodo.org/records/10371068" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">Unobtrusive</a></td>
-                <td>24</td>
-                <td>E4</td>
-                <td><span class="badge badge-lab">Lab</span><span class="badge badge-real">Real</span></td>
-                <td>Stimulus</td>
-                <td>Cognitive tasks, WFH</td>
+                <td style="text-align: center;">24</td>
+                <td style="text-align: center;">E4</td>
+                <td style="text-align: center;"><span class="badge badge-lab">Lab</span><span class="badge badge-real">Real</span></td>
+                <td style="text-align: center;">Stimulus</td>
+                <td style="text-align: center;">Cognitive tasks, WFH</td>
             </tr>
             <tr>
                 <td><a href="https://github.com/cwi-dis/CEAP-360VR-Dataset" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">CEAP-360VR</a></td>
-                <td>32</td>
-                <td>E4</td>
-                <td><span class="badge badge-lab">Lab</span></td>
-                <td>Self-report</td>
-                <td>VR 360° videos</td>
+                <td style="text-align: center;">32</td>
+                <td style="text-align: center;">E4</td>
+                <td style="text-align: center;"><span class="badge badge-lab">Lab</span></td>
+                <td style="text-align: center;">Self-report</td>
+                <td style="text-align: center;">VR 360 videos</td>
             </tr>
             <tr>
-                <td><a href="https://www.scientisst.com/projects/run-like-a-scientisst" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">ScientISST MOVE</a></td>
-                <td>15</td>
-                <td>E4</td>
-                <td><span class="badge badge-constraint">Constraint</span></td>
-                <td>Stimulus</td>
-                <td>Physical activities</td>
+                <td><a href="https://www.scientisst.com/projects/run-like-a-scientisst " target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">ScientISST MOVE</a></td>
+                <td style="text-align: center;">15</td>
+                <td style="text-align: center;">E4</td>
+                <td style="text-align: center;"><span class="badge badge-constraint">Constraint</span></td>
+                <td style="text-align: center;">Stimulus</td>
+                <td style="text-align: center;">Physical activities</td>
             </tr>
             <tr>
-                <td><a href="https://pc.inf.usi.ch/studentproject/affect-and-learning-in-the-laureate-dataset/" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">LAUREATE</a></td>
-                <td>44</td>
-                <td>E4</td>
-                <td><span class="badge badge-real">Real</span></td>
-                <td>Self-report</td>
-                <td>13-week university</td>
+                <td><a href="https://pc.inf.usi.ch/student-projects/affect-and-learning-in-the-laureate-dataset" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">LAUREATE</a></td>
+                <td style="text-align: center;">44</td>
+                <td style="text-align: center;">E4</td>
+                <td style="text-align: center;"><span class="badge badge-real">Real</span></td>
+                <td style="text-align: center;">Self-report</td>
+                <td style="text-align: center;">13-week university</td>
             </tr>
             <tr>
-                <td><a href="https://hcai.eu/fordigitstress/" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">ForDigitStress</a></td>
-                <td>38</td>
-                <td>IOMbio</td>
-                <td><span class="badge badge-constraint">Constraint</span></td>
-                <td>Expert</td>
-                <td>Job interview</td>
+                <td><a href="https://hcai.eu/fordigitstress" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">ForDigitStress</a></td>
+                <td style="text-align: center;">38</td>
+                <td style="text-align: center;">IOMbio</td>
+                <td style="text-align: center;"><span class="badge badge-constraint">Constraint</span></td>
+                <td style="text-align: center;">Expert</td>
+                <td style="text-align: center;">Job interview</td>
             </tr>
             <tr>
-                <td><a href="https://www.synapse.org/Synapse:syn22418021" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">Dapper</a></td>
-                <td>88</td>
-                <td>Custom</td>
-                <td><span class="badge badge-real">Real</span></td>
-                <td>Self-report</td>
-                <td>Daily life (5 days)</td>
+                <td><a href="synapse.org/Synapse:syn22418021" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">Dapper</a></td>
+                <td style="text-align: center;">88</td>
+                <td style="text-align: center;">Custom</td>
+                <td style="text-align: center;"><span class="badge badge-real">Real</span></td>
+                <td style="text-align: center;">Self-report</td>
+                <td style="text-align: center;">Daily life (5 days)</td>
             </tr>
             <tr>
                 <td><a href="https://zenodo.org/records/6640290" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">ADARP</a></td>
-                <td>11</td>
-                <td>E4</td>
-                <td><span class="badge badge-real">Real</span></td>
-                <td>Self-report</td>
-                <td>Alcohol disorder</td>
+                <td style="text-align: center;">11</td>
+                <td style="text-align: center;">E4</td>
+                <td style="text-align: center;"><span class="badge badge-real">Real</span></td>
+                <td style="text-align: center;">Self-report</td>
+                <td style="text-align: center;">Alcohol disorder</td>
             </tr>
             <tr>
                 <td><a href="https://zenodo.org/records/7023242" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">MOCAS</a></td>
-                <td>21</td>
-                <td>E4</td>
-                <td><span class="badge badge-lab">Lab</span></td>
-                <td>Self-report</td>
-                <td>CCTV monitoring</td>
+                <td style="text-align: center;">21</td>
+                <td style="text-align: center;">E4</td>
+                <td style="text-align: center;"><span class="badge badge-lab">Lab</span></td>
+                <td style="text-align: center;">Self-report</td>
+                <td style="text-align: center;">CCTV monitoring</td>
             </tr>
             <tr>
                 <td><a href="https://physionet.org/content/wearable-device-dataset/1.0.0/" target="_blank" style="color: #667eea; text-decoration: underline; font-weight: 600;">Exercise</a></td>
-                <td>97</td>
-                <td>E4</td>
-                <td><span class="badge badge-constraint">Constraint</span></td>
-                <td>Stimulus</td>
-                <td>Stroop, debate, exercise</td>
+                <td style="text-align: center;">97</td>
+                <td style="text-align: center;">E4</td>
+                <td style="text-align: center;"><span class="badge badge-constraint">Constraint</span></td>
+                <td style="text-align: center;">Stimulus</td>
+                <td style="text-align: center;">Stroop, debate, exercise</td>
             </tr>
         </tbody>
     </table>
 </div>
+
 
 
 
@@ -712,639 +1102,649 @@
                 <button class="tab-btn" onclick="showTab(event, 'fourclass')">Four-Class</button>
             </div>
 
-            <!-- Arousal Leaderboard -->
-           <!-- Arousal Leaderboard -->
+<!-- Updated Arousal Leaderboard - Improved Readability -->
 <div id="arousal" class="tab-content active">
     <h3>Arousal Classification - All 19 Datasets</h3>
     <table>
         <thead>
             <tr>
-                <th>Rank</th>
-                <th>Dataset</th>
-                <th>EDA F1</th>
-                <th>EDA Best Model</th>
-                <th>PPG F1</th>
-                <th>PPG Best Model</th>
-                <th>Combined F1</th>
-                <th>Combined Best Model</th>
+                <th rowspan="2" style="vertical-align: middle;">Rank</th>
+                <th rowspan="2" style="vertical-align: middle;">Dataset</th>
+                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">EDA</th>
+                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">PPG</th>
+                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">Combined</th>
+            </tr>
+            <tr>
+                <th style="text-align: center;">F1</th>
+                <th style="text-align: center;">Best Model</th>
+                <th style="text-align: center;">F1</th>
+                <th style="text-align: center;">Best Model</th>
+                <th style="text-align: center;">F1</th>
+                <th style="text-align: center;">Best Model</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><span class="rank-badge rank-1">1</span></td>
                 <td>ForDigitStress</td>
-                <td>0.94</td>
-                <td><small>CLSP MLP 25%</small></td>
-                <td><strong>0.99</strong></td>
-                <td><small>RF</small></td>
-                <td><strong>0.99</strong></td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.94</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
+                <td style="text-align: center;">0.99</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.99</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-2">2</span></td>
                 <td>WESAD</td>
-                <td>0.83</td>
-                <td><small>Signal ResNet</small></td>
-                <td>0.80</td>
-                <td><small>HC-MLP</small></td>
-                <td>0.91</td>
-                <td><small>HC-MLP</small></td>
+                <td style="text-align: center;">0.83</td>
+                <td style="text-align: center; font-size: 0.75em;">Signal ResNet</td>
+                <td style="text-align: center;">0.80</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                <td style="text-align: center;">0.91</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-3">3</span></td>
                 <td>Unobtrusive</td>
-                <td>0.88</td>
-                <td><small>RF</small></td>
-                <td>0.87</td>
-                <td><small>RF</small></td>
-                <td>0.86</td>
-                <td><small>CLSP MLP 50%</small></td>
+                <td style="text-align: center;">0.88</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.87</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.86</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">4</span></td>
                 <td>ScientISST MOVE</td>
-                <td>0.77</td>
-                <td><small>HC Attention MLP</small></td>
-                <td>0.81</td>
-                <td><small>RF</small></td>
-                <td>0.88</td>
-                <td><small>HC-MLP</small></td>
+                <td style="text-align: center;">0.77</td>
+                <td style="text-align: center; font-size: 0.75em;">HC Attention MLP</td>
+                <td style="text-align: center;">0.81</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.88</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">5</span></td>
                 <td>ADARP</td>
-                <td>0.83</td>
-                <td><small>CLSP MLP 25%</small></td>
-                <td>0.80</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.62</td>
-                <td><small>CLSP MLP 25%</small></td>
+                <td style="text-align: center;">0.83</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
+                <td style="text-align: center;">0.80</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.62</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">6</span></td>
                 <td>MAUS</td>
-                <td>0.83</td>
-                <td><small>Signal ResNet</small></td>
-                <td>0.82</td>
-                <td><small>RF</small></td>
-                <td>0.82</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.83</td>
+                <td style="text-align: center; font-size: 0.75em;">Signal ResNet</td>
+                <td style="text-align: center;">0.82</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.82</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">7</span></td>
                 <td>VERBIO</td>
-                <td>0.83</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.77</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.72</td>
-                <td><small>CLSP CNN 50%</small></td>
+                <td style="text-align: center;">0.83</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.77</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.72</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">8</span></td>
                 <td>LAUREATE</td>
-                <td>0.69</td>
-                <td><small>RF</small></td>
-                <td>0.77</td>
-                <td><small>CLSP MLP 50%</small></td>
-                <td>0.82</td>
-                <td><small>CLSP Zero-Shot</small></td>
+                <td style="text-align: center;">0.69</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.77</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
+                <td style="text-align: center;">0.82</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">9</span></td>
                 <td>Dapper</td>
-                <td>0.77</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.70</td>
-                <td><small>CLSP CNN 5%</small></td>
-                <td>0.81</td>
-                <td><small>CLSP MLP 5%</small></td>
+                <td style="text-align: center;">0.77</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.70</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                <td style="text-align: center;">0.81</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">10</span></td>
                 <td>CLAS</td>
-                <td>0.69</td>
-                <td><small>RF</small></td>
-                <td>0.66</td>
-                <td><small>RF</small></td>
-                <td>0.70</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.69</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.66</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.70</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">11</span></td>
                 <td>EMOGNITION</td>
-                <td>0.68</td>
-                <td><small>CLSP MLP 5%</small></td>
-                <td>0.62</td>
-                <td><small>CLSP MLP 50%</small></td>
-                <td>0.57</td>
-                <td><small>CLSP CNN 5%</small></td>
+                <td style="text-align: center;">0.68</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                <td style="text-align: center;">0.62</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
+                <td style="text-align: center;">0.57</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">12</span></td>
                 <td>MOCAS</td>
-                <td>0.65</td>
-                <td><small>CLSP CNN 5%</small></td>
-                <td>0.62</td>
-                <td><small>CLSP MLP 5%</small></td>
-                <td>0.63</td>
-                <td><small>CLSP MLP 25%</small></td>
+                <td style="text-align: center;">0.65</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                <td style="text-align: center;">0.62</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                <td style="text-align: center;">0.63</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">13</span></td>
                 <td>EmoWear</td>
-                <td>0.64</td>
-                <td><small>RF</small></td>
-                <td>0.64</td>
-                <td><small>RF</small></td>
-                <td>0.67</td>
-                <td><small>CLSP MLP 50%</small></td>
+                <td style="text-align: center;">0.64</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.64</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.67</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">14</span></td>
                 <td>Exercise</td>
-                <td>0.63</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.57</td>
-                <td><small>CLSP CNN 25%</small></td>
-                <td>0.54</td>
-                <td><small>CLSP MLP 5%</small></td>
+                <td style="text-align: center;">0.63</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.57</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
+                <td style="text-align: center;">0.54</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">15</span></td>
                 <td>NURSE</td>
-                <td>0.62</td>
-                <td><small>CLSP CNN 5%</small></td>
-                <td>0.52</td>
-                <td><small>CLSP MLP 50%</small></td>
-                <td>0.62</td>
-                <td><small>CLSP CNN 5%</small></td>
+                <td style="text-align: center;">0.62</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                <td style="text-align: center;">0.52</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
+                <td style="text-align: center;">0.62</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">16</span></td>
                 <td>CEAP-360VR</td>
-                <td>0.56</td>
-                <td><small>CLSP CNN 5%</small></td>
-                <td>0.43</td>
-                <td><small>CLSP CNN 5%</small></td>
-                <td>0.45</td>
-                <td><small>CLSP MLP 5%</small></td>
+                <td style="text-align: center;">0.56</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                <td style="text-align: center;">0.43</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                <td style="text-align: center;">0.45</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">17</span></td>
                 <td>PhyMER</td>
-                <td>0.51</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.42</td>
-                <td><small>LDA</small></td>
-                <td>0.42</td>
-                <td><small>LDA</small></td>
+                <td style="text-align: center;">0.51</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.42</td>
+                <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                <td style="text-align: center;">0.42</td>
+                <td style="text-align: center; font-size: 0.75em;">LDA</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">18</span></td>
                 <td>CASE</td>
-                <td>0.47</td>
-                <td><small>Signal CNN+Transformer</small></td>
-                <td>0.30</td>
-                <td><small>HC-MLP</small></td>
-                <td>0.40</td>
-                <td><small>CLSP MLP 5%</small></td>
+                <td style="text-align: center;">0.47</td>
+                <td style="text-align: center; font-size: 0.75em;">Signal CNN+Transformer</td>
+                <td style="text-align: center;">0.30</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                <td style="text-align: center;">0.40</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">19</span></td>
                 <td>UBFCPHYS</td>
-                <td>0.45</td>
-                <td><small>CLSP MLP 5%</small></td>
-                <td>0.34</td>
-                <td><small>CLSP CNN 25%</small></td>
-                <td>0.41</td>
-                <td><small>CLSP MLP 5%</small></td>
+                <td style="text-align: center;">0.45</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                <td style="text-align: center;">0.34</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
+                <td style="text-align: center;">0.41</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
             </tr>
         </tbody>
     </table>
 </div>
 
-
-            <!-- Valence Leaderboard -->
-            <!-- Valence Leaderboard -->
+<!-- Updated Valence Leaderboard - Improved Readability -->
 <div id="valence" class="tab-content">
     <h3>Valence Classification - All 19 Datasets</h3>
     <table>
         <thead>
             <tr>
-                <th>Rank</th>
-                <th>Dataset</th>
-                <th>EDA F1</th>
-                <th>EDA Best Model</th>
-                <th>PPG F1</th>
-                <th>PPG Best Model</th>
-                <th>Combined F1</th>
-                <th>Combined Best Model</th>
+                <th rowspan="2" style="vertical-align: middle;">Rank</th>
+                <th rowspan="2" style="vertical-align: middle;">Dataset</th>
+                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">EDA</th>
+                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">PPG</th>
+                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">Combined</th>
+            </tr>
+            <tr>
+                <th style="text-align: center;">F1</th>
+                <th style="text-align: center;">Best Model</th>
+                <th style="text-align: center;">F1</th>
+                <th style="text-align: center;">Best Model</th>
+                <th style="text-align: center;">F1</th>
+                <th style="text-align: center;">Best Model</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><span class="rank-badge rank-1">1</span></td>
                 <td>WESAD</td>
-                <td>0.83</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.83</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td><strong>0.98</strong></td>
-                <td><small>HC-MLP</small></td>
+                <td style="text-align: center;">0.83</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.83</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.98</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-2">2</span></td>
                 <td>Dapper</td>
-                <td>0.87</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.85</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.94</td>
-                <td><small>CLSP CNN 50%</small></td>
+                <td style="text-align: center;">0.87</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.85</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.94</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-3">3</span></td>
                 <td>ForDigitStress</td>
-                <td>0.87</td>
-                <td><small>CLSP CNN 5%</small></td>
-                <td>0.92</td>
-                <td><small>RF</small></td>
-                <td>0.92</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.87</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                <td style="text-align: center;">0.92</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.92</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">4</span></td>
                 <td>MOCAS</td>
-                <td>0.89</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.87</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.82</td>
-                <td><small>CLSP CNN 25%</small></td>
+                <td style="text-align: center;">0.89</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.87</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.82</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">5</span></td>
                 <td>ScientISST MOVE</td>
-                <td>0.82</td>
-                <td><small>CLSP MLP 50%</small></td>
-                <td>0.80</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.82</td>
-                <td><small>CLSP CNN 50%</small></td>
+                <td style="text-align: center;">0.82</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
+                <td style="text-align: center;">0.80</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.82</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">6</span></td>
                 <td>EmoWear</td>
-                <td>0.78</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.77</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.77</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.78</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.77</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.77</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">7</span></td>
                 <td>UBFCPHYS</td>
-                <td>0.76</td>
-                <td><small>RF</small></td>
-                <td>0.68</td>
-                <td><small>LDA</small></td>
-                <td>0.72</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.76</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.68</td>
+                <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                <td style="text-align: center;">0.72</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">8</span></td>
                 <td>Exercise</td>
-                <td>0.75</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.72</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.71</td>
-                <td><small>CLSP MLP 50%</small></td>
+                <td style="text-align: center;">0.75</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.72</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.71</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">9</span></td>
                 <td>PhyMER</td>
-                <td>0.72</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.69</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.70</td>
-                <td><small>CLSP MLP 50%</small></td>
+                <td style="text-align: center;">0.72</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.69</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.70</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">10</span></td>
                 <td>Unobtrusive</td>
-                <td>0.71</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.71</td>
-                <td><small>RF</small></td>
-                <td>0.70</td>
-                <td><small>CLSP CNN 25%</small></td>
+                <td style="text-align: center;">0.71</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.71</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.70</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">11</span></td>
                 <td>CLAS</td>
-                <td>0.64</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.61</td>
-                <td><small>CLSP CNN 25%</small></td>
-                <td>0.63</td>
-                <td><small>HC Attention MLP</small></td>
+                <td style="text-align: center;">0.64</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.61</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
+                <td style="text-align: center;">0.63</td>
+                <td style="text-align: center; font-size: 0.75em;">HC Attention MLP</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">12</span></td>
                 <td>NURSE</td>
-                <td>0.62</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.39</td>
-                <td><small>CLSP CNN 5%</small></td>
-                <td>0.38</td>
-                <td><small>CLSP Zero-Shot</small></td>
+                <td style="text-align: center;">0.62</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.39</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                <td style="text-align: center;">0.38</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">13</span></td>
                 <td>CEAP-360VR</td>
-                <td>0.62</td>
-                <td><small>CLSP CNN 5%</small></td>
-                <td>0.61</td>
-                <td><small>CLSP CNN 5%</small></td>
-                <td>0.50</td>
-                <td><small>LDA</small></td>
+                <td style="text-align: center;">0.62</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                <td style="text-align: center;">0.61</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                <td style="text-align: center;">0.50</td>
+                <td style="text-align: center; font-size: 0.75em;">LDA</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">14</span></td>
                 <td>MAUS</td>
-                <td>0.58</td>
-                <td><small>HC-MLP</small></td>
-                <td>0.56</td>
-                <td><small>LDA</small></td>
-                <td>0.59</td>
-                <td><small>LDA</small></td>
+                <td style="text-align: center;">0.58</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                <td style="text-align: center;">0.56</td>
+                <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                <td style="text-align: center;">0.59</td>
+                <td style="text-align: center; font-size: 0.75em;">LDA</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">15</span></td>
                 <td>CASE</td>
-                <td>0.54</td>
-                <td><small>CLSP MLP 5%</small></td>
-                <td>0.48</td>
-                <td><small>LDA</small></td>
-                <td>0.49</td>
-                <td><small>LDA</small></td>
+                <td style="text-align: center;">0.54</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                <td style="text-align: center;">0.48</td>
+                <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                <td style="text-align: center;">0.49</td>
+                <td style="text-align: center; font-size: 0.75em;">LDA</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">16</span></td>
                 <td>EMOGNITION</td>
-                <td>0.53</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.50</td>
-                <td><small>CLSP MLP 5%</small></td>
-                <td>0.39</td>
-                <td><small>CLSP CNN 5%</small></td>
+                <td style="text-align: center;">0.53</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.50</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                <td style="text-align: center;">0.39</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">17</span></td>
                 <td>LAUREATE</td>
-                <td>0.36</td>
-                <td><small>HC-MLP</small></td>
-                <td>0.41</td>
-                <td><small>HC-MLP</small></td>
-                <td>0.40</td>
-                <td><small>CLSP MLP 50%</small></td>
+                <td style="text-align: center;">0.36</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                <td style="text-align: center;">0.41</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                <td style="text-align: center;">0.40</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">18</span></td>
                 <td>VERBIO</td>
-                <td>0.40</td>
-                <td><small>HC-MLP</small></td>
-                <td>0.38</td>
-                <td><small>HC-MLP</small></td>
-                <td>0.34</td>
-                <td><small>CLSP MLP 5%</small></td>
+                <td style="text-align: center;">0.40</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                <td style="text-align: center;">0.38</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                <td style="text-align: center;">0.34</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">19</span></td>
                 <td>ADARP</td>
-                <td>0.30</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.40</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.47</td>
-                <td><small>HC-MLP</small></td>
+                <td style="text-align: center;">0.30</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.40</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.47</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
             </tr>
         </tbody>
     </table>
 </div>
 
-
-            <!-- Four-Class Leaderboard -->
-            <!-- Four-Class Leaderboard -->
+<!-- Updated Four-Class Leaderboard - Improved Readability -->
 <div id="fourclass" class="tab-content">
-    <h3>Four-Class Classification - All 19 Datasets</h3>
+    <h3>Four-Class Classification (HAPV, HANV, LAPV, LANV) - All 19 Datasets</h3>
     <table>
         <thead>
             <tr>
-                <th>Rank</th>
-                <th>Dataset</th>
-                <th>EDA F1</th>
-                <th>EDA Best Model</th>
-                <th>PPG F1</th>
-                <th>PPG Best Model</th>
-                <th>Combined F1</th>
-                <th>Combined Best Model</th>
+                <th rowspan="2" style="vertical-align: middle;">Rank</th>
+                <th rowspan="2" style="vertical-align: middle;">Dataset</th>
+                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">EDA</th>
+                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">PPG</th>
+                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">Combined</th>
+            </tr>
+            <tr>
+                <th style="text-align: center;">F1</th>
+                <th style="text-align: center;">Best Model</th>
+                <th style="text-align: center;">F1</th>
+                <th style="text-align: center;">Best Model</th>
+                <th style="text-align: center;">F1</th>
+                <th style="text-align: center;">Best Model</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><span class="rank-badge rank-1">1</span></td>
                 <td>WESAD</td>
-                <td><strong>0.987</strong></td>
-                <td><small>RF</small></td>
-                <td>0.794</td>
-                <td><small>RF</small></td>
-                <td><strong>0.987</strong></td>
-                <td><small>LDA</small></td>
+                <td style="text-align: center;">0.987</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.794</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.987</td>
+                <td style="text-align: center; font-size: 0.75em;">LDA</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-2">2</span></td>
                 <td>ForDigitStress</td>
-                <td>0.682</td>
-                <td><small>LDA</small></td>
-                <td>0.821</td>
-                <td><small>RF</small></td>
-                <td>0.826</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.682</td>
+                <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                <td style="text-align: center;">0.821</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.826</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-3">3</span></td>
                 <td>ScientISST MOVE</td>
-                <td>0.701</td>
-                <td><small>CLSP MLP 25%</small></td>
-                <td>0.740</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.800</td>
-                <td><small>CLSP CNN 50%</small></td>
+                <td style="text-align: center;">0.701</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
+                <td style="text-align: center;">0.740</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.800</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">4</span></td>
                 <td>MAUS</td>
-                <td>0.700</td>
-                <td><small>HC-MLP</small></td>
-                <td>0.705</td>
-                <td><small>RF</small></td>
-                <td>0.728</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.700</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                <td style="text-align: center;">0.705</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.728</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">5</span></td>
                 <td>PhyMER</td>
-                <td>0.723</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.300</td>
-                <td><small>RF</small></td>
-                <td>0.342</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.723</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.300</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.342</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">6</span></td>
                 <td>UBFCPHYS</td>
-                <td>0.705</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.551</td>
-                <td><small>LDA</small></td>
-                <td>0.622</td>
-                <td><small>LDA</small></td>
+                <td style="text-align: center;">0.705</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.551</td>
+                <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                <td style="text-align: center;">0.622</td>
+                <td style="text-align: center; font-size: 0.75em;">LDA</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">7</span></td>
                 <td>MOCAS</td>
-                <td>0.701</td>
-                <td><small>CLSP MLP 25%</small></td>
-                <td>0.357</td>
-                <td><small>RF</small></td>
-                <td>0.366</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.701</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
+                <td style="text-align: center;">0.357</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.366</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">8</span></td>
                 <td>EMOGNITION</td>
-                <td>0.572</td>
-                <td><small>RF</small></td>
-                <td>0.601</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.513</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.572</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.601</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.513</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">9</span></td>
                 <td>Dapper</td>
-                <td>0.434</td>
-                <td><small>RF</small></td>
-                <td>0.426</td>
-                <td><small>RF</small></td>
-                <td>0.555</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.434</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.426</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.555</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">10</span></td>
                 <td>Exercise</td>
-                <td>0.552</td>
-                <td><small>CLSP CNN 25%</small></td>
-                <td>0.438</td>
-                <td><small>HC-MLP</small></td>
-                <td>0.480</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.552</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
+                <td style="text-align: center;">0.438</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                <td style="text-align: center;">0.480</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">11</span></td>
                 <td>LAUREATE</td>
-                <td>0.527</td>
-                <td><small>CLSP MLP 5%</small></td>
-                <td>0.460</td>
-                <td><small>RF</small></td>
-                <td>0.461</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.527</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                <td style="text-align: center;">0.460</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.461</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">12</span></td>
                 <td>CASE</td>
-                <td>0.476</td>
-                <td><small>RF</small></td>
-                <td>0.397</td>
-                <td><small>RF</small></td>
-                <td>0.498</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.476</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.397</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.498</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">13</span></td>
                 <td>VERBIO</td>
-                <td>0.480</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.582</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.436</td>
-                <td><small>CLSP Zero-Shot</small></td>
+                <td style="text-align: center;">0.480</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.582</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.436</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">14</span></td>
                 <td>NURSE</td>
-                <td>0.433</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.667</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.520</td>
-                <td><small>CLSP Zero-Shot</small></td>
+                <td style="text-align: center;">0.433</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.667</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.520</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">15</span></td>
                 <td>CLAS</td>
-                <td>0.430</td>
-                <td><small>RF</small></td>
-                <td>0.408</td>
-                <td><small>HC-MLP</small></td>
-                <td>0.459</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.430</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.408</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                <td style="text-align: center;">0.459</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">16</span></td>
                 <td>Unobtrusive</td>
-                <td>0.402</td>
-                <td><small>RF</small></td>
-                <td>0.409</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.393</td>
-                <td><small>HC-MLP</small></td>
+                <td style="text-align: center;">0.402</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.409</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.393</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">17</span></td>
                 <td>ADARP</td>
-                <td>0.269</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.433</td>
-                <td><small>CLSP Zero-Shot</small></td>
-                <td>0.354</td>
-                <td><small>CLSP Zero-Shot</small></td>
+                <td style="text-align: center;">0.269</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.433</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                <td style="text-align: center;">0.354</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">18</span></td>
                 <td>CEAP-360VR</td>
-                <td>0.285</td>
-                <td><small>CLSP MLP 25%</small></td>
-                <td>0.307</td>
-                <td><small>RF</small></td>
-                <td>0.314</td>
-                <td><small>RF</small></td>
+                <td style="text-align: center;">0.285</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
+                <td style="text-align: center;">0.307</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
+                <td style="text-align: center;">0.314</td>
+                <td style="text-align: center; font-size: 0.75em;">RF</td>
             </tr>
             <tr>
                 <td><span class="rank-badge rank-other">19</span></td>
                 <td>EmoWear</td>
-                <td>0.293</td>
-                <td><small>CLSP CNN 50%</small></td>
-                <td>0.270</td>
-                <td><small>HC-MLP</small></td>
-                <td>0.282</td>
-                <td><small>HC-MLP</small></td>
+                <td style="text-align: center;">0.293</td>
+                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                <td style="text-align: center;">0.270</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                <td style="text-align: center;">0.282</td>
+                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
             </tr>
         </tbody>
     </table>
@@ -1355,85 +1755,85 @@
 
         <!-- Models Section -->
         <div id="models" class="section">
-            <h2>🏛️ Model Architectures</h2>
-
-            <div class="architecture-image">
-                <img src="clsp_finetune.png" alt="CLSP Fine-Tuning Architecture">
-                <p>CLSP fine-tuning with conditional context optimization (CoCoOp)</p>
-            </div>
-
-            <h3>Four Modeling Paradigms (16 Architectures)</h3>
-
-            <div class="paradigm-grid">
-                <div class="paradigm-card">
-                    <h4>1. Traditional ML</h4>
-                    <p><strong>Models:</strong> RF, LDA</p>
-                    <p><strong>Input:</strong> Handcrafted features</p>
-                    <ul>
-                        <li>Random Forest</li>
-                        <li>LDA</li>
-                    </ul>
-                    <p style="margin-top: 6px;"><strong>Top:</strong> 59/171</p>
-                </div>
-
-                <div class="paradigm-card">
-                    <h4>2. DL + Handcrafted</h4>
-                    <p><strong>Models:</strong> 4 variants</p>
-                    <p><strong>Input:</strong> Handcrafted features</p>
-                    <ul>
-                        <li>MLP</li>
-                        <li>ResNet</li>
-                        <li>LSTM+MLP</li>
-                        <li>Attention+MLP</li>
-                    </ul>
-                    <p style="margin-top: 6px;"><strong>Top:</strong> 21/171 </p>
-                </div>
-
-                <div class="paradigm-card">
-                    <h4>3. DL on Raw Signals</h4>
-                    <p><strong>Models:</strong> 3 variants</p>
-                    <p><strong>Input:</strong> Raw time-series</p>
-                    <ul>
-                        <li>Signal ResNet</li>
-                        <li>Signal LSTM+MLP</li>
-                        <li>CNN+Transformer</li>
-                    </ul>
-                    <p style="margin-top: 6px;"><strong>Top:</strong> 3/171</p>
-                </div>
-
-                <div class="paradigm-card">
-                    <h4>4. Pretrained CLSP</h4>
-                    <p><strong>Models:</strong> 7 variants</p>
-                    <p><strong>Input:</strong> Pretrained embeddings</p>
-                    <ul>
-                        <li>Zero-Shot</li>
-                        <li>MLP (5/25/50%)</li>
-                        <li>CNN (5/25/50%)</li>
-                    </ul>
-                    <p style="margin-top: 6px;"><strong>Top:</strong> 88/171</p>
-                </div>
-            </div>
-
-            <div class="key-findings">
-                <h4>Key Model Insights</h4>
-                <ul>
-                    <li><strong>CLSP is the overall winner with 88/171 (51.5%) - dominates binary tasks but less so in four-class</strong></li>
-                    <li><strong>Few-Shot Power:</strong> 23 top instances with only 5% training data</li>
-                    <li><strong>Classical ML Competitive:</strong> RF and LDA remain strong for small datasets</li>
-                    <li><strong>Handcrafted Features Win:</strong> 166/171 (97%) top models use domain knowledge</li>
-                </ul>
-            </div>
+    <h2>Model Architectures</h2>
+    
+    <div class="architecture-image">
+        <img src="clsp_finetune.png" alt="CLSP Fine-Tuning Architecture">
+        <p>CLSP fine-tuning with conditional context optimization (CoCoOp)</p>
+    </div>
+    
+    <h3>Four Modeling Paradigms (16 Architectures)</h3>
+    
+    <div class="paradigm-grid">
+        <div class="paradigm-card">
+            <h4>1. Traditional ML</h4>
+            <p><strong>Models:</strong> RF, LDA</p>
+            <p><strong>Input:</strong> Handcrafted features</p>
+            <ul>
+                <li>Random Forest</li>
+                <li>LDA</li>
+            </ul>
+            <p style="margin-top: 6px;"><strong>Top:</strong> 59/171</p>
         </div>
+        
+        <div class="paradigm-card">
+            <h4>2. DL + Handcrafted</h4>
+            <p><strong>Models:</strong> 4 variants</p>
+            <p><strong>Input:</strong> Handcrafted features</p>
+            <ul>
+                <li>MLP</li>
+                <li>ResNet</li>
+                <li>LSTM+MLP</li>
+                <li>Attention+MLP</li>
+            </ul>
+            <p style="margin-top: 6px;"><strong>Top:</strong> 21/171</p>
+        </div>
+        
+        <div class="paradigm-card">
+            <h4>3. DL on Raw Signals</h4>
+            <p><strong>Models:</strong> 3 variants</p>
+            <p><strong>Input:</strong> Raw time-series</p>
+            <ul>
+                <li>Signal ResNet</li>
+                <li>Signal LSTM+MLP</li>
+                <li>CNN+Transformer</li>
+            </ul>
+            <p style="margin-top: 6px;"><strong>Top:</strong> 3/171</p>
+        </div>
+        
+        <div class="paradigm-card">
+            <h4>4. Pretrained CLSP</h4>
+            <p><strong>Models:</strong> 7 variants</p>
+            <p><strong>Input:</strong> Pretrained embeddings</p>
+            <ul>
+                <li>Zero-Shot</li>
+                <li>MLP (5/25/50%)</li>
+                <li>CNN (5/25/50%)</li>
+            </ul>
+            <p style="margin-top: 6px;"><strong>Top:</strong> 88/171</p>
+        </div>
+    </div>
+    
+    <div class="key-findings">
+        <h4>Key Model Insights</h4>
+        <ul>
+            <li><strong>CLSP is the overall winner with 88/171 (51.5%) - dominates binary tasks but less so in four-class</strong></li>
+            <li><strong>Few-Shot Power:</strong> 23 top instances with only 5% training data</li>
+            <li><strong>Classical ML Competitive:</strong> RF and LDA remain strong for small datasets</li>
+            <li><strong>Handcrafted Features Win:</strong> 166/171 (97%) top models use domain knowledge</li>
+        </ul>
+    </div>
+</div>
 
-<!-- Submit Section -->
-<div id="submit" class="section">
-    <h2>🤝 Contribute to FEEL</h2>
-    
-    <p style="font-size: 1.05em; line-height: 1.7; margin-bottom: 20px;">
-     Help expand the FEEL benchmark by submitting your model results or proposing new datasets. We welcome contributions that evaluate novel architectures, introduce new preprocessing techniques, or extend analysis to additional heterogeneity dimensions.
-    </p>
-    
-    <div style="text-align: center; margin: 25px 0;">
+        <!-- Submit Section -->
+        <div id="submit" class="section">
+            <h2>🎯 Contribute to FEEL</h2>
+
+            <p style="font-size: 1.05em; line-height: 1.7; margin-bottom: 20px;">
+                Help expand the FEEL benchmark by submitting your model results or proposing new datasets. We welcome contributions that evaluate novel architectures, introduce new preprocessing techniques, or extend analysis to additional heterogeneity dimensions.
+            </p>
+
+            <div style="text-align: center; margin: 25px 0;">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSchhaTlXFliCb1fS2zCK7-66zWAExXn6RavqeLaH2nE8vKs8A/viewform" target="_blank" class="btn" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border: none;">📤 Submit Results</a>
     </div>
 
@@ -1464,59 +1864,27 @@ Citation link comning soon</pre>
 
         </div>
 
-<!-- Timeline Section -->
-<div id="timeline" class="section">
-    <h2>📝 Research Timeline</h2>
-    
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 20px 0;">
-        
-        <!-- CSCSW 2024 -->
-        <div class="paradigm-card">
-            <h4 style="color: #667eea; font-size: 0.9em; margin-bottom: 6px;">CSCSW 2024</h4>
-            <p style="font-size: 0.75em; line-height: 1.3; margin-bottom: 8px;">
-                Translating Emotions to Annotations: A Participant's Perspective of Physiological Emotion Data Collection
-            </p>
-            <a href="https://dl.acm.org/doi/abs/10.1145/3711093" target="_blank" style="color: #667eea; text-decoration: none; font-size: 0.75em; font-weight: 600;">
-                🧠 Paper →
-            </a>
+<div id="support" class="section">
+    <h2 style="text-align: center; margin-bottom: 40px; color: #333;">Supported By</h2>
+    <div class="support-logos-container">
+        <div class="logo-box">
+            <img src="chcc_site.png" alt="IIIT-Delhi CHCC">
         </div>
-        
-        <!-- NeurIPS 2024 -->
-        <div class="paradigm-card">
-            <h4 style="color: #667eea; font-size: 0.9em; margin-bottom: 6px;">NeurIPS 2024</h4>
-            <p style="font-size: 0.75em; line-height: 1.3; margin-bottom: 8px;">
-                EEVR: A Dataset of Paired Physiological Signals and Textual Descriptions for Joint Emotion Representation Learning
-            </p>
-            <a href="https://nips.cc/virtual/2024/poster/97493" target="_blank" style="color: #667eea; text-decoration: none; font-size: 0.75em; font-weight: 600;">
-                ⌚ Project →
-            </a>
+        <div class="logo-box">
+            <img src="iiitd.png" alt="IIIT Delhi">
         </div>
-        
-        <!-- IMWUT 2025 -->
-        <div class="paradigm-card">
-            <h4 style="color: #667eea; font-size: 0.9em; margin-bottom: 6px;">IMWUT 2025</h4>
-            <p style="font-size: 0.75em; line-height: 1.3; margin-bottom: 8px;">
-                AnnoSense: A Framework for Physiological Emotion Data Collection in Everyday Settings for AI
-            </p>
-            <a href="https://dl.acm.org/doi/abs/10.1145/3749519" target="_blank" style="color: #667eea; text-decoration: none; font-size: 0.75em; font-weight: 600;">
-                📶 Paper →
-            </a>
+        <div class="logo-box">
+            <img src="cai.jpg" alt="Infosys CAI">
         </div>
-        
-        <!-- NeurIPS 2025 - Current -->
-        <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); padding: 12px; border-radius: 8px; border-left: 4px solid #764ba2; border: 2px solid #667eea;">
-            <h4 style="color: #667eea; font-size: 0.9em; margin-bottom: 6px;">NeurIPS 2025 🎯</h4>
-            <p style="font-size: 0.75em; line-height: 1.3; margin-bottom: 8px;">
-                <strong>FEEL: Quantifying Heterogeneity in Physiological
-Signals for Generalizable Emotion Recognition</strong>
-            </p>
-            <a href="#about" style="color: #667eea; text-decoration: none; font-size: 0.75em; font-weight: 600;">
-               📐  Explore →
-            </a>
+        <div class="logo-box">
+            <img src="rit.png" alt="RIT">
         </div>
-        
+        <div class="logo-box">
+            <img src="melange.png" alt="Melange">
+        </div>
     </div>
 </div>
+
 
         <!-- Footer -->
         <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; margin-top: 40px; color: white;">
