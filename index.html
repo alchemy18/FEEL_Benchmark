@@ -296,7 +296,6 @@
         }
 
         .architecture-image img {
-            max-width: 450px;
             width: 100%;
             height: auto;
             border-radius: 8px;
@@ -724,6 +723,11 @@
         display: block;
         overflow-x: auto;
         white-space: nowrap;
+    }
+
+    .architecture-image {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
     
     /* Optional: Add visual scroll hint */
@@ -3091,7 +3095,7 @@ function showCrossTab(evt, tabName) {
     <h2>Model Architectures</h2>
     
     <div class="architecture-image">
-        <img src="clsp_finetune.png" alt="CLSP Fine-Tuning Architecture">
+        <img src="clsp_finetune.png" alt="CLSP Fine-Tuning Architecture" style="width: 1000px; height: auto;">
         <p>CLSP fine-tuning with conditional context optimization (CoCoOp)</p>
     </div>
     
