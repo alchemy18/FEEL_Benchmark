@@ -736,7 +736,275 @@
     transform: translateY(-5px);
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
+/* Main tab styling */
+.main-tab-content {
+    display: none;
+}
 
+.main-tab-content.active {
+    display: block;
+}
+
+/* Cross-dataset specific styling */
+.section-intro {
+    text-align: center;
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.cross-tabs {
+    margin-top: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.cross-tab-content {
+    display: none;
+    margin-top: 30px;
+}
+
+.cross-tab-content.active {
+    display: block;
+}
+
+.cross-section-header {
+    margin-bottom: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+}
+
+.cross-section-header h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.8em;
+}
+
+.cross-section-header p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 1.05em;
+}
+
+.cross-subsection {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.cross-subsection h4 {
+    color: #333;
+    margin: 0 0 20px 0;
+    font-size: 1.3em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+.cross-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.cross-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.cross-table th {
+    padding: 15px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.cross-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.cross-table tbody tr:hover {
+    background: #f0f4ff;
+    transition: background 0.2s ease;
+}
+
+.cross-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Highlight F1 scores */
+.cross-table td:nth-child(4),
+.cross-table td:nth-child(6),
+.cross-table td:nth-child(8) {
+    font-weight: 600;
+    color: #28a745;
+}
+/* Cross-table cell alignment and styling */
+.cross-table th,
+.cross-table td {
+    text-align: center;
+    vertical-align: middle;
+    color: #000;
+}
+
+/* Remove any color highlighting from F1 scores - keep black */
+.cross-table td:nth-child(4),
+.cross-table td:nth-child(6),
+.cross-table td:nth-child(8) {
+    font-weight: 600;
+    color: #000;
+}
+
+/* Highlight best transferable row using gradient theme colors */
+.cross-table tbody tr.best-transfer {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+    border-left: 4px solid #667eea;
+    font-weight: 500;
+}
+
+.cross-table tbody tr.best-transfer:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.25) 0%, rgba(118, 75, 162, 0.25) 100%);
+}
+
+/* Existing cross-table styles */
+.cross-subsection {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.cross-subsection h4 {
+    color: #333;
+    margin: 0 0 20px 0;
+    font-size: 1.3em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+.cross-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.cross-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.cross-table th {
+    padding: 15px 12px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.cross-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.cross-table tbody tr:hover {
+    background: #f0f4ff;
+    transition: background 0.2s ease;
+}
+
+.cross-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Cross-table headers with rowspan and colspan */
+.cross-table thead tr:first-child th {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.cross-table th {
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    font-size: 0.85em;
+}
+
+.cross-table td {
+    text-align: center;
+    vertical-align: middle;
+    color: #000;
+    font-size: 0.9em;
+}
+
+/* Remove any color from F1/model cells */
+.cross-table td {
+    font-weight: normal;
+    color: #000;
+}
+
+/* Highlight best transferable row using gradient theme colors */
+.cross-table tbody tr.best-transfer {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+    border-left: 4px solid #667eea;
+}
+
+.cross-table tbody tr.best-transfer:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.25) 0%, rgba(118, 75, 162, 0.25) 100%);
+}
+
+.cross-subsection {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.cross-subsection h4 {
+    color: #333;
+    margin: 0 0 20px 0;
+    font-size: 1.3em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+.cross-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.cross-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.cross-table th {
+    padding: 15px 8px;
+    font-weight: 600;
+}
+
+.cross-table td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.cross-table tbody tr:hover {
+    background: #f0f4ff;
+    transition: background 0.2s ease;
+}
+
+.cross-table tbody tr:last-child td {
+    border-bottom: none;
+}
 
         @media (max-width: 1200px) {
             .paradigm-grid {
@@ -780,7 +1048,7 @@
     <a href="https://alchemy18.github.io/pragyasingh/" target="_blank" data-tooltip="HCAI Researcher | AI for Mental Health">
         Pragya Singh<sup>1</sup>
     </a>,
-    <a href="https://sites.google.com/view/ankush-gupta" target="_blank" data-tooltip="AI/ML Engineer | AI for Equitable Understanding">
+    <a href="https://sites.google.com/view/ankush-gupta" target="_blank" data-tooltip="AI/ML Researcher | AI for Equitable Understanding">
         Ankush Gupta<sup>1</sup>
     </a>,
     <a href="https://www.linkedin.com/in/somayj/" target="_blank" data-tooltip="AI/ML Engineer | IIIT-Delhi">
@@ -908,7 +1176,7 @@ Signals for Generalizable Emotion Recognition</strong>
             <li><strong>19 Datasets:</strong> Diverse experimental conditions (lab, real-world, constraint), devices, and labeling strategies</li>
             <li><strong>Unified Pipeline:</strong> Standardized preprocessing, harmonization, and evaluation protocols</li>
             <li><strong>16 Architectures:</strong> Evaluated across 4 paradigms - traditional ML, deep learning, and pretrained models</li>
-            <li><strong>Cross-Dataset Analysis:</strong> Systematic transferability evaluation across settings, devices, and labeling methods</li>
+            <li><strong>Cross-Dataset Analysis:</strong> Systematic transferability evaluation across settings, devices, labeling methods, age and gender.</li>
             <li><strong>CLSP Fine-Tuning:</strong> Novel conditional context optimization for dataset adaptation</li>
             <li><strong>Benchmarked on 3 Classification Tasks:</strong> Arousal, Valence, and Four-Class (HAPV, HANV, LAPV, LANV) emotion recognition</li>
         </ul>
@@ -1094,664 +1362,1705 @@ Signals for Generalizable Emotion Recognition</strong>
 
         <!-- Leaderboards Section -->
         <div id="leaderboards" class="section">
-            <h2>🏆 Leaderboards</h2>
+    <h2>🏆 Leaderboards</h2>
 
-            <div class="leaderboard-tabs">
-                <button class="tab-btn active" onclick="showTab(event, 'arousal')">Arousal</button>
-                <button class="tab-btn" onclick="showTab(event, 'valence')">Valence</button>
-                <button class="tab-btn" onclick="showTab(event, 'fourclass')">Four-Class</button>
-            </div>
+    <!-- Main Leaderboard Tabs -->
+    <div class="leaderboard-tabs">
+        <button class="tab-btn active" onclick="showMainTab(event, 'within-dataset')">Within-Dataset</button>
+        <button class="tab-btn" onclick="showMainTab(event, 'cross-dataset')">Cross-Dataset</button>
+    </div>
 
-<!-- Updated Arousal Leaderboard - Improved Readability -->
-<div id="arousal" class="tab-content active">
-    <h3>Arousal Classification - All 19 Datasets</h3>
-    <table>
-        <thead>
-            <tr>
-                <th rowspan="2" style="vertical-align: middle;">Rank</th>
-                <th rowspan="2" style="vertical-align: middle;">Dataset</th>
-                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">EDA</th>
-                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">PPG</th>
-                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">Combined</th>
-            </tr>
-            <tr>
-                <th style="text-align: center;">F1</th>
-                <th style="text-align: center;">Best Model</th>
-                <th style="text-align: center;">F1</th>
-                <th style="text-align: center;">Best Model</th>
-                <th style="text-align: center;">F1</th>
-                <th style="text-align: center;">Best Model</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><span class="rank-badge rank-1">1</span></td>
-                <td>ForDigitStress</td>
-                <td style="text-align: center;">0.94</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
-                <td style="text-align: center;">0.99</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.99</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-2">2</span></td>
-                <td>WESAD</td>
-                <td style="text-align: center;">0.83</td>
-                <td style="text-align: center; font-size: 0.75em;">Signal ResNet</td>
-                <td style="text-align: center;">0.80</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-                <td style="text-align: center;">0.91</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-3">3</span></td>
-                <td>Unobtrusive</td>
-                <td style="text-align: center;">0.88</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.87</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.86</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">4</span></td>
-                <td>ScientISST MOVE</td>
-                <td style="text-align: center;">0.77</td>
-                <td style="text-align: center; font-size: 0.75em;">HC Attention MLP</td>
-                <td style="text-align: center;">0.81</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.88</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">5</span></td>
-                <td>ADARP</td>
-                <td style="text-align: center;">0.83</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
-                <td style="text-align: center;">0.80</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.62</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">6</span></td>
-                <td>MAUS</td>
-                <td style="text-align: center;">0.83</td>
-                <td style="text-align: center; font-size: 0.75em;">Signal ResNet</td>
-                <td style="text-align: center;">0.82</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.82</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">7</span></td>
-                <td>VERBIO</td>
-                <td style="text-align: center;">0.83</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.77</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.72</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">8</span></td>
-                <td>LAUREATE</td>
-                <td style="text-align: center;">0.69</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.77</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
-                <td style="text-align: center;">0.82</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">9</span></td>
-                <td>Dapper</td>
-                <td style="text-align: center;">0.77</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.70</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
-                <td style="text-align: center;">0.81</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">10</span></td>
-                <td>CLAS</td>
-                <td style="text-align: center;">0.69</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.66</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.70</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">11</span></td>
-                <td>EMOGNITION</td>
-                <td style="text-align: center;">0.68</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
-                <td style="text-align: center;">0.62</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
-                <td style="text-align: center;">0.57</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">12</span></td>
-                <td>MOCAS</td>
-                <td style="text-align: center;">0.65</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
-                <td style="text-align: center;">0.62</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
-                <td style="text-align: center;">0.63</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">13</span></td>
-                <td>EmoWear</td>
-                <td style="text-align: center;">0.64</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.64</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.67</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">14</span></td>
-                <td>Exercise</td>
-                <td style="text-align: center;">0.63</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.57</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
-                <td style="text-align: center;">0.54</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">15</span></td>
-                <td>NURSE</td>
-                <td style="text-align: center;">0.62</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
-                <td style="text-align: center;">0.52</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
-                <td style="text-align: center;">0.62</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">16</span></td>
-                <td>CEAP-360VR</td>
-                <td style="text-align: center;">0.56</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
-                <td style="text-align: center;">0.43</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
-                <td style="text-align: center;">0.45</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">17</span></td>
-                <td>PhyMER</td>
-                <td style="text-align: center;">0.51</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.42</td>
-                <td style="text-align: center; font-size: 0.75em;">LDA</td>
-                <td style="text-align: center;">0.42</td>
-                <td style="text-align: center; font-size: 0.75em;">LDA</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">18</span></td>
-                <td>CASE</td>
-                <td style="text-align: center;">0.47</td>
-                <td style="text-align: center; font-size: 0.75em;">Signal CNN+Transformer</td>
-                <td style="text-align: center;">0.30</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-                <td style="text-align: center;">0.40</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">19</span></td>
-                <td>UBFCPHYS</td>
-                <td style="text-align: center;">0.45</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
-                <td style="text-align: center;">0.34</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
-                <td style="text-align: center;">0.41</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- Updated Valence Leaderboard - Improved Readability -->
-<div id="valence" class="tab-content">
-    <h3>Valence Classification - All 19 Datasets</h3>
-    <table>
-        <thead>
-            <tr>
-                <th rowspan="2" style="vertical-align: middle;">Rank</th>
-                <th rowspan="2" style="vertical-align: middle;">Dataset</th>
-                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">EDA</th>
-                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">PPG</th>
-                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">Combined</th>
-            </tr>
-            <tr>
-                <th style="text-align: center;">F1</th>
-                <th style="text-align: center;">Best Model</th>
-                <th style="text-align: center;">F1</th>
-                <th style="text-align: center;">Best Model</th>
-                <th style="text-align: center;">F1</th>
-                <th style="text-align: center;">Best Model</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><span class="rank-badge rank-1">1</span></td>
-                <td>WESAD</td>
-                <td style="text-align: center;">0.83</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.83</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.98</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-2">2</span></td>
-                <td>Dapper</td>
-                <td style="text-align: center;">0.87</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.85</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.94</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-3">3</span></td>
-                <td>ForDigitStress</td>
-                <td style="text-align: center;">0.87</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
-                <td style="text-align: center;">0.92</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.92</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">4</span></td>
-                <td>MOCAS</td>
-                <td style="text-align: center;">0.89</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.87</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.82</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">5</span></td>
-                <td>ScientISST MOVE</td>
-                <td style="text-align: center;">0.82</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
-                <td style="text-align: center;">0.80</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.82</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">6</span></td>
-                <td>EmoWear</td>
-                <td style="text-align: center;">0.78</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.77</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.77</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">7</span></td>
-                <td>UBFCPHYS</td>
-                <td style="text-align: center;">0.76</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.68</td>
-                <td style="text-align: center; font-size: 0.75em;">LDA</td>
-                <td style="text-align: center;">0.72</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">8</span></td>
-                <td>Exercise</td>
-                <td style="text-align: center;">0.75</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.72</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.71</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">9</span></td>
-                <td>PhyMER</td>
-                <td style="text-align: center;">0.72</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.69</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.70</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">10</span></td>
-                <td>Unobtrusive</td>
-                <td style="text-align: center;">0.71</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.71</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.70</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">11</span></td>
-                <td>CLAS</td>
-                <td style="text-align: center;">0.64</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.61</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
-                <td style="text-align: center;">0.63</td>
-                <td style="text-align: center; font-size: 0.75em;">HC Attention MLP</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">12</span></td>
-                <td>NURSE</td>
-                <td style="text-align: center;">0.62</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.39</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
-                <td style="text-align: center;">0.38</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">13</span></td>
-                <td>CEAP-360VR</td>
-                <td style="text-align: center;">0.62</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
-                <td style="text-align: center;">0.61</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
-                <td style="text-align: center;">0.50</td>
-                <td style="text-align: center; font-size: 0.75em;">LDA</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">14</span></td>
-                <td>MAUS</td>
-                <td style="text-align: center;">0.58</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-                <td style="text-align: center;">0.56</td>
-                <td style="text-align: center; font-size: 0.75em;">LDA</td>
-                <td style="text-align: center;">0.59</td>
-                <td style="text-align: center; font-size: 0.75em;">LDA</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">15</span></td>
-                <td>CASE</td>
-                <td style="text-align: center;">0.54</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
-                <td style="text-align: center;">0.48</td>
-                <td style="text-align: center; font-size: 0.75em;">LDA</td>
-                <td style="text-align: center;">0.49</td>
-                <td style="text-align: center; font-size: 0.75em;">LDA</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">16</span></td>
-                <td>EMOGNITION</td>
-                <td style="text-align: center;">0.53</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.50</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
-                <td style="text-align: center;">0.39</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">17</span></td>
-                <td>LAUREATE</td>
-                <td style="text-align: center;">0.36</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-                <td style="text-align: center;">0.41</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-                <td style="text-align: center;">0.40</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">18</span></td>
-                <td>VERBIO</td>
-                <td style="text-align: center;">0.40</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-                <td style="text-align: center;">0.38</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-                <td style="text-align: center;">0.34</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">19</span></td>
-                <td>ADARP</td>
-                <td style="text-align: center;">0.30</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.40</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.47</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- Updated Four-Class Leaderboard - Improved Readability -->
-<div id="fourclass" class="tab-content">
-    <h3>Four-Class Classification (HAPV, HANV, LAPV, LANV) - All 19 Datasets</h3>
-    <table>
-        <thead>
-            <tr>
-                <th rowspan="2" style="vertical-align: middle;">Rank</th>
-                <th rowspan="2" style="vertical-align: middle;">Dataset</th>
-                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">EDA</th>
-                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">PPG</th>
-                <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">Combined</th>
-            </tr>
-            <tr>
-                <th style="text-align: center;">F1</th>
-                <th style="text-align: center;">Best Model</th>
-                <th style="text-align: center;">F1</th>
-                <th style="text-align: center;">Best Model</th>
-                <th style="text-align: center;">F1</th>
-                <th style="text-align: center;">Best Model</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><span class="rank-badge rank-1">1</span></td>
-                <td>WESAD</td>
-                <td style="text-align: center;">0.987</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.794</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.987</td>
-                <td style="text-align: center; font-size: 0.75em;">LDA</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-2">2</span></td>
-                <td>ForDigitStress</td>
-                <td style="text-align: center;">0.682</td>
-                <td style="text-align: center; font-size: 0.75em;">LDA</td>
-                <td style="text-align: center;">0.821</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.826</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-3">3</span></td>
-                <td>ScientISST MOVE</td>
-                <td style="text-align: center;">0.701</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
-                <td style="text-align: center;">0.740</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.800</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">4</span></td>
-                <td>MAUS</td>
-                <td style="text-align: center;">0.700</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-                <td style="text-align: center;">0.705</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.728</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">5</span></td>
-                <td>PhyMER</td>
-                <td style="text-align: center;">0.723</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.300</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.342</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">6</span></td>
-                <td>UBFCPHYS</td>
-                <td style="text-align: center;">0.705</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.551</td>
-                <td style="text-align: center; font-size: 0.75em;">LDA</td>
-                <td style="text-align: center;">0.622</td>
-                <td style="text-align: center; font-size: 0.75em;">LDA</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">7</span></td>
-                <td>MOCAS</td>
-                <td style="text-align: center;">0.701</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
-                <td style="text-align: center;">0.357</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.366</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">8</span></td>
-                <td>EMOGNITION</td>
-                <td style="text-align: center;">0.572</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.601</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.513</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">9</span></td>
-                <td>Dapper</td>
-                <td style="text-align: center;">0.434</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.426</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.555</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">10</span></td>
-                <td>Exercise</td>
-                <td style="text-align: center;">0.552</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
-                <td style="text-align: center;">0.438</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-                <td style="text-align: center;">0.480</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">11</span></td>
-                <td>LAUREATE</td>
-                <td style="text-align: center;">0.527</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
-                <td style="text-align: center;">0.460</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.461</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">12</span></td>
-                <td>CASE</td>
-                <td style="text-align: center;">0.476</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.397</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.498</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">13</span></td>
-                <td>VERBIO</td>
-                <td style="text-align: center;">0.480</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.582</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.436</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">14</span></td>
-                <td>NURSE</td>
-                <td style="text-align: center;">0.433</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.667</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.520</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">15</span></td>
-                <td>CLAS</td>
-                <td style="text-align: center;">0.430</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.408</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-                <td style="text-align: center;">0.459</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">16</span></td>
-                <td>Unobtrusive</td>
-                <td style="text-align: center;">0.402</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.409</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.393</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">17</span></td>
-                <td>ADARP</td>
-                <td style="text-align: center;">0.269</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.433</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-                <td style="text-align: center;">0.354</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">18</span></td>
-                <td>CEAP-360VR</td>
-                <td style="text-align: center;">0.285</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
-                <td style="text-align: center;">0.307</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-                <td style="text-align: center;">0.314</td>
-                <td style="text-align: center; font-size: 0.75em;">RF</td>
-            </tr>
-            <tr>
-                <td><span class="rank-badge rank-other">19</span></td>
-                <td>EmoWear</td>
-                <td style="text-align: center;">0.293</td>
-                <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
-                <td style="text-align: center;">0.270</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-                <td style="text-align: center;">0.282</td>
-                <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-
+    <!-- WITHIN-DATASET RESULTS -->
+    <div id="within-dataset" class="main-tab-content active">
+        <div class="leaderboard-tabs">
+            <button class="tab-btn active" onclick="showTab(event, 'arousal')">Arousal</button>
+            <button class="tab-btn" onclick="showTab(event, 'valence')">Valence</button>
+            <button class="tab-btn" onclick="showTab(event, 'fourclass')">Four-Class</button>
         </div>
+
+        <!-- Arousal Leaderboard -->
+        <div id="arousal" class="tab-content active">
+            <h3>Arousal Classification - All 19 Datasets</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2" style="vertical-align: middle;">Rank</th>
+                        <th rowspan="2" style="vertical-align: middle;">Dataset</th>
+                        <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">EDA</th>
+                        <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">PPG</th>
+                        <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">Combined</th>
+                    </tr>
+                    <tr>
+                        <th style="text-align: center;">F1</th>
+                        <th style="text-align: center;">Best Model</th>
+                        <th style="text-align: center;">F1</th>
+                        <th style="text-align: center;">Best Model</th>
+                        <th style="text-align: center;">F1</th>
+                        <th style="text-align: center;">Best Model</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="rank-badge rank-1">1</span></td>
+                        <td>ForDigitStress</td>
+                        <td style="text-align: center;">0.94</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
+                        <td style="text-align: center;">0.99</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.99</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-2">2</span></td>
+                        <td>WESAD</td>
+                        <td style="text-align: center;">0.83</td>
+                        <td style="text-align: center; font-size: 0.75em;">Signal ResNet</td>
+                        <td style="text-align: center;">0.80</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                        <td style="text-align: center;">0.91</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-3">3</span></td>
+                        <td>Unobtrusive</td>
+                        <td style="text-align: center;">0.88</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.87</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.86</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">4</span></td>
+                        <td>ScientISST MOVE</td>
+                        <td style="text-align: center;">0.77</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC Attention MLP</td>
+                        <td style="text-align: center;">0.81</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.88</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">5</span></td>
+                        <td>ADARP</td>
+                        <td style="text-align: center;">0.83</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
+                        <td style="text-align: center;">0.80</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.62</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">6</span></td>
+                        <td>MAUS</td>
+                        <td style="text-align: center;">0.83</td>
+                        <td style="text-align: center; font-size: 0.75em;">Signal ResNet</td>
+                        <td style="text-align: center;">0.82</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.82</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">7</span></td>
+                        <td>VERBIO</td>
+                        <td style="text-align: center;">0.83</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.77</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.72</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">8</span></td>
+                        <td>LAUREATE</td>
+                        <td style="text-align: center;">0.69</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.77</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
+                        <td style="text-align: center;">0.82</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">9</span></td>
+                        <td>Dapper</td>
+                        <td style="text-align: center;">0.77</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.70</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                        <td style="text-align: center;">0.81</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">10</span></td>
+                        <td>CLAS</td>
+                        <td style="text-align: center;">0.69</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.66</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.70</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">11</span></td>
+                        <td>EMOGNITION</td>
+                        <td style="text-align: center;">0.68</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                        <td style="text-align: center;">0.62</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
+                        <td style="text-align: center;">0.57</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">12</span></td>
+                        <td>MOCAS</td>
+                        <td style="text-align: center;">0.65</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                        <td style="text-align: center;">0.62</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                        <td style="text-align: center;">0.63</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">13</span></td>
+                        <td>EmoWear</td>
+                        <td style="text-align: center;">0.64</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.64</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.67</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">14</span></td>
+                        <td>Exercise</td>
+                        <td style="text-align: center;">0.63</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.57</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
+                        <td style="text-align: center;">0.54</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">15</span></td>
+                        <td>NURSE</td>
+                        <td style="text-align: center;">0.62</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                        <td style="text-align: center;">0.52</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
+                        <td style="text-align: center;">0.62</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">16</span></td>
+                        <td>CEAP-360VR</td>
+                        <td style="text-align: center;">0.56</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                        <td style="text-align: center;">0.43</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                        <td style="text-align: center;">0.45</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">17</span></td>
+                        <td>PhyMER</td>
+                        <td style="text-align: center;">0.51</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.42</td>
+                        <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                        <td style="text-align: center;">0.42</td>
+                        <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">18</span></td>
+                        <td>CASE</td>
+                        <td style="text-align: center;">0.47</td>
+                        <td style="text-align: center; font-size: 0.75em;">Signal CNN+Transformer</td>
+                        <td style="text-align: center;">0.30</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                        <td style="text-align: center;">0.40</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">19</span></td>
+                        <td>UBFCPHYS</td>
+                        <td style="text-align: center;">0.45</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                        <td style="text-align: center;">0.34</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
+                        <td style="text-align: center;">0.41</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Valence Leaderboard -->
+        <div id="valence" class="tab-content">
+            <h3>Valence Classification - All 19 Datasets</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2" style="vertical-align: middle;">Rank</th>
+                        <th rowspan="2" style="vertical-align: middle;">Dataset</th>
+                        <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">EDA</th>
+                        <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">PPG</th>
+                        <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">Combined</th>
+                    </tr>
+                    <tr>
+                        <th style="text-align: center;">F1</th>
+                        <th style="text-align: center;">Best Model</th>
+                        <th style="text-align: center;">F1</th>
+                        <th style="text-align: center;">Best Model</th>
+                        <th style="text-align: center;">F1</th>
+                        <th style="text-align: center;">Best Model</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="rank-badge rank-1">1</span></td>
+                        <td>WESAD</td>
+                        <td style="text-align: center;">0.83</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.83</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.98</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-2">2</span></td>
+                        <td>Dapper</td>
+                        <td style="text-align: center;">0.87</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.85</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.94</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-3">3</span></td>
+                        <td>ForDigitStress</td>
+                        <td style="text-align: center;">0.87</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                        <td style="text-align: center;">0.92</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.92</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">4</span></td>
+                        <td>MOCAS</td>
+                        <td style="text-align: center;">0.89</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.87</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.82</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">5</span></td>
+                        <td>ScientISST MOVE</td>
+                        <td style="text-align: center;">0.82</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
+                        <td style="text-align: center;">0.80</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.82</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">6</span></td>
+                        <td>EmoWear</td>
+                        <td style="text-align: center;">0.78</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.77</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.77</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">7</span></td>
+                        <td>UBFCPHYS</td>
+                        <td style="text-align: center;">0.76</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.68</td>
+                        <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                        <td style="text-align: center;">0.72</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">8</span></td>
+                        <td>Exercise</td>
+                        <td style="text-align: center;">0.75</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.72</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.71</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">9</span></td>
+                        <td>PhyMER</td>
+                        <td style="text-align: center;">0.72</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.69</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.70</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">10</span></td>
+                        <td>Unobtrusive</td>
+                        <td style="text-align: center;">0.71</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.71</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.70</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">11</span></td>
+                        <td>CLAS</td>
+                        <td style="text-align: center;">0.64</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.61</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
+                        <td style="text-align: center;">0.63</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC Attention MLP</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">12</span></td>
+                        <td>NURSE</td>
+                        <td style="text-align: center;">0.62</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.39</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                        <td style="text-align: center;">0.38</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">13</span></td>
+                        <td>CEAP-360VR</td>
+                        <td style="text-align: center;">0.62</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                        <td style="text-align: center;">0.61</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                        <td style="text-align: center;">0.50</td>
+                        <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">14</span></td>
+                        <td>MAUS</td>
+                        <td style="text-align: center;">0.58</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                        <td style="text-align: center;">0.56</td>
+                        <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                        <td style="text-align: center;">0.59</td>
+                        <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">15</span></td>
+                        <td>CASE</td>
+                        <td style="text-align: center;">0.54</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                        <td style="text-align: center;">0.48</td>
+                        <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                        <td style="text-align: center;">0.49</td>
+                        <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">16</span></td>
+                        <td>EMOGNITION</td>
+                        <td style="text-align: center;">0.53</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.50</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                        <td style="text-align: center;">0.39</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 5%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">17</span></td>
+                        <td>LAUREATE</td>
+                        <td style="text-align: center;">0.36</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                        <td style="text-align: center;">0.41</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                        <td style="text-align: center;">0.40</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 50%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">18</span></td>
+                        <td>VERBIO</td>
+                        <td style="text-align: center;">0.40</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                        <td style="text-align: center;">0.38</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                        <td style="text-align: center;">0.34</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">19</span></td>
+                        <td>ADARP</td>
+                        <td style="text-align: center;">0.30</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.40</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.47</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Four-Class Leaderboard -->
+        <div id="fourclass" class="tab-content">
+            <h3>Four-Class Classification (HAPV, HANV, LAPV, LANV) - All 19 Datasets</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2" style="vertical-align: middle;">Rank</th>
+                        <th rowspan="2" style="vertical-align: middle;">Dataset</th>
+                        <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">EDA</th>
+                        <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">PPG</th>
+                        <th colspan="2" style="text-align: center; border-bottom: 2px solid rgba(255,255,255,0.3);">Combined</th>
+                    </tr>
+                    <tr>
+                        <th style="text-align: center;">F1</th>
+                        <th style="text-align: center;">Best Model</th>
+                        <th style="text-align: center;">F1</th>
+                        <th style="text-align: center;">Best Model</th>
+                        <th style="text-align: center;">F1</th>
+                        <th style="text-align: center;">Best Model</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="rank-badge rank-1">1</span></td>
+                        <td>WESAD</td>
+                        <td style="text-align: center;">0.987</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.794</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.987</td>
+                        <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-2">2</span></td>
+                        <td>ForDigitStress</td>
+                        <td style="text-align: center;">0.682</td>
+                        <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                        <td style="text-align: center;">0.821</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.826</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-3">3</span></td>
+                        <td>ScientISST MOVE</td>
+                        <td style="text-align: center;">0.701</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
+                        <td style="text-align: center;">0.740</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.800</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">4</span></td>
+                        <td>MAUS</td>
+                        <td style="text-align: center;">0.700</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                        <td style="text-align: center;">0.705</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.728</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">5</span></td>
+                        <td>PhyMER</td>
+                        <td style="text-align: center;">0.723</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.300</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.342</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">6</span></td>
+                        <td>UBFCPHYS</td>
+                        <td style="text-align: center;">0.705</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.551</td>
+                        <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                        <td style="text-align: center;">0.622</td>
+                        <td style="text-align: center; font-size: 0.75em;">LDA</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">7</span></td>
+                        <td>MOCAS</td>
+                        <td style="text-align: center;">0.701</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
+                        <td style="text-align: center;">0.357</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.366</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">8</span></td>
+                        <td>EMOGNITION</td>
+                        <td style="text-align: center;">0.572</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.601</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.513</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">9</span></td>
+                        <td>Dapper</td>
+                        <td style="text-align: center;">0.434</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.426</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.555</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">10</span></td>
+                        <td>Exercise</td>
+                        <td style="text-align: center;">0.552</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 25%</td>
+                        <td style="text-align: center;">0.438</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                        <td style="text-align: center;">0.480</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">11</span></td>
+                        <td>LAUREATE</td>
+                        <td style="text-align: center;">0.527</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 5%</td>
+                        <td style="text-align: center;">0.460</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.461</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">12</span></td>
+                        <td>CASE</td>
+                        <td style="text-align: center;">0.476</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.397</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.498</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">13</span></td>
+                        <td>VERBIO</td>
+                        <td style="text-align: center;">0.480</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.582</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.436</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">14</span></td>
+                        <td>NURSE</td>
+                        <td style="text-align: center;">0.433</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.667</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.520</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">15</span></td>
+                        <td>CLAS</td>
+                        <td style="text-align: center;">0.430</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.408</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                        <td style="text-align: center;">0.459</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">16</span></td>
+                        <td>Unobtrusive</td>
+                        <td style="text-align: center;">0.402</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.409</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.393</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">17</span></td>
+                        <td>ADARP</td>
+                        <td style="text-align: center;">0.269</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.433</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                        <td style="text-align: center;">0.354</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP Zero-Shot</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">18</span></td>
+                        <td>CEAP-360VR</td>
+                        <td style="text-align: center;">0.285</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP MLP 25%</td>
+                        <td style="text-align: center;">0.307</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                        <td style="text-align: center;">0.314</td>
+                        <td style="text-align: center; font-size: 0.75em;">RF</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge rank-other">19</span></td>
+                        <td>EmoWear</td>
+                        <td style="text-align: center;">0.293</td>
+                        <td style="text-align: center; font-size: 0.75em;">CLSP CNN 50%</td>
+                        <td style="text-align: center;">0.270</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                        <td style="text-align: center;">0.282</td>
+                        <td style="text-align: center; font-size: 0.75em;">HC-MLP</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- CROSS-DATASET RESULTS -->
+    <div id="cross-dataset" class="main-tab-content">        
+        <!-- Cross-Dataset Subtabs -->
+        <div class="leaderboard-tabs cross-tabs">
+            <button class="tab-btn active" onclick="showCrossTab(event, 'cross-setting')">Experimental Setting</button>
+            <button class="tab-btn" onclick="showCrossTab(event, 'cross-device')">Device Type</button>
+            <button class="tab-btn" onclick="showCrossTab(event, 'cross-labeling')">Labeling Method</button>
+            <button class="tab-btn" onclick="showCrossTab(event, 'cross-demographic')">Demographics</button>
+        </div>
+
+        <!-- Cross-Setting Results -->
+<div id="cross-setting" class="cross-tab-content active">
+    <div class="cross-subsection">
+        <h4>Arousal Classification</h4>
+        <table class="cross-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">Testing Cohort</th>
+                    <th rowspan="2">Training Cohort</th>
+                    <th colspan="2">EDA</th>
+                    <th colspan="2">PPG</th>
+                    <th colspan="2">Combined</th>
+                </tr>
+                <tr>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="best-transfer">
+                    <td>Lab</td>
+                    <td>Real</td>
+                    <td>0.72</td>
+                    <td>CLSP CNN 5%</td>
+                    <td>0.57</td>
+                    <td>CLSP MLP 5%</td>
+                    <td>0.71</td>
+                    <td>CLSP MLP 5%</td>
+                </tr>
+                <tr>
+                    <td>Lab</td>
+                    <td>Constraint</td>
+                    <td>0.56</td>
+                    <td>CLSP MLP 50%</td>
+                    <td>0.61</td>
+                    <td>RF</td>
+                    <td>0.60</td>
+                    <td>RF</td>
+                </tr>
+                <tr>
+                    <td>Lab</td>
+                    <td>Lab</td>
+                    <td>0.50</td>
+                    <td>RF</td>
+                    <td>0.50</td>
+                    <td>RF</td>
+                    <td>0.52</td>
+                    <td>RF</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>Constraint</td>
+                    <td>Real</td>
+                    <td>0.68</td>
+                    <td>RF</td>
+                    <td>0.51</td>
+                    <td>RF</td>
+                    <td>0.64</td>
+                    <td>CLSP MLP 5%</td>
+                </tr>
+                <tr>
+                    <td>Constraint</td>
+                    <td>Lab</td>
+                    <td>0.44</td>
+                    <td>HCMLP</td>
+                    <td>0.67</td>
+                    <td>LDA</td>
+                    <td>0.64</td>
+                    <td>LDA</td>
+                </tr>
+                <tr>
+                    <td>Constraint</td>
+                    <td>Constraint</td>
+                    <td>0.48</td>
+                    <td>HCMLP</td>
+                    <td>0.48</td>
+                    <td>RF</td>
+                    <td>0.48</td>
+                    <td>RF</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>Real</td>
+                    <td>Constraint</td>
+                    <td>0.65</td>
+                    <td>CLSP MLP 5%</td>
+                    <td>0.59</td>
+                    <td>RF</td>
+                    <td>0.73</td>
+                    <td>CLSP MLP 5%</td>
+                </tr>
+                <tr>
+                    <td>Real</td>
+                    <td>Lab</td>
+                    <td>0.59</td>
+                    <td>HCMLP</td>
+                    <td>0.69</td>
+                    <td>LDA</td>
+                    <td>0.72</td>
+                    <td>CLSP MLP 25%</td>
+                </tr>
+                <tr>
+                    <td>Real</td>
+                    <td>Real</td>
+                    <td>0.49</td>
+                    <td>HCMLP</td>
+                    <td>0.48</td>
+                    <td>RF</td>
+                    <td>0.46</td>
+                    <td>RF</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="cross-subsection">
+        <h4>Valence Classification</h4>
+        <table class="cross-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">Testing Cohort</th>
+                    <th rowspan="2">Training Cohort</th>
+                    <th colspan="2">EDA</th>
+                    <th colspan="2">PPG</th>
+                    <th colspan="2">Combined</th>
+                </tr>
+                <tr>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="best-transfer">
+                    <td>Lab</td>
+                    <td>Real</td>
+                    <td>0.79</td>
+                    <td>CLSP MLP 5%</td>
+                    <td>0.69</td>
+                    <td>RF</td>
+                    <td>0.79</td>
+                    <td>CLSP MLP 25%</td>
+                </tr>
+                <tr>
+                    <td>Lab</td>
+                    <td>Constraint</td>
+                    <td>0.66</td>
+                    <td>CLSP MLP 25%</td>
+                    <td>0.67</td>
+                    <td>CLSP CNN 5%</td>
+                    <td>0.68</td>
+                    <td>CLSP MLP 25%</td>
+                </tr>
+                <tr>
+                    <td>Lab</td>
+                    <td>Lab</td>
+                    <td>0.54</td>
+                    <td>RF</td>
+                    <td>0.50</td>
+                    <td>HCMLP</td>
+                    <td>0.51</td>
+                    <td>HCMLP</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>Constraint</td>
+                    <td>Real</td>
+                    <td>0.76</td>
+                    <td>RF</td>
+                    <td>0.78</td>
+                    <td>RF</td>
+                    <td>0.77</td>
+                    <td>RF</td>
+                </tr>
+                <tr>
+                    <td>Constraint</td>
+                    <td>Lab</td>
+                    <td>0.76</td>
+                    <td>RF</td>
+                    <td>0.72</td>
+                    <td>RF</td>
+                    <td>0.74</td>
+                    <td>RF</td>
+                </tr>
+                <tr>
+                    <td>Constraint</td>
+                    <td>Constraint</td>
+                    <td>0.63</td>
+                    <td>RF</td>
+                    <td>0.64</td>
+                    <td>RF</td>
+                    <td>0.65</td>
+                    <td>RF</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>Real</td>
+                    <td>Constraint</td>
+                    <td>0.76</td>
+                    <td>RF</td>
+                    <td>0.70</td>
+                    <td>RF</td>
+                    <td>0.88</td>
+                    <td>RF</td>
+                </tr>
+                <tr>
+                    <td>Real</td>
+                    <td>Lab</td>
+                    <td>0.72</td>
+                    <td>RF</td>
+                    <td>0.64</td>
+                    <td>CLSP MLP 25%</td>
+                    <td>0.76</td>
+                    <td>RF</td>
+                </tr>
+                <tr>
+                    <td>Real</td>
+                    <td>Real</td>
+                    <td>0.41</td>
+                    <td>HCMLP</td>
+                    <td>0.41</td>
+                    <td>HCMLP</td>
+                    <td>0.42</td>
+                    <td>HCMLP</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Cross-Device Results -->
+<div id="cross-device" class="cross-tab-content">
+    <div class="cross-subsection">
+        <h4>Arousal Classification</h4>
+        <table class="cross-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">Testing Device</th>
+                    <th rowspan="2">Training Device</th>
+                    <th colspan="2">EDA</th>
+                    <th colspan="2">PPG</th>
+                    <th colspan="2">Combined</th>
+                </tr>
+                <tr>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Custom Wearable</td>
+                    <td>E4 Wearable</td>
+                    <td>0.65</td>
+                    <td>CLSP MLP 50%</td>
+                    <td>0.82</td>
+                    <td>RF</td>
+                    <td>0.73</td>
+                    <td>CLSP MLP 50%</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>Custom Wearable</td>
+                    <td>Lab-Based</td>
+                    <td>0.62</td>
+                    <td>RF</td>
+                    <td>0.77</td>
+                    <td>RF</td>
+                    <td>0.81</td>
+                    <td>CLSP CNN 50%</td>
+                </tr>
+                <tr>
+                    <td>Custom Wearable</td>
+                    <td>Custom Wearable</td>
+                    <td>0.34</td>
+                    <td>RF</td>
+                    <td>0.26</td>
+                    <td>RF</td>
+                    <td>0.30</td>
+                    <td>RF</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>E4 Wearable</td>
+                    <td>Lab-Based</td>
+                    <td>0.67</td>
+                    <td>CLSP CNN 50%</td>
+                    <td>0.73</td>
+                    <td>CLSP CNN 50%</td>
+                    <td>0.73</td>
+                    <td>RF</td>
+                </tr>
+                <tr>
+                    <td>E4 Wearable</td>
+                    <td>Custom Wearable</td>
+                    <td>0.64</td>
+                    <td>CLSP CNN 50%</td>
+                    <td>0.57</td>
+                    <td>RF</td>
+                    <td>0.66</td>
+                    <td>CLSP CNN 50%</td>
+                </tr>
+                <tr>
+                    <td>E4 Wearable</td>
+                    <td>E4 Wearable</td>
+                    <td>0.62</td>
+                    <td>RF</td>
+                    <td>0.60</td>
+                    <td>RF</td>
+                    <td>0.61</td>
+                    <td>RF</td>
+                </tr>
+                <tr>
+                    <td>Lab-Based</td>
+                    <td>Lab-Based</td>
+                    <td>0.60</td>
+                    <td>RF</td>
+                    <td>0.62</td>
+                    <td>RF</td>
+                    <td>0.62</td>
+                    <td>RF</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>Lab-Based</td>
+                    <td>E4 Wearable</td>
+                    <td>0.45</td>
+                    <td>RF</td>
+                    <td>0.52</td>
+                    <td>HCMLP</td>
+                    <td>0.57</td>
+                    <td>HCMLP</td>
+                </tr>
+                <tr>
+                    <td>Lab-Based</td>
+                    <td>Custom Wearable</td>
+                    <td>0.51</td>
+                    <td>RF</td>
+                    <td>0.53</td>
+                    <td>RF</td>
+                    <td>0.54</td>
+                    <td>RF</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="cross-subsection">
+        <h4>Valence Classification</h4>
+        <table class="cross-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">Testing Device</th>
+                    <th rowspan="2">Training Device</th>
+                    <th colspan="2">EDA</th>
+                    <th colspan="2">PPG</th>
+                    <th colspan="2">Combined</th>
+                </tr>
+                <tr>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="best-transfer">
+                    <td>Custom Wearable</td>
+                    <td>E4 Wearable</td>
+                    <td>0.70</td>
+                    <td>CLSP MLP 50%</td>
+                    <td>0.82</td>
+                    <td>RF</td>
+                    <td>0.82</td>
+                    <td>CLSP MLP 50%</td>
+                </tr>
+                <tr>
+                    <td>Custom Wearable</td>
+                    <td>Lab-Based</td>
+                    <td>0.71</td>
+                    <td>LDA</td>
+                    <td>0.81</td>
+                    <td>LDA</td>
+                    <td>0.81</td>
+                    <td>LDA</td>
+                </tr>
+                <tr>
+                    <td>Custom Wearable</td>
+                    <td>Custom Wearable</td>
+                    <td>0.34</td>
+                    <td>RF</td>
+                    <td>0.26</td>
+                    <td>RF</td>
+                    <td>0.28</td>
+                    <td>RF</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>E4 Wearable</td>
+                    <td>Lab-Based</td>
+                    <td>0.67</td>
+                    <td>CLSP MLP 25%</td>
+                    <td>0.64</td>
+                    <td>RF</td>
+                    <td>0.73</td>
+                    <td>CLSP CNN 50%</td>
+                </tr>
+                <tr>
+                    <td>E4 Wearable</td>
+                    <td>Custom Wearable</td>
+                    <td>0.60</td>
+                    <td>CLSP CNN 50%</td>
+                    <td>0.55</td>
+                    <td>CLSP MLP 50%</td>
+                    <td>0.62</td>
+                    <td>CLSP MLP 50%</td>
+                </tr>
+                <tr>
+                    <td>E4 Wearable</td>
+                    <td>E4 Wearable</td>
+                    <td>0.59</td>
+                    <td>RF</td>
+                    <td>0.56</td>
+                    <td>HCMLP</td>
+                    <td>0.61</td>
+                    <td>HCMLP</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>Lab-Based</td>
+                    <td>Custom Wearable</td>
+                    <td>0.62</td>
+                    <td>CLSP CNN 5%</td>
+                    <td>0.61</td>
+                    <td>RF</td>
+                    <td>0.62</td>
+                    <td>RF</td>
+                </tr>
+                <tr>
+                    <td>Lab-Based</td>
+                    <td>E4 Wearable</td>
+                    <td>0.52</td>
+                    <td>HCMLP</td>
+                    <td>0.57</td>
+                    <td>HCMLP</td>
+                    <td>0.54</td>
+                    <td>HCMLP</td>
+                </tr>
+                <tr>
+                    <td>Lab-Based</td>
+                    <td>Lab-Based</td>
+                    <td>0.52</td>
+                    <td>RF</td>
+                    <td>0.45</td>
+                    <td>HCMLP</td>
+                    <td>0.47</td>
+                    <td>HCMLP</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Cross-Labeling Results -->
+<div id="cross-labeling" class="cross-tab-content">
+    <div class="cross-subsection">
+        <h4>Arousal Classification</h4>
+        <table class="cross-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">Testing Label</th>
+                    <th rowspan="2">Training Label</th>
+                    <th colspan="2">EDA</th>
+                    <th colspan="2">PPG</th>
+                    <th colspan="2">Combined</th>
+                </tr>
+                <tr>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="best-transfer">
+                    <td>Stimulus-Label</td>
+                    <td>Expert-Annotated</td>
+                    <td>0.64</td>
+                    <td>CLSP MLP 5%</td>
+                    <td>0.72</td>
+                    <td>RF</td>
+                    <td>0.65</td>
+                    <td>CLSP MLP 50%</td>
+                </tr>
+                <tr>
+                    <td>Stimulus-Label</td>
+                    <td>Self-report</td>
+                    <td>0.62</td>
+                    <td>RF</td>
+                    <td>0.44</td>
+                    <td>CLSP CNN 5%</td>
+                    <td>0.57</td>
+                    <td>CLSP CNN 5%</td>
+                </tr>
+                <tr>
+                    <td>Stimulus-Label</td>
+                    <td>Stimulus-Label</td>
+                    <td>0.54</td>
+                    <td>RF</td>
+                    <td>0.51</td>
+                    <td>RF</td>
+                    <td>0.55</td>
+                    <td>HCMLP</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>Self-report</td>
+                    <td>Expert-Annotated</td>
+                    <td>0.65</td>
+                    <td>CLSP MLP 5%</td>
+                    <td>0.64</td>
+                    <td>CLSP CNN 50%</td>
+                    <td>0.69</td>
+                    <td>CLSP MLP 5%</td>
+                </tr>
+                <tr>
+                    <td>Self-report</td>
+                    <td>Stimulus-Label</td>
+                    <td>0.57</td>
+                    <td>HCMLP</td>
+                    <td>0.51</td>
+                    <td>CLSP CNN 50%</td>
+                    <td>0.63</td>
+                    <td>RF</td>
+                </tr>
+                <tr>
+                    <td>Self-report</td>
+                    <td>Self-report</td>
+                    <td>0.53</td>
+                    <td>HCMLP</td>
+                    <td>0.52</td>
+                    <td>HCMLP</td>
+                    <td>0.52</td>
+                    <td>HCMLP</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>Expert-Annotated</td>
+                    <td>Self-report</td>
+                    <td>0.87</td>
+                    <td>RF</td>
+                    <td>0.69</td>
+                    <td>LDA</td>
+                    <td>0.84</td>
+                    <td>RF</td>
+                </tr>
+                <tr>
+                    <td>Expert-Annotated</td>
+                    <td>Stimulus-Label</td>
+                    <td>0.79</td>
+                    <td>CLSP CNN 50%</td>
+                    <td>0.70</td>
+                    <td>CLSP MLP 50%</td>
+                    <td>0.82</td>
+                    <td>RF</td>
+                </tr>
+                <tr>
+                    <td>Expert-Annotated</td>
+                    <td>Expert-Annotated</td>
+                    <td>0.52</td>
+                    <td>RF</td>
+                    <td>0.28</td>
+                    <td>RF</td>
+                    <td>0.48</td>
+                    <td>HCMLP</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="cross-subsection">
+        <h4>Valence Classification</h4>
+        <table class="cross-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">Testing Label</th>
+                    <th rowspan="2">Training Label</th>
+                    <th colspan="2">EDA</th>
+                    <th colspan="2">PPG</th>
+                    <th colspan="2">Combined</th>
+                </tr>
+                <tr>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="best-transfer">
+                    <td>Stimulus-Label</td>
+                    <td>Expert-Annotated</td>
+                    <td>0.65</td>
+                    <td>CLSP MLP 5%</td>
+                    <td>0.65</td>
+                    <td>CLSP CNN 50%</td>
+                    <td>0.65</td>
+                    <td>CLSP CNN 25%</td>
+                </tr>
+                <tr>
+                    <td>Stimulus-Label</td>
+                    <td>Self-report</td>
+                    <td>0.63</td>
+                    <td>CLSP CNN 25%</td>
+                    <td>0.61</td>
+                    <td>CLSP CNN 5%</td>
+                    <td>0.61</td>
+                    <td>CLSP CNN 5%</td>
+                </tr>
+                <tr>
+                    <td>Stimulus-Label</td>
+                    <td>Stimulus-Label</td>
+                    <td>0.61</td>
+                    <td>RF</td>
+                    <td>0.53</td>
+                    <td>RF</td>
+                    <td>0.52</td>
+                    <td>RF</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>Self-report</td>
+                    <td>Expert-Annotated</td>
+                    <td>0.69</td>
+                    <td>CLSP MLP 50%</td>
+                    <td>0.72</td>
+                    <td>RF</td>
+                    <td>0.76</td>
+                    <td>CLSP CNN 50%</td>
+                </tr>
+                <tr>
+                    <td>Self-report</td>
+                    <td>Stimulus-Label</td>
+                    <td>0.57</td>
+                    <td>LDA</td>
+                    <td>0.59</td>
+                    <td>CLSP MLP 5%</td>
+                    <td>0.56</td>
+                    <td>LDA</td>
+                </tr>
+                <tr>
+                    <td>Self-report</td>
+                    <td>Self-report</td>
+                    <td>0.53</td>
+                    <td>RF</td>
+                    <td>0.48</td>
+                    <td>HCMLP</td>
+                    <td>0.52</td>
+                    <td>HCMLP</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>Expert-Annotated</td>
+                    <td>Stimulus-Label</td>
+                    <td>0.87</td>
+                    <td>LDA</td>
+                    <td>0.85</td>
+                    <td>RF</td>
+                    <td>0.87</td>
+                    <td>CLSP CNN 5%</td>
+                </tr>
+                <tr>
+                    <td>Expert-Annotated</td>
+                    <td>Self-report</td>
+                    <td>0.83</td>
+                    <td>CLSP CNN 25%</td>
+                    <td>0.85</td>
+                    <td>CLSP CNN 50%</td>
+                    <td>0.74</td>
+                    <td>CLSP CNN 50%</td>
+                </tr>
+                <tr>
+                    <td>Expert-Annotated</td>
+                    <td>Expert-Annotated</td>
+                    <td>0.56</td>
+                    <td>HCMLP</td>
+                    <td>0.42</td>
+                    <td>RF</td>
+                    <td>0.49</td>
+                    <td>HCMLP</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Cross-Demographic Results -->
+<div id="cross-demographic" class="cross-tab-content">
+    <div class="cross-subsection">
+        <h4>Gender-Based Transfer - Arousal Classification</h4>
+        <table class="cross-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">Testing Group</th>
+                    <th rowspan="2">Training Group</th>
+                    <th colspan="2">EDA</th>
+                    <th colspan="2">PPG</th>
+                    <th colspan="2">Combined</th>
+                </tr>
+                <tr>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="best-transfer">
+                    <td>Male</td>
+                    <td>Female</td>
+                    <td>0.56</td>
+                    <td>HCMLP</td>
+                    <td>0.51</td>
+                    <td>LDA</td>
+                    <td>0.54</td>
+                    <td>LDA</td>
+                </tr>
+                <tr>
+                    <td>Male</td>
+                    <td>Male</td>
+                    <td>0.56</td>
+                    <td>RF</td>
+                    <td>0.51</td>
+                    <td>HCMLP</td>
+                    <td>0.56</td>
+                    <td>RF</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>Female</td>
+                    <td>Female</td>
+                    <td>0.52</td>
+                    <td>RF</td>
+                    <td>0.55</td>
+                    <td>HCMLP</td>
+                    <td>0.56</td>
+                    <td>HCMLP</td>
+                </tr>
+                <tr>
+                    <td>Female</td>
+                    <td>Male</td>
+                    <td>0.50</td>
+                    <td>LDA</td>
+                    <td>0.51</td>
+                    <td>LDA</td>
+                    <td>0.53</td>
+                    <td>LDA</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="cross-subsection">
+        <h4>Gender-Based Transfer - Valence Classification</h4>
+        <table class="cross-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">Testing Group</th>
+                    <th rowspan="2">Training Group</th>
+                    <th colspan="2">EDA</th>
+                    <th colspan="2">PPG</th>
+                    <th colspan="2">Combined</th>
+                </tr>
+                <tr>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="best-transfer">
+                    <td>Male</td>
+                    <td>Female</td>
+                    <td>0.69</td>
+                    <td>CLSP MLP 25%</td>
+                    <td>0.71</td>
+                    <td>RF</td>
+                    <td>0.70</td>
+                    <td>CLSP CNN 50%</td>
+                </tr>
+                <tr>
+                    <td>Male</td>
+                    <td>Male</td>
+                    <td>0.53</td>
+                    <td>HCMLP</td>
+                    <td>0.52</td>
+                    <td>HCMLP</td>
+                    <td>0.47</td>
+                    <td>RF</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>Female</td>
+                    <td>Male</td>
+                    <td>0.71</td>
+                    <td>CLSP MLP 50%</td>
+                    <td>0.70</td>
+                    <td>CLSP CNN 50%</td>
+                    <td>0.70</td>
+                    <td>CLSP MLP 25%</td>
+                </tr>
+                <tr>
+                    <td>Female</td>
+                    <td>Female</td>
+                    <td>0.55</td>
+                    <td>HCMLP</td>
+                    <td>0.49</td>
+                    <td>RF</td>
+                    <td>0.54</td>
+                    <td>HCMLP</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="cross-subsection">
+        <h4>Age-Based Transfer - Arousal Classification</h4>
+        <table class="cross-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">Testing Group</th>
+                    <th rowspan="2">Training Group</th>
+                    <th colspan="2">EDA</th>
+                    <th colspan="2">PPG</th>
+                    <th colspan="2">Combined</th>
+                </tr>
+                <tr>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="best-transfer">
+                    <td>Old (>25 years)</td>
+                    <td>Young (18-25 years)</td>
+                    <td>0.51</td>
+                    <td>LDA</td>
+                    <td>0.56</td>
+                    <td>HCMLP</td>
+                    <td>0.56</td>
+                    <td>HCMLP</td>
+                </tr>
+                <tr>
+                    <td>Old (>25 years)</td>
+                    <td>Old (>25 years)</td>
+                    <td>0.55</td>
+                    <td>RF</td>
+                    <td>0.55</td>
+                    <td>RF</td>
+                    <td>0.53</td>
+                    <td>RF</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>Young (18-25 years)</td>
+                    <td>Young (18-25 years)</td>
+                    <td>0.55</td>
+                    <td>HCMLP</td>
+                    <td>0.53</td>
+                    <td>RF</td>
+                    <td>0.58</td>
+                    <td>HCMLP</td>
+                </tr>
+                <tr>
+                    <td>Young (18-25 years)</td>
+                    <td>Old (>25 years)</td>
+                    <td>0.50</td>
+                    <td>LDA</td>
+                    <td>0.43</td>
+                    <td>LDA</td>
+                    <td>0.47</td>
+                    <td>CLSP MLP 50%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="cross-subsection">
+        <h4>Age-Based Transfer - Valence Classification</h4>
+        <table class="cross-table">
+            <thead>
+                <tr>
+                    <th rowspan="2">Testing Group</th>
+                    <th rowspan="2">Training Group</th>
+                    <th colspan="2">EDA</th>
+                    <th colspan="2">PPG</th>
+                    <th colspan="2">Combined</th>
+                </tr>
+                <tr>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                    <th>F1</th>
+                    <th>Best Model</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="best-transfer">
+                    <td>Old (>25 years)</td>
+                    <td>Young (18-25 years)</td>
+                    <td>0.73</td>
+                    <td>CLSP MLP 50%</td>
+                    <td>0.72</td>
+                    <td>CLSP CNN 50%</td>
+                    <td>0.73</td>
+                    <td>RF</td>
+                </tr>
+                <tr>
+                    <td>Old (>25 years)</td>
+                    <td>Old (>25 years)</td>
+                    <td>0.53</td>
+                    <td>RF</td>
+                    <td>0.57</td>
+                    <td>RF</td>
+                    <td>0.53</td>
+                    <td>RF</td>
+                </tr>
+                <tr class="best-transfer">
+                    <td>Young (18-25 years)</td>
+                    <td>Old (>25 years)</td>
+                    <td>0.72</td>
+                    <td>CLSP MLP 5%</td>
+                    <td>0.67</td>
+                    <td>RF</td>
+                    <td>0.69</td>
+                    <td>RF</td>
+                </tr>
+                <tr>
+                    <td>Young (18-25 years)</td>
+                    <td>Young (18-25 years)</td>
+                    <td>0.54</td>
+                    <td>RF</td>
+                    <td>0.51</td>
+                    <td>RF</td>
+                    <td>0.48</td>
+                    <td>RF</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+    </div>
+</div>
+
+
+
+<script>
+function showMainTab(evt, tabName) {
+    // Hide all main tab contents
+    const mainTabs = document.getElementsByClassName('main-tab-content');
+    for (let i = 0; i < mainTabs.length; i++) {
+        mainTabs[i].classList.remove('active');
+    }
+    
+    // Remove active class from all buttons in main tabs
+    const buttons = evt.currentTarget.parentElement.getElementsByClassName('tab-btn');
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+    }
+    
+    // Show current tab and mark button as active
+    document.getElementById(tabName).classList.add('active');
+    evt.currentTarget.classList.add('active');
+}
+
+function showTab(evt, tabName) {
+    // Hide all within-dataset tab contents
+    const tabs = evt.currentTarget.closest('.main-tab-content').getElementsByClassName('tab-content');
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = 'none';
+    }
+    
+    // Remove active class from all buttons
+    const buttons = evt.currentTarget.parentElement.getElementsByClassName('tab-btn');
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+    }
+    
+    // Show current tab and mark button as active
+    document.getElementById(tabName).style.display = 'block';
+    evt.currentTarget.classList.add('active');
+}
+
+function showCrossTab(evt, tabName) {
+    // Hide all cross-dataset tab contents
+    const crossTabs = document.getElementsByClassName('cross-tab-content');
+    for (let i = 0; i < crossTabs.length; i++) {
+        crossTabs[i].classList.remove('active');
+    }
+    
+    // Remove active class from all cross-tab buttons
+    const buttons = evt.currentTarget.parentElement.getElementsByClassName('tab-btn');
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+    }
+    
+    // Show current tab and mark button as active
+    document.getElementById(tabName).classList.add('active');
+    evt.currentTarget.classList.add('active');
+}
+</script>
+
 
         <!-- Models Section -->
         <div id="models" class="section">
@@ -1817,7 +3126,7 @@ Signals for Generalizable Emotion Recognition</strong>
     <div class="key-findings">
         <h4>Key Model Insights</h4>
         <ul>
-            <li><strong>CLSP is the overall winner with 88/171 (51.5%) - dominates binary tasks but less so in four-class</strong></li>
+            <li><strong>CLSP is the overall winner</strong> with 88/171 (51.5%) - dominates binary tasks classification</li>
             <li><strong>Few-Shot Power:</strong> 23 top instances with only 5% training data</li>
             <li><strong>Classical ML Competitive:</strong> RF and LDA remain strong for small datasets</li>
             <li><strong>Handcrafted Features Win:</strong> 166/171 (97%) top models use domain knowledge</li>
@@ -1867,22 +3176,33 @@ Citation link comning soon</pre>
 <div id="support" class="section">
     <h2 style="text-align: center; margin-bottom: 40px; color: #333;">Supported By</h2>
     <div class="support-logos-container">
-        <div class="logo-box">
+    <div class="logo-box">
+        <a href="https://chcc.ai" target="_blank" rel="noopener noreferrer">
             <img src="chcc_site.png" alt="IIIT-Delhi CHCC">
-        </div>
-        <div class="logo-box">
-            <img src="iiitd.png" alt="IIIT Delhi">
-        </div>
-        <div class="logo-box">
-            <img src="cai.jpg" alt="Infosys CAI">
-        </div>
-        <div class="logo-box">
-            <img src="rit.png" alt="RIT New York USA">
-        </div>
-        <div class="logo-box">
-            <img src="melange.png" alt="IIIT-Delhi Melange">
-        </div>
+        </a>
     </div>
+    <div class="logo-box">
+        <a href="https://iiitd.ac.in" target="_blank" rel="noopener noreferrer">
+            <img src="iiitd.png" alt="IIIT Delhi">
+        </a>
+    </div>
+    <div class="logo-box">
+        <a href="https://cai.iiitd.ac.in" target="_blank" rel="noopener noreferrer">
+            <img src="cai.jpg" alt="Infosys CAI">
+        </a>
+    </div>
+    <div class="logo-box">
+        <a href="https://www.rit.edu" target="_blank" rel="noopener noreferrer">
+            <img src="rit.png" alt="RIT New York USA">
+        </a>
+    </div>
+    <div class="logo-box">
+        <a href="https://melange.iiitd.edu.in" target="_blank" rel="noopener noreferrer">
+            <img src="melange.png" alt="IIIT-Delhi Melange">
+        </a>
+    </div>
+</div>
+
 </div>
 
 
