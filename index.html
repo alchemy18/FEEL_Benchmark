@@ -709,6 +709,30 @@
     }
 }
 
+/* Quick fix for table overflow */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    .section {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    /* Optional: Add visual scroll hint */
+    table {
+        position: relative;
+        box-shadow: inset -10px 0 10px -10px rgba(0,0,0,0.2);
+    }
+}
+
 /* Animation for Page Load */
 @keyframes fadeInUp {
     from {
